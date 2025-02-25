@@ -20,16 +20,16 @@
     var CONFIG = {"hostname":"freyawuu.github.io","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta name="description" content="OCEAN: OFFLINE CHAIN-OF-THOUGHT EVALUATION AND ALIGNMENT IN LARGE LANGUAGE MODELS Structure Step 1: Modeling Chain of Thought as MDP CHAIN-OF-THOUGHT  Markov Decision Process(MDP)   Step 2: Verbalizin">
+  <meta name="description" content="OCEAN: OFFLINE CHAIN-OF-THOUGHT EVALUATION AND ALIGNMENT IN LARGE LANGUAGE MODELS Structure Step 1: Modeling Chain of Thought as MDP CHAIN-OF-THOUGHT  query $q$ reasoning steps $\bold{c} &#x3D; (c1, c_2, \">
 <meta property="og:type" content="article">
 <meta property="og:title" content="OCEAN OFFLINE CHAIN-OF-THOUGHT EVALUATION AND ALIGNMENT IN LARGE LANGUAGE MODELS">
 <meta property="og:url" content="https://freyawuu.github.io/2025/02/25/PaperReading/OCEAN/index.html">
 <meta property="og:site_name" content="Freya Wu の blogs">
-<meta property="og:description" content="OCEAN: OFFLINE CHAIN-OF-THOUGHT EVALUATION AND ALIGNMENT IN LARGE LANGUAGE MODELS Structure Step 1: Modeling Chain of Thought as MDP CHAIN-OF-THOUGHT  Markov Decision Process(MDP)   Step 2: Verbalizin">
+<meta property="og:description" content="OCEAN: OFFLINE CHAIN-OF-THOUGHT EVALUATION AND ALIGNMENT IN LARGE LANGUAGE MODELS Structure Step 1: Modeling Chain of Thought as MDP CHAIN-OF-THOUGHT  query $q$ reasoning steps $\bold{c} &#x3D; (c1, c_2, \">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://freyawuu.github.io/2025/02/25/PaperReading/OCEAN/images/PaperReading/OCEAN_1.png">
 <meta property="article:published_time" content="2025-02-25T07:14:47.000Z">
-<meta property="article:modified_time" content="2025-02-25T13:18:04.242Z">
+<meta property="article:modified_time" content="2025-02-25T14:06:20.051Z">
 <meta property="article:author" content="Freya Wu">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://freyawuu.github.io/2025/02/25/PaperReading/OCEAN/images/PaperReading/OCEAN_1.png">
@@ -198,7 +198,7 @@
               <span class="post-meta-item-text">发表于</span>
               
 
-              <time title="创建时间：2025-02-25 15:14:47 / 修改时间：21:18:04" itemprop="dateCreated datePublished" datetime="2025-02-25T15:14:47+08:00">2025-02-25</time>
+              <time title="创建时间：2025-02-25 15:14:47 / 修改时间：22:06:20" itemprop="dateCreated datePublished" datetime="2025-02-25T15:14:47+08:00">2025-02-25</time>
             </span>
 
           
@@ -216,11 +216,32 @@
 <h2 id="Structure"><a href="#Structure" class="headerlink" title="Structure"></a>Structure</h2><p><img src="images/PaperReading/OCEAN_1.png" alt="OCEAN Structure"></p>
 <h3 id="Step-1-Modeling-Chain-of-Thought-as-MDP"><a href="#Step-1-Modeling-Chain-of-Thought-as-MDP" class="headerlink" title="Step 1: Modeling Chain of Thought as MDP"></a>Step 1: Modeling Chain of Thought as MDP</h3><ul>
 <li><p>CHAIN-OF-THOUGHT</p>
+<ul>
+<li>query $q$</li>
+<li>reasoning steps $\bold{c} = (c<em>1, c_2, \cdots, c_T )$<br>$c_t = \prod</em>{i=1}^{t-1} \pi<em>\theta(c_i|q, c</em>{&lt; i})$</li>
+<li>answer $y = \pi<em>\theta(y|q, \bold{c}) \prod</em>{i=1}^T \pi<em>\theta(c_i|q, c</em>{&lt; i})$</li>
+</ul>
 </li>
 <li><p>Markov Decision Process(MDP)</p>
+<ul>
+<li>Markov Property: The current state contains all the necessary information for the future state</li>
+<li>finite action space: token set $\alpha_t \in |V|$</li>
+<li>every action step:<br>  generate next state<br>  $𝑠<em>{t+1}=[𝑠</em>𝑡, 𝑐<em>𝑡 ]$<br>  reward to define policy<br>  $r_t=r(𝑠</em>𝑡, 𝑐_𝑡)$</li>
+</ul>
 </li>
 </ul>
-<h3 id="Step-2-Verbalizing-KG"><a href="#Step-2-Verbalizing-KG" class="headerlink" title="Step 2: Verbalizing KG"></a>Step 2: Verbalizing KG</h3><h3 id="Step-3-Aligning"><a href="#Step-3-Aligning" class="headerlink" title="Step 3: Aligning"></a>Step 3: Aligning</h3><h4 id="KG-IPS-feature-Unbias"><a href="#KG-IPS-feature-Unbias" class="headerlink" title="KG-IPS feature: Unbias"></a>KG-IPS feature: Unbias</h4><h4 id="KG-IPS-feature-Variance-Lower-Bound"><a href="#KG-IPS-feature-Variance-Lower-Bound" class="headerlink" title="KG-IPS feature: Variance Lower Bound"></a>KG-IPS feature: Variance Lower Bound</h4><h4 id="KG-IPS-feature"><a href="#KG-IPS-feature" class="headerlink" title="KG-IPS feature:"></a>KG-IPS feature:</h4><h2 id="Experiment-Result"><a href="#Experiment-Result" class="headerlink" title="Experiment Result"></a>Experiment Result</h2><h3 id><a href="#" class="headerlink" title=" "></a> </h3><h2 id="NOTES"><a href="#NOTES" class="headerlink" title="NOTES:"></a>NOTES:</h2><h3 id="KG-amp-CoT-Previous-Work"><a href="#KG-amp-CoT-Previous-Work" class="headerlink" title="KG &amp; CoT Previous Work"></a>KG &amp; CoT Previous Work</h3><ul>
+<h3 id="Step-2-Verbalized-Knowledge-Graph-Reasoning"><a href="#Step-2-Verbalized-Knowledge-Graph-Reasoning" class="headerlink" title="Step 2: Verbalized Knowledge Graph Reasoning"></a>Step 2: Verbalized Knowledge Graph Reasoning</h3><h4 id="modeling-tractory"><a href="#modeling-tractory" class="headerlink" title="modeling tractory"></a>modeling tractory</h4><ul>
+<li>trajectory<ul>
+<li>query $q$ $\to$ decomposed triple $(e_0, r_1, e_1)$</li>
+<li>trajectory $h = (e<em>0, r_1, e_1, \cdots, r_t, e_t)$<br>$(r_t, e_t) = \prod</em>{i=1}^{t-1} \mu((r<em>i, e_i)|(e_0, r_1, e_1, \cdots, r</em>{i-1}, e_{i-1}))$</li>
+<li>answer $e_t$</li>
+</ul>
+</li>
+<li>trajectories set $\mathbb{H}={h<em>k}</em>{k=1}^K$</li>
+</ul>
+<h4 id="trajectory-to-model-policy"><a href="#trajectory-to-model-policy" class="headerlink" title="trajectory to model policy"></a>trajectory to model policy</h4><p>$\mu \to \mu_{\phi}$</p>
+<h3 id="Step-3-OCEAN-Aligning-KG-amp-CoT"><a href="#Step-3-OCEAN-Aligning-KG-amp-CoT" class="headerlink" title="Step 3: OCEAN: Aligning KG &amp; CoT"></a>Step 3: OCEAN: Aligning KG &amp; CoT</h3><ul>
+<li>Inverse propensity scores(IPS)<h4 id="KG-IPS-feature-Unbias"><a href="#KG-IPS-feature-Unbias" class="headerlink" title="KG-IPS feature: Unbias"></a>KG-IPS feature: Unbias</h4><h4 id="KG-IPS-feature-Variance-Lower-Bound"><a href="#KG-IPS-feature-Variance-Lower-Bound" class="headerlink" title="KG-IPS feature: Variance Lower Bound"></a>KG-IPS feature: Variance Lower Bound</h4><h4 id="KG-IPS-feature"><a href="#KG-IPS-feature" class="headerlink" title="KG-IPS feature:"></a>KG-IPS feature:</h4><h2 id="Experiment-Result"><a href="#Experiment-Result" class="headerlink" title="Experiment Result"></a>Experiment Result</h2><h3 id><a href="#" class="headerlink" title=" "></a> </h3><h2 id="NOTES"><a href="#NOTES" class="headerlink" title="NOTES:"></a>NOTES:</h2><h3 id="KG-amp-CoT-Previous-Work"><a href="#KG-amp-CoT-Previous-Work" class="headerlink" title="KG &amp; CoT Previous Work"></a>KG &amp; CoT Previous Work</h3></li>
 <li><p>Verify-and-edit framework<br>  Model self validation &amp; editing</p>
 <blockquote>
 <p>Ruochen Zhao, Xingxuan Li, Shafiq Joty, Chengwei Qin, and Lidong Bing. “Verify-and-edit: A knowledge-enhanced chain-of-thought framework.” In Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers), pp. 5823–5840, Toronto, Canada, July 2023. doi: 10.18653/v1/2023.acl-long.320.</p>
@@ -314,7 +335,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#OCEAN-OFFLINE-CHAIN-OF-THOUGHT-EVALUATION-AND-ALIGNMENT-IN-LARGE-LANGUAGE-MODELS"><span class="nav-number">1.</span> <span class="nav-text">OCEAN: OFFLINE CHAIN-OF-THOUGHT EVALUATION AND ALIGNMENT IN LARGE LANGUAGE MODELS</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Structure"><span class="nav-number">1.1.</span> <span class="nav-text">Structure</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Step-1-Modeling-Chain-of-Thought-as-MDP"><span class="nav-number">1.1.1.</span> <span class="nav-text">Step 1: Modeling Chain of Thought as MDP</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Step-2-Verbalizing-KG"><span class="nav-number">1.1.2.</span> <span class="nav-text">Step 2: Verbalizing KG</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Step-3-Aligning"><span class="nav-number">1.1.3.</span> <span class="nav-text">Step 3: Aligning</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#KG-IPS-feature-Unbias"><span class="nav-number">1.1.3.1.</span> <span class="nav-text">KG-IPS feature: Unbias</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#KG-IPS-feature-Variance-Lower-Bound"><span class="nav-number">1.1.3.2.</span> <span class="nav-text">KG-IPS feature: Variance Lower Bound</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#KG-IPS-feature"><span class="nav-number">1.1.3.3.</span> <span class="nav-text">KG-IPS feature:</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Experiment-Result"><span class="nav-number">1.2.</span> <span class="nav-text">Experiment Result</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-number">1.2.1.</span> <span class="nav-text"> </span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#NOTES"><span class="nav-number">1.3.</span> <span class="nav-text">NOTES:</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#KG-amp-CoT-Previous-Work"><span class="nav-number">1.3.1.</span> <span class="nav-text">KG &amp; CoT Previous Work</span></a></li></ol></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#OCEAN-OFFLINE-CHAIN-OF-THOUGHT-EVALUATION-AND-ALIGNMENT-IN-LARGE-LANGUAGE-MODELS"><span class="nav-number">1.</span> <span class="nav-text">OCEAN: OFFLINE CHAIN-OF-THOUGHT EVALUATION AND ALIGNMENT IN LARGE LANGUAGE MODELS</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Structure"><span class="nav-number">1.1.</span> <span class="nav-text">Structure</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Step-1-Modeling-Chain-of-Thought-as-MDP"><span class="nav-number">1.1.1.</span> <span class="nav-text">Step 1: Modeling Chain of Thought as MDP</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Step-2-Verbalized-Knowledge-Graph-Reasoning"><span class="nav-number">1.1.2.</span> <span class="nav-text">Step 2: Verbalized Knowledge Graph Reasoning</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#modeling-tractory"><span class="nav-number">1.1.2.1.</span> <span class="nav-text">modeling tractory</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#trajectory-to-model-policy"><span class="nav-number">1.1.2.2.</span> <span class="nav-text">trajectory to model policy</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Step-3-OCEAN-Aligning-KG-amp-CoT"><span class="nav-number">1.1.3.</span> <span class="nav-text">Step 3: OCEAN: Aligning KG &amp; CoT</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#KG-IPS-feature-Unbias"><span class="nav-number">1.1.3.1.</span> <span class="nav-text">KG-IPS feature: Unbias</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#KG-IPS-feature-Variance-Lower-Bound"><span class="nav-number">1.1.3.2.</span> <span class="nav-text">KG-IPS feature: Variance Lower Bound</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#KG-IPS-feature"><span class="nav-number">1.1.3.3.</span> <span class="nav-text">KG-IPS feature:</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Experiment-Result"><span class="nav-number">1.2.</span> <span class="nav-text">Experiment Result</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-number">1.2.1.</span> <span class="nav-text"> </span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#NOTES"><span class="nav-number">1.3.</span> <span class="nav-text">NOTES:</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#KG-amp-CoT-Previous-Work"><span class="nav-number">1.3.1.</span> <span class="nav-text">KG &amp; CoT Previous Work</span></a></li></ol></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 

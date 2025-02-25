@@ -17,28 +17,28 @@
 
 <script id="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"example.com","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+    var CONFIG = {"hostname":"freyawuu.github.io","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
   <meta name="description" content="概念 内点($E^0$ 内核)&#x2F;外点&#x2F;边界点&#x2F;孤立界点 开集&#x2F;闭集 开区域(区域)[联通的开集]&#x2F;闭区域 聚点(内点+边界点):$\forall \epsilon$ $\bigcup^0(p_0,\epsilon)\bigcap E\ne \emptyset$ [导集 E’]   闭集的判断  差集为开集 聚点all in E 边界点all in E   联通: 道路(曲线)连接  tip$\e">
 <meta property="og:type" content="article">
 <meta property="og:title" content="多元函数的微分学">
-<meta property="og:url" content="http://example.com/2022/03/19/higher%20mathematics/%E5%A4%9A%E5%85%83%E5%87%BD%E6%95%B0%E7%9A%84%E5%BE%AE%E5%88%86%E5%AD%A6/index.html">
+<meta property="og:url" content="https://freyawuu.github.io/2022/03/19/higher%20mathematics/%E5%A4%9A%E5%85%83%E5%87%BD%E6%95%B0%E7%9A%84%E5%BE%AE%E5%88%86%E5%AD%A6/index.html">
 <meta property="og:site_name" content="Freya Wu の blogs">
 <meta property="og:description" content="概念 内点($E^0$ 内核)&#x2F;外点&#x2F;边界点&#x2F;孤立界点 开集&#x2F;闭集 开区域(区域)[联通的开集]&#x2F;闭区域 聚点(内点+边界点):$\forall \epsilon$ $\bigcup^0(p_0,\epsilon)\bigcap E\ne \emptyset$ [导集 E’]   闭集的判断  差集为开集 聚点all in E 边界点all in E   联通: 道路(曲线)连接  tip$\e">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="http://example.com/.com//2022-02-16-15-29-58.png">
-<meta property="og:image" content="http://example.com/.com//2022-02-16-15-36-55.png">
-<meta property="og:image" content="http://example.com/.com//2022-03-11-08-16-36.png">
-<meta property="og:image" content="http://example.com/.com//2022-03-11-08-33-12.png">
+<meta property="og:image" content="https://freyawuu.github.io/.io//2022-02-16-15-29-58.png">
+<meta property="og:image" content="https://freyawuu.github.io/.io//2022-02-16-15-36-55.png">
+<meta property="og:image" content="https://freyawuu.github.io/.io//2022-03-11-08-16-36.png">
+<meta property="og:image" content="https://freyawuu.github.io/.io//2022-03-11-08-33-12.png">
 <meta property="article:published_time" content="2022-03-19T02:58:33.445Z">
 <meta property="article:modified_time" content="2022-05-04T03:46:02.114Z">
 <meta property="article:author" content="Freya Wu">
 <meta property="article:tag" content="notes">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://example.com/.com//2022-02-16-15-29-58.png">
+<meta name="twitter:image" content="https://freyawuu.github.io/.io//2022-02-16-15-29-58.png">
 
-<link rel="canonical" href="http://example.com/2022/03/19/higher%20mathematics/%E5%A4%9A%E5%85%83%E5%87%BD%E6%95%B0%E7%9A%84%E5%BE%AE%E5%88%86%E5%AD%A6/">
+<link rel="canonical" href="https://freyawuu.github.io/2022/03/19/higher%20mathematics/%E5%A4%9A%E5%85%83%E5%87%BD%E6%95%B0%E7%9A%84%E5%BE%AE%E5%88%86%E5%AD%A6/">
 
 
 <script id="page-configurations">
@@ -178,7 +178,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2022/03/19/higher%20mathematics/%E5%A4%9A%E5%85%83%E5%87%BD%E6%95%B0%E7%9A%84%E5%BE%AE%E5%88%86%E5%AD%A6/">
+    <link itemprop="mainEntityOfPage" href="https://freyawuu.github.io/2022/03/19/higher%20mathematics/%E5%A4%9A%E5%85%83%E5%87%BD%E6%95%B0%E7%9A%84%E5%BE%AE%E5%88%86%E5%AD%A6/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.jpg">
@@ -270,9 +270,9 @@
 <p>有界闭域上的二元连续函数：有界性/最值定理/零点存在定理/介值定理</p>
 <p>tip:零点存在定理：两点间任意路径存在零点</p>
 <ul>
-<li><p>[ ]<br><img src="/.com//2022-02-16-15-29-58.png" alt><br>$\lim_{(x,y)\to (0,0)e^{}}$</p>
+<li><p>[ ]<br><img src="/.io//2022-02-16-15-29-58.png" alt><br>$\lim_{(x,y)\to (0,0)e^{}}$</p>
 </li>
-<li><p>[ ]<br><img src="/.com//2022-02-16-15-36-55.png" alt></p>
+<li><p>[ ]<br><img src="/.io//2022-02-16-15-36-55.png" alt></p>
 </li>
 </ul>
 <h2 id="求导"><a href="#求导" class="headerlink" title="求导"></a>求导</h2><h3 id="偏导"><a href="#偏导" class="headerlink" title="偏导"></a>偏导</h3><p>当$f(x,y)$的两个二阶混合偏导数在点$(x,y)$处连续 ： $f<em>{xy}(x,y)=f</em>{yx}(x,y)$</p>
@@ -299,14 +299,14 @@
 F_u & F_v \\
 G_u & G_v \\
 \end{vmatrix}</script><p>$u_x=-\displaystyle\frac{\displaystyle\frac{\partial(F,G)}{\partial(x,v)}}{\displaystyle\frac{\partial(F,G)}{\partial(u,v)}}$ $v_x=-\displaystyle\frac{\displaystyle\frac{\partial(F,G)}{\partial(u,x)}}{\displaystyle\frac{\partial(F,G)}{\partial(u,v)}}$ y同理</p>
-<p>充分条件 $F|<em>{P_0}=0,G|</em>{P<em>0}=0,J=\displaystyle\frac{\partial(F,G)}{\partial(u,v)}|</em>{p_0}\ne 0$<br><img src="/.com//2022-03-11-08-16-36.png" alt></p>
+<p>充分条件 $F|<em>{P_0}=0,G|</em>{P<em>0}=0,J=\displaystyle\frac{\partial(F,G)}{\partial(u,v)}|</em>{p_0}\ne 0$<br><img src="/.io//2022-03-11-08-16-36.png" alt></p>
 <hr>
 <h3 id="方向导数"><a href="#方向导数" class="headerlink" title="方向导数"></a>方向导数</h3><ul>
 <li>注意 课本定义为 <code>双向</code>;其它定义为<code>单项</code>(t&gt;0)</li>
 </ul>
 <p>$f_x cos \alpha+f_y cos \beta$</p>
 <h3 id="梯度"><a href="#梯度" class="headerlink" title="梯度"></a>梯度</h3><p>$\nabla=(\frac{\partial}{\partial x},\frac{\partial}{\partial y})$ 向量微分算子/Hamilton算子</p>
-<h3 id="几何应用"><a href="#几何应用" class="headerlink" title="几何应用"></a>几何应用</h3><h2 id><a href="#" class="headerlink" title></a><img src="/.com//2022-03-11-08-33-12.png" alt></h2><h3 id="二元Taylor"><a href="#二元Taylor" class="headerlink" title="二元Taylor"></a>二元Taylor</h3><p>$f(x,y)$在$P_0(x_0,y_0)$的领域内有<code>n+1</code>阶连续偏导数</p>
+<h3 id="几何应用"><a href="#几何应用" class="headerlink" title="几何应用"></a>几何应用</h3><h2 id><a href="#" class="headerlink" title></a><img src="/.io//2022-03-11-08-33-12.png" alt></h2><h3 id="二元Taylor"><a href="#二元Taylor" class="headerlink" title="二元Taylor"></a>二元Taylor</h3><p>$f(x,y)$在$P_0(x_0,y_0)$的领域内有<code>n+1</code>阶连续偏导数</p>
 <p>$f(x<em>0+\Delta x,y_0+\Delta y)=\sum</em>{k=0}^n \frac{1}{k !}(\Delta x\frac{\partial x}+\Delta y\frac{\partial}{\partial y})^k f|_{(x_0,y_0)}+R_n$</p>
 <ul>
 <li><p>Lagrange余项 $R<em>n=\frac{1}{(n+1)!}(\Delta x\frac{\partial x}+\Delta y\frac{\partial}{\partial y})^{n+1} f|</em>{(x_0+\theta \Delta x,y_0+ \theta \Delta y)}$</p>

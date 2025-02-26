@@ -386,20 +386,20 @@
 
       
           <h1 id="第一类"><a href="#第一类" class="headerlink" title="第一类"></a>第一类</h1><p>无方向性</p>
-<h2 id="第一类曲线积分"><a href="#第一类曲线积分" class="headerlink" title="第一类曲线积分"></a>第一类曲线积分</h2><p>$\int<em>Cf(x,y)ds=\int</em>{\alpha}^\beta f(x(t),y(t))\sqrt{x’^2(t)+y’^2(t)}dt$</p>
+<h2 id="第一类曲线积分"><a href="#第一类曲线积分" class="headerlink" title="第一类曲线积分"></a>第一类曲线积分</h2><p>$\int_Cf(x,y)ds=\int_{\alpha}^\beta f(x(t),y(t))\sqrt{x’^2(t)+y’^2(t)}dt$</p>
 <blockquote>
 <p>单参数形式</p>
 </blockquote>
 <h2 id="第一类曲面积分"><a href="#第一类曲面积分" class="headerlink" title="第一类曲面积分"></a>第一类曲面积分</h2><ul>
-<li><p>$z=z(x,y)$<br>$\iint<em>c f(x,y,z)ds=\iint</em>{D_{xy}}f(x,y,z(x,y))\sqrt{1+z_x^2+z_y^2}dxdy$</p>
+<li><p>$z=z(x,y)$<br>$\iint_c f(x,y,z)ds=\iint_{D_{xy}}f(x,y,z(x,y))\sqrt{1+z_x^2+z_y^2}dxdy$</p>
 </li>
 <li><p>$x=x(u,v)$</p>
 <ul>
-<li>$\iint<em>c f(x,y,z)ds=\iint</em>{D_{uv}}f(x(u,v),y(u,v),z(u,v))\sqrt{EG-F^2}dudv$<blockquote>
+<li>$\iint_c f(x,y,z)ds=\iint_{D_{uv}}f(x(u,v),y(u,v),z(u,v))\sqrt{EG-F^2}dudv$<blockquote>
 <p>$E=r_u \cdot r_u…$</p>
 </blockquote>
 </li>
-<li>$\iint<em>c f(x,y,z)ds=\iint</em>{D_{uv}}f(x(u,v),y(u,v),z(u,v))\sqrt{A^2+B^2+C^2}dudv$<blockquote>
+<li>$\iint_c f(x,y,z)ds=\iint_{D_{uv}}f(x(u,v),y(u,v),z(u,v))\sqrt{A^2+B^2+C^2}dudv$<blockquote>
 <p>$A=\frac{\partial(y,z)}{\partial(u,v)},…(x,y,z)轮换$</p>
 </blockquote>
 </li>
@@ -436,7 +436,7 @@
 <blockquote>
 <p>挖 补 围</p>
 </blockquote>
-<h2 id="平面区域的面积公式"><a href="#平面区域的面积公式" class="headerlink" title="平面区域的面积公式"></a>平面区域的面积公式</h2><p>$A<em>D=\iint_D dxdy=-\oint</em>{C^+}ydx=\oint<em>{C^+}xdy=\frac1 2\oint</em>{C^+}xdy-ydx$</p>
+<h2 id="平面区域的面积公式"><a href="#平面区域的面积公式" class="headerlink" title="平面区域的面积公式"></a>平面区域的面积公式</h2><p>$A_D=\iint_D dxdy=-\oint_{C^+}ydx=\oint_{C^+}xdy=\frac1 2\oint_{C^+}xdy-ydx$</p>
 <h2 id="平面曲线积分与路径的无关性"><a href="#平面曲线积分与路径的无关性" class="headerlink" title="平面曲线积分与路径的无关性"></a>平面曲线积分与路径的无关性</h2><p><img src="/.io//2022-04-27-11-20-29.png" alt></p>
 <h2 id="全微分求积"><a href="#全微分求积" class="headerlink" title="全微分求积"></a>全微分求积</h2><blockquote>
 <p>先验证$Q_x=P_y$</p>
@@ -451,15 +451,15 @@
 <blockquote>
 <p>积分因子</p>
 </blockquote>
-<h2 id="Gauss-公式"><a href="#Gauss-公式" class="headerlink" title="Gauss 公式"></a>Gauss 公式</h2><p>$\oiint<em>{S+}Pdydz+Qdzdx+Rdxdy=\iiint</em>{\Omega}=(\displaystyle\frac{\partial P}{\partial x}+\displaystyle\frac{\partial Q}{\partial y})+\displaystyle\frac{\partial R}{\partial z}dV$</p>
+<h2 id="Gauss-公式"><a href="#Gauss-公式" class="headerlink" title="Gauss 公式"></a>Gauss 公式</h2><p>$\oiint_{S+}Pdydz+Qdzdx+Rdxdy=\iiint_{\Omega}=(\displaystyle\frac{\partial P}{\partial x}+\displaystyle\frac{\partial Q}{\partial y})+\displaystyle\frac{\partial R}{\partial z}dV$</p>
 <h3 id="体积计算公式"><a href="#体积计算公式" class="headerlink" title="体积计算公式"></a>体积计算公式</h3><p>$V=\frac 1 3 \oiint_{S+}xdydz+ydzdx+zdxdy$</p>
 <h3 id="散度"><a href="#散度" class="headerlink" title="散度"></a>散度</h3><p>$div F=\frac{\partial F}{\partial x}+ \frac{\partial F}{\partial y}+\frac{\partial F}{\partial z}$</p>
-<h3 id="Stokes-定理"><a href="#Stokes-定理" class="headerlink" title="Stokes 定理"></a>Stokes 定理</h3><p>$\oint<em>{\partial \Sigma+}Pdx+Qdy+Rdz=\iint</em>{\Sigma}(\displaystyle\frac{\partial R}{\partial y}-\displaystyle\frac{\partial Q}{\partial z})dydz+(\displaystyle\frac{\partial P}{\partial z}-\displaystyle\frac{\partial R}{\partial x})dzdx+(\displaystyle\frac{\partial Q}{\partial x}-\displaystyle\frac{\partial P}{\partial y})dxdy$</p>
+<h3 id="Stokes-定理"><a href="#Stokes-定理" class="headerlink" title="Stokes 定理"></a>Stokes 定理</h3><p>$\oint_{\partial \Sigma+}Pdx+Qdy+Rdz=\iint_{\Sigma}(\displaystyle\frac{\partial R}{\partial y}-\displaystyle\frac{\partial Q}{\partial z})dydz+(\displaystyle\frac{\partial P}{\partial z}-\displaystyle\frac{\partial R}{\partial x})dzdx+(\displaystyle\frac{\partial Q}{\partial x}-\displaystyle\frac{\partial P}{\partial y})dxdy$</p>
 <h3 id="旋度"><a href="#旋度" class="headerlink" title="旋度"></a>旋度</h3><blockquote>
 <p>rot/cult</p>
 </blockquote>
 <p>$(\displaystyle\frac{\partial R}{\partial y}-\displaystyle\frac{\partial Q}{\partial z},\displaystyle\frac{\partial P}{\partial z}-\displaystyle\frac{\partial R}{\partial x},<br>\displaystyle\frac{\partial Q}{\partial x}-\displaystyle\frac{\partial P}{\partial y})$</p>
-<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>$\int<em>{\partial \Sigma}u=\int</em>{\Sigma}du$</p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>$\int_{\partial \Sigma}u=\int_{\Sigma}du$</p>
 
       
     </div>
@@ -766,7 +766,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h1 id="刚体力学"><a href="#刚体力学" class="headerlink" title="刚体力学"></a>刚体力学</h1><h2 id="定轴转动"><a href="#定轴转动" class="headerlink" title="定轴转动"></a>定轴转动</h2><p>$a<em>t=r</em>\perp \beta$<br>$a<em>n=r</em>\perp \omega^2$</p>
+          <h1 id="刚体力学"><a href="#刚体力学" class="headerlink" title="刚体力学"></a>刚体力学</h1><h2 id="定轴转动"><a href="#定轴转动" class="headerlink" title="定轴转动"></a>定轴转动</h2><p>$a_t=r_\perp \beta$<br>$a_n=r_\perp \omega^2$</p>
 <blockquote>
 <p>与一维匀变速运动相似</p>
 </blockquote>
@@ -779,7 +779,7 @@
 </li>
 </ul>
 <h2 id="刚体定轴转动定理"><a href="#刚体定轴转动定理" class="headerlink" title="刚体定轴转动定理"></a>刚体定轴转动定理</h2><p>$M=J \beta$</p>
-<p>$\int<em>{t_0}^t Mdt=\int</em>{J_0\omega_0}^{J \omega}d(J \omega)=J \omega-J_0 \omega_0$</p>
+<p>$\int_{t_0}^t Mdt=\int_{J_0\omega_0}^{J \omega}d(J \omega)=J \omega-J_0 \omega_0$</p>
 <ul>
 <li>remember:</li>
 <li><ul>

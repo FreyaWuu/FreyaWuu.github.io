@@ -299,7 +299,7 @@
 </ul>
 </li>
 <li>单位斜坡响应 $c(t)=t-T+Te^{-t/T}$<ul>
-<li>稳态误差 $e(t)|<em>{t=\infty}=[T(1-e^{-t/T})]|</em>{t=\infty}=T$<h4 id="二阶系统"><a href="#二阶系统" class="headerlink" title="二阶系统"></a>二阶系统</h4>$\frac{C(s)}{R(s)}=\frac K{Js^2 +Bs+K}=\frac {\omega_n^2}{s^2 +2\zeta \omega_n s+\omega_n^2}$</li>
+<li>稳态误差 $e(t)|_{t=\infty}=[T(1-e^{-t/T})]|_{t=\infty}=T$<h4 id="二阶系统"><a href="#二阶系统" class="headerlink" title="二阶系统"></a>二阶系统</h4>$\frac{C(s)}{R(s)}=\frac K{Js^2 +Bs+K}=\frac {\omega_n^2}{s^2 +2\zeta \omega_n s+\omega_n^2}$</li>
 </ul>
 </li>
 <li>参数<ul>
@@ -365,7 +365,7 @@
 </ul>
 <p>平移-相对稳定性</p>
 <h3 id="稳态性能"><a href="#稳态性能" class="headerlink" title="稳态性能"></a>稳态性能</h3><ul>
-<li>稳态误差<br>$\frac{E(s)}{R(s)} \to E(s)$<br>终值定理(对于稳定系统) $e<em>{ss}=lim</em>{t\to +\infty}e(t)=lim_{s\to 0}sE(s)$</li>
+<li>稳态误差<br>$\frac{E(s)}{R(s)} \to E(s)$<br>终值定理(对于稳定系统) $e_{ss}=lim_{t\to +\infty}e(t)=lim_{s\to 0}sE(s)$</li>
 </ul>
 <p>按开环传递函数中包含积分环节的数目进行分类<br>单位负反馈系统:</p>
 <div class="table-container">
@@ -381,9 +381,9 @@
 <tbody>
 <tr>
 <td>常数</td>
-<td>静态位置误差常数$K<em>p=lim</em>{s\to 0}G(s)$</td>
-<td>静态速度误差常数$K<em>v=lim</em>{s\to 0}sG(s)$</td>
-<td>静态加速度误差常数$K<em>a=lim</em>{s\to 0}s^2G(s)$</td>
+<td>静态位置误差常数$K_p=lim_{s\to 0}G(s)$</td>
+<td>静态速度误差常数$K_v=lim_{s\to 0}sG(s)$</td>
+<td>静态加速度误差常数$K_a=lim_{s\to 0}s^2G(s)$</td>
 </tr>
 <tr>
 <td>0型</td>
@@ -425,7 +425,7 @@
 <li>非齐次</li>
 </ul>
 <p>$x(t)=\phi(t)x(0)+\int_{0}^t \phi(t-\tau)Bu(\tau)d\tau$</p>
-<p>$x(t)=e^{A(t-t<em>0)}x(t_0)+\int</em>{t_0}^t e^{A(t-\tau)}Bu(\tau)d\tau$</p>
+<p>$x(t)=e^{A(t-t_0)}x(t_0)+\int_{t_0}^t e^{A(t-\tau)}Bu(\tau)d\tau$</p>
 <p><img src="/.io//image-16.png" alt="Alt text"></p>
 <ul>
 <li>[ ] 我觉得这很酷但我不会算<h4 id="性质"><a href="#性质" class="headerlink" title="性质"></a>性质</h4><h5 id="可控性"><a href="#可控性" class="headerlink" title="可控性"></a>可控性</h5><blockquote>
@@ -483,7 +483,7 @@
 <p>选择合适的$K_e$使其稳定(快速响应和对干扰噪声灵敏性的折中)<br>对对偶系统<br>$\dot{z}=A^<em>z+C^</em>v$<br>$n=B^<em>z$<br>进行极点配置<br>$|sI-A^</em>+C^<em>K|$<br>$K_e=K^</em>$</p>
 <ul>
 <li>矩阵变换法<br><img src="/.io//image-22.png" alt="Alt text"></li>
-<li>直接代入法<br>设$K=[k<em>{e1}, k</em>{e2}, k_{e3}]^T$<br>$|sI-A+K_eC|=(s-\mu_1)(s-\mu_2)(s-\mu_3)$</li>
+<li>直接代入法<br>设$K=[k_{e1}, k_{e2}, k_{e3}]^T$<br>$|sI-A+K_eC|=(s-\mu_1)(s-\mu_2)(s-\mu_3)$</li>
 </ul>
 <h5 id="联合"><a href="#联合" class="headerlink" title="联合"></a>联合</h5><script type="math/tex; mode=display">
  \left[

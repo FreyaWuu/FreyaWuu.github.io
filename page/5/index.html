@@ -512,32 +512,32 @@
 <p>积分换序/区域划分/对称性质(区域/奇偶/轮换)/变量替换/补</p>
 </blockquote>
 <ul>
-<li>变量替换<br>$\iint<em>Df(x,y)dxdy=\iint</em>{D’}f(x(u,v),y(u,v))|\displaystyle\frac{\partial(x,y)}{\partial(u,v)}|dudv$<br><code>D&#39;</code>定限很重要！！</li>
-<li>极坐标<br>  $\iint<em>Df(x,y)dxdy=\iint</em>{D’}f(r cos\theta,r sin\theta)|r|d\theta dr$</li>
+<li>变量替换<br>$\iint_Df(x,y)dxdy=\iint_{D’}f(x(u,v),y(u,v))|\displaystyle\frac{\partial(x,y)}{\partial(u,v)}|dudv$<br><code>D&#39;</code>定限很重要！！</li>
+<li>极坐标<br>  $\iint_Df(x,y)dxdy=\iint_{D’}f(r cos\theta,r sin\theta)|r|d\theta dr$</li>
 </ul>
 <p><img src="/.io//2022-03-28-08-17-23.png" alt></p>
 <blockquote>
 <p>用二重积分夹逼求出定积分~</p>
 </blockquote>
 <h2 id="三重积分"><a href="#三重积分" class="headerlink" title="三重积分"></a>三重积分</h2><ul>
-<li><p>柱线法/坐标面投影法<br>$\iiint<em>Df(x,y,z)dV=\int_a^bdx\int</em>{y<em>1(x)}^{y_2(x)}dy\int</em>{z_1(x,y)}^{z_2(x,y)}dz$</p>
+<li><p>柱线法/坐标面投影法<br>$\iiint_Df(x,y,z)dV=\int_a^bdx\int_{y_1(x)}^{y_2(x)}dy\int_{z_1(x,y)}^{z_2(x,y)}dz$</p>
 </li>
-<li><p>截面法<br>$\int<em>{h_1}^{h_2}F(z)dz=\int</em>{h<em>1}^{h_2}dz\iint</em>{D_z}f(x,y,z)dxdy$</p>
+<li><p>截面法<br>$\int_{h_1}^{h_2}F(z)dz=\int_{h_1}^{h_2}dz\iint_{D_z}f(x,y,z)dxdy$</p>
 </li>
 </ul>
-<h3 id="对称性-变量代换-略"><a href="#对称性-变量代换-略" class="headerlink" title="对称性 变量代换 略"></a><em>对称性 变量代换 略</em></h3><h4 id="柱面坐标系"><a href="#柱面坐标系" class="headerlink" title="柱面坐标系"></a>柱面坐标系</h4><p>$(r,\theta,z)$<br>  $\iint<em>Df(x,y,z)dxdy=\iint</em>{D’}f(r cos\theta,r sin\theta,z)|r|d\theta dr dz$</p>
+<h3 id="对称性-变量代换-略"><a href="#对称性-变量代换-略" class="headerlink" title="对称性 变量代换 略"></a><em>对称性 变量代换 略</em></h3><h4 id="柱面坐标系"><a href="#柱面坐标系" class="headerlink" title="柱面坐标系"></a>柱面坐标系</h4><p>$(r,\theta,z)$<br>  $\iint_Df(x,y,z)dxdy=\iint_{D’}f(r cos\theta,r sin\theta,z)|r|d\theta dr dz$</p>
 <blockquote>
 <p>两项平方和</p>
-<h4 id="球面坐标系"><a href="#球面坐标系" class="headerlink" title="球面坐标系"></a>球面坐标系</h4><p>$(\rho,\phi,\theta)$<br>  $\iint<em>Df(x,y,z)dxdy=\iint</em>{D’}f(\rho sin\phi cos\theta,\rho sin \phi sin\theta,\rho cos \phi)\rho^2 sin \phi d \rho d \phi d\theta $</p>
+<h4 id="球面坐标系"><a href="#球面坐标系" class="headerlink" title="球面坐标系"></a>球面坐标系</h4><p>$(\rho,\phi,\theta)$<br>  $\iint_Df(x,y,z)dxdy=\iint_{D’}f(\rho sin\phi cos\theta,\rho sin \phi sin\theta,\rho cos \phi)\rho^2 sin \phi d \rho d \phi d\theta $</p>
 <p>三项平方和<br>注意 $\phi$ 是与z轴夹角</p>
 </blockquote>
 <h1 id="应用"><a href="#应用" class="headerlink" title="应用"></a>应用</h1><h2 id="曲面面积"><a href="#曲面面积" class="headerlink" title="曲面面积"></a>曲面面积</h2><ul>
-<li><p>$z=f(x,y)$<br>$\bold{n}={z_x,z_y,-1}$<br>$S=\iint_D \sqrt{1+z_x^2+z_y^2}dxdy $</p>
+<li><p>$z=f(x,y)$<br>$\bold{n}=\{z_x,z_y,-1\}$<br>$S=\iint_D \sqrt{1+z_x^2+z_y^2}dxdy $</p>
 </li>
 <li><p>$x=x(u,v),y=y(u,v),z=z(u,v)$<br>$S=\iint_D \sqrt{EG-F^2}$</p>
 <p>$r=r(u,v)=r(x(u,v),y(u,v),z(u,v))$</p>
 <p>$n=r_u \times r_v=(A,B,C)$</p>
-<p>$s=\iint<em>{D</em>{uv}}\sqrt{A^2+B^2+C^2}dudv$</p>
+<p>$s=\iint_{D_{uv}}\sqrt{A^2+B^2+C^2}dudv$</p>
 <blockquote>
 <p>$\displaystyle\frac{\partial(y,z)}{u,v}(A),\displaystyle\frac{\partial(z,x)}{u,v}(B),\displaystyle\frac{\partial(x,y)}{u,v}(C)$至少一个非0，S为光滑曲面</p>
 </blockquote>
@@ -621,7 +621,7 @@
 
       
           <h2 id="定积分"><a href="#定积分" class="headerlink" title="定积分"></a>定积分</h2><h3 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h3><p>分划 $\to$ 近似和 $\to$ 取极限</p>
-<p><strong>$\lambda=max_{1\le i \le n}{\Delta x_i}$</strong><br><strong>$A=lim<em>{\lambda \to 0}\sum</em>{i=1}^{n}f(\varepsilon_i)\Delta x_i$</strong> $\int_a^{b}f(x)dx$<br>有极限：<strong>黎曼可积</strong> :$\in R[a,b]$</p>
+<p><strong>$\lambda=max_{1\le i \le n}{\Delta x_i}$</strong><br><strong>$A=lim_{\lambda \to 0}\sum_{i=1}^{n}f(\varepsilon_i)\Delta x_i$</strong> $\int_a^{b}f(x)dx$<br>有极限：<strong>黎曼可积</strong> :$\in R[a,b]$</p>
 <ul>
 <li>上下限，积分区间，被积函数，积分变量 略</li>
 </ul>
@@ -947,7 +947,7 @@ a_2x+b_2y+c_2=0 \\
 <li><p>[ ]<br><img src="/.io//2022-02-16-15-36-55.png" alt></p>
 </li>
 </ul>
-<h2 id="求导"><a href="#求导" class="headerlink" title="求导"></a>求导</h2><h3 id="偏导"><a href="#偏导" class="headerlink" title="偏导"></a>偏导</h3><p>当$f(x,y)$的两个二阶混合偏导数在点$(x,y)$处连续 ： $f<em>{xy}(x,y)=f</em>{yx}(x,y)$</p>
+<h2 id="求导"><a href="#求导" class="headerlink" title="求导"></a>求导</h2><h3 id="偏导"><a href="#偏导" class="headerlink" title="偏导"></a>偏导</h3><p>当$f(x,y)$的两个二阶混合偏导数在点$(x,y)$处连续 ： $f_{xy}(x,y)=f_{yx}(x,y)$</p>
 <h3 id="全微分"><a href="#全微分" class="headerlink" title="全微分"></a>全微分</h3><p>形式不变性</p>
 <h3 id="一些关系"><a href="#一些关系" class="headerlink" title="一些关系"></a>一些关系</h3><p>偏导数均连续 ➡ 可微 ➡ 连续+可偏导<br>可偏导 ➡ xy轴方向上连续</p>
 <h3 id="隐函数存在定理"><a href="#隐函数存在定理" class="headerlink" title="隐函数存在定理"></a>隐函数存在定理</h3><p>$F(x_0,y_0)=0$ $F_y(x_0,y_0)\ne 0$<br>$\to$ 确定唯一函数，且$\displaystyle\frac{dy}{dx}=-\displaystyle\frac{F_x(x,y)}{F_y(x,y)}$</p>
@@ -971,7 +971,7 @@ a_2x+b_2y+c_2=0 \\
 F_u & F_v \\
 G_u & G_v \\
 \end{vmatrix}</script><p>$u_x=-\displaystyle\frac{\displaystyle\frac{\partial(F,G)}{\partial(x,v)}}{\displaystyle\frac{\partial(F,G)}{\partial(u,v)}}$ $v_x=-\displaystyle\frac{\displaystyle\frac{\partial(F,G)}{\partial(u,x)}}{\displaystyle\frac{\partial(F,G)}{\partial(u,v)}}$ y同理</p>
-<p>充分条件 $F|<em>{P_0}=0,G|</em>{P<em>0}=0,J=\displaystyle\frac{\partial(F,G)}{\partial(u,v)}|</em>{p_0}\ne 0$<br><img src="/.io//2022-03-11-08-16-36.png" alt></p>
+<p>充分条件 $F|_{P_0}=0,G|_{P_0}=0,J=\displaystyle\frac{\partial(F,G)}{\partial(u,v)}|_{p_0}\ne 0$<br><img src="/.io//2022-03-11-08-16-36.png" alt></p>
 <hr>
 <h3 id="方向导数"><a href="#方向导数" class="headerlink" title="方向导数"></a>方向导数</h3><ul>
 <li>注意 课本定义为 <code>双向</code>;其它定义为<code>单项</code>(t&gt;0)</li>
@@ -979,9 +979,9 @@ G_u & G_v \\
 <p>$f_x cos \alpha+f_y cos \beta$</p>
 <h3 id="梯度"><a href="#梯度" class="headerlink" title="梯度"></a>梯度</h3><p>$\nabla=(\frac{\partial}{\partial x},\frac{\partial}{\partial y})$ 向量微分算子/Hamilton算子</p>
 <h3 id="几何应用"><a href="#几何应用" class="headerlink" title="几何应用"></a>几何应用</h3><h2 id><a href="#" class="headerlink" title></a><img src="/.io//2022-03-11-08-33-12.png" alt></h2><h3 id="二元Taylor"><a href="#二元Taylor" class="headerlink" title="二元Taylor"></a>二元Taylor</h3><p>$f(x,y)$在$P_0(x_0,y_0)$的领域内有<code>n+1</code>阶连续偏导数</p>
-<p>$f(x<em>0+\Delta x,y_0+\Delta y)=\sum</em>{k=0}^n \frac{1}{k !}(\Delta x\frac{\partial x}+\Delta y\frac{\partial}{\partial y})^k f|_{(x_0,y_0)}+R_n$</p>
+<p>$f(x_0+\Delta x,y_0+\Delta y)=\sum_{k=0}^n \frac{1}{k !}(\Delta x\frac{\partial x}+\Delta y\frac{\partial}{\partial y})^k f|_{(x_0,y_0)}+R_n$</p>
 <ul>
-<li><p>Lagrange余项 $R<em>n=\frac{1}{(n+1)!}(\Delta x\frac{\partial x}+\Delta y\frac{\partial}{\partial y})^{n+1} f|</em>{(x_0+\theta \Delta x,y_0+ \theta \Delta y)}$</p>
+<li><p>Lagrange余项 $R_n=\frac{1}{(n+1)!}(\Delta x\frac{\partial x}+\Delta y\frac{\partial}{\partial y})^{n+1} f|_{(x_0+\theta \Delta x,y_0+ \theta \Delta y)}$</p>
 </li>
 <li><p>Peano余项 $R_n=o(\rho^n)$ $\rho=\sqrt{(\Delta x)^2+(\Delta y)^2}$</p>
 <blockquote>
@@ -995,7 +995,7 @@ G_u & G_v \\
 <p>$\theta \in (0,1)$</p>
 </blockquote>
 <p><em>Maclaurin $x_0=0,y_0=0$</em></p>
-<h3 id="极值"><a href="#极值" class="headerlink" title="极值"></a>极值</h3><p>对于驻点($f<em>x=0,f_y=0$)<br>考虑<br>$A=f</em>{xx};B=f<em>{xy}=f</em>{yx};C=f_{yy}$<br>$H=AC-B^2$</p>
+<h3 id="极值"><a href="#极值" class="headerlink" title="极值"></a>极值</h3><p>对于驻点($f_x=0,f_y=0$)<br>考虑<br>$A=f_{xx};B=f_{xy}=f_{yx};C=f_{yy}$<br>$H=AC-B^2$</p>
 <blockquote>
 <p>Hessel行列式？？名字忘了</p>
 </blockquote>
@@ -1034,7 +1034,7 @@ f_{n1} & f_{n2} & \cdots & f_{nn} \\
 <li>用条件换元  : 有些时候难以实现</li>
 <li>Lagrange 乘数法 : 隐函数</li>
 </ul>
-<p>$-\lambda<em>1=\displaystyle\frac{f_z}{\phi_z^1}|</em>{(x_0,y_0,z_0)}$<br>（m个$\lambda$）</p>
+<p>$-\lambda_1=\displaystyle\frac{f_z}{\phi_z^1}|_{(x_0,y_0,z_0)}$<br>（m个$\lambda$）</p>
 <p>$L(x,y,z,\lambda)=f(x,y,z)+\lambda\phi(x,y,z)$</p>
 <p>所有偏导数为0</p>
 <p><strong>$\displaystyle\frac{f_x}{\phi_x}=\displaystyle\frac{f_y}{\phi_y}=\cdots$</strong><br>代入约束</p>
@@ -1275,11 +1275,11 @@ v_1 & v_2 & v_3 \\
 <ul>
 <li>定义<br>$\exist A,\forall \epsilon&gt;0,\exist N \in \N,n&gt;N:|x_n-A|&lt;\epsilon$ </li>
 </ul>
-<h2 id="压缩映射原理"><a href="#压缩映射原理" class="headerlink" title="压缩映射原理"></a>压缩映射原理</h2><p>$|x<em>n-A|&lt;L|x</em>{n-1}-A|&lt;\cdots&lt;L^{n}|x_1-A|&lt;\epsilon$ ($L&lt;1$)</p>
+<h2 id="压缩映射原理"><a href="#压缩映射原理" class="headerlink" title="压缩映射原理"></a>压缩映射原理</h2><p>$|x_n-A|&lt;L|x_{n-1}-A|&lt;\cdots&lt;L^{n}|x_1-A|&lt;\epsilon$ ($L&lt;1$)</p>
 <ul>
 <li>[ ] 极限的运算法则只能推广到有限项</li>
 </ul>
-<h2 id="单调有界数列极限存在定理"><a href="#单调有界数列极限存在定理" class="headerlink" title="单调有界数列极限存在定理"></a>单调有界数列极限存在定理</h2><h2 id="区间套定理"><a href="#区间套定理" class="headerlink" title="区间套定理"></a>区间套定理</h2><p>若$[a<em>{n+1}+b</em>{n+1}]\subset [a<em>n,b_n],\forall n \in \N,\lim</em>{x \to \infty}(b<em>n-a_n)=0$<br>$\exist \epsilon \in \bigcap</em>{n=1}^{\infty}[a_n,b_n]$</p>
+<h2 id="单调有界数列极限存在定理"><a href="#单调有界数列极限存在定理" class="headerlink" title="单调有界数列极限存在定理"></a>单调有界数列极限存在定理</h2><h2 id="区间套定理"><a href="#区间套定理" class="headerlink" title="区间套定理"></a>区间套定理</h2><p>若$[a_{n+1}+b_{n+1}]\subset [a_n,b_n],\forall n \in \N,\lim_{x \to \infty}(b_n-a_n)=0$<br>$\exist \epsilon \in \bigcap_{n=1}^{\infty}[a_n,b_n]$</p>
 <h1 id="导数"><a href="#导数" class="headerlink" title="导数"></a>导数</h1><h2 id="高阶导数"><a href="#高阶导数" class="headerlink" title="高阶导数"></a>高阶导数</h2><h3 id="莱布尼兹公式"><a href="#莱布尼兹公式" class="headerlink" title="莱布尼兹公式"></a>莱布尼兹公式</h3><script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 <script type="text/x-mathjax-config">
   MathJax.Hub.Config({ tex2jax: {inlineMath: [['$', '$']]}, messageStyle: "none" });
@@ -1374,7 +1374,7 @@ v_1 & v_2 & v_3 \\
 <h3 id="拉格朗日中值公式"><a href="#拉格朗日中值公式" class="headerlink" title="拉格朗日中值公式"></a>拉格朗日中值公式</h3><p>$f(b)-f(a)=f’(\epsilon)(b-a)$</p>
 <h3 id="有限增量公式"><a href="#有限增量公式" class="headerlink" title="有限增量公式"></a>有限增量公式</h3><p>$f(x_0+\Delta x)-f(x_0)=f’(x_0+\theta \Delta x)\Delta x,\theta\in(0,1)$</p>
 <h2 id="柯西定理"><a href="#柯西定理" class="headerlink" title="柯西定理"></a>柯西定理</h2><p>若$f,g \in C[a,b] \cap D(a,b), \forall x\in(a,b):g’(x)\ne 0$<br>$\displaystyle{\frac{f(b)-f(a)}{g(b)-g(a)}=\frac{f’(\epsilon)}{g’(\epsilon)}}$</p>
-<h2 id="达布定理"><a href="#达布定理" class="headerlink" title="达布定理"></a>达布定理</h2><p>若$f\in D[a,b], f’<em>+(a)&lt;f’</em>-(b) : \forall c\in (f’<em>+(a),f’</em>-(b)) ,\exist\epsilon\in(a,b):f’(\epsilon)=c$</p>
+<h2 id="达布定理"><a href="#达布定理" class="headerlink" title="达布定理"></a>达布定理</h2><p>若$f\in D[a,b], f’_+(a)&lt;f’_-(b) : \forall c\in (f’_+(a),f’_-(b)) ,\exist\epsilon\in(a,b):f’(\epsilon)=c$</p>
 <hr>
 <h1 id="洛必达-L’-Hospital-法则"><a href="#洛必达-L’-Hospital-法则" class="headerlink" title="洛必达(L’ Hospital)法则"></a>洛必达(L’ Hospital)法则</h1><hr>
 <ul>
@@ -1383,7 +1383,7 @@ v_1 & v_2 & v_3 \\
 </ul>
 <hr>
 <h1 id="泰勒公式"><a href="#泰勒公式" class="headerlink" title="泰勒公式"></a>泰勒公式</h1><hr>
-<h2 id="泰勒多项式"><a href="#泰勒多项式" class="headerlink" title="泰勒多项式"></a>泰勒多项式</h2><p>$P<em>n(x)=\sum</em>{k=0}^n\displaystyle\frac{f^{(k)}(x_0)}{k!}(x-x_0)^k$</p>
+<h2 id="泰勒多项式"><a href="#泰勒多项式" class="headerlink" title="泰勒多项式"></a>泰勒多项式</h2><p>$P_n(x)=\sum_{k=0}^n\displaystyle\frac{f^{(k)}(x_0)}{k!}(x-x_0)^k$</p>
 <h2 id="佩亚诺-Peano-余项"><a href="#佩亚诺-Peano-余项" class="headerlink" title="佩亚诺(Peano)余项"></a>佩亚诺(Peano)余项</h2><p>+$o((x-x_0)^n)$</p>
 <h2 id="拉格朗日余项"><a href="#拉格朗日余项" class="headerlink" title="拉格朗日余项"></a>拉格朗日余项</h2><p>$\displaystyle\frac{f^{(n+1)}(\epsilon)}{(n+1)!}(x-x_0)^{(n+1)}$</p>
 <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>

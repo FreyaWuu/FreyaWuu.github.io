@@ -279,7 +279,7 @@
 <li><p>[ ]<br><img src="/.io//2022-02-16-15-36-55.png" alt></p>
 </li>
 </ul>
-<h2 id="求导"><a href="#求导" class="headerlink" title="求导"></a>求导</h2><h3 id="偏导"><a href="#偏导" class="headerlink" title="偏导"></a>偏导</h3><p>当$f(x,y)$的两个二阶混合偏导数在点$(x,y)$处连续 ： $f<em>{xy}(x,y)=f</em>{yx}(x,y)$</p>
+<h2 id="求导"><a href="#求导" class="headerlink" title="求导"></a>求导</h2><h3 id="偏导"><a href="#偏导" class="headerlink" title="偏导"></a>偏导</h3><p>当$f(x,y)$的两个二阶混合偏导数在点$(x,y)$处连续 ： $f_{xy}(x,y)=f_{yx}(x,y)$</p>
 <h3 id="全微分"><a href="#全微分" class="headerlink" title="全微分"></a>全微分</h3><p>形式不变性</p>
 <h3 id="一些关系"><a href="#一些关系" class="headerlink" title="一些关系"></a>一些关系</h3><p>偏导数均连续 ➡ 可微 ➡ 连续+可偏导<br>可偏导 ➡ xy轴方向上连续</p>
 <h3 id="隐函数存在定理"><a href="#隐函数存在定理" class="headerlink" title="隐函数存在定理"></a>隐函数存在定理</h3><p>$F(x_0,y_0)=0$ $F_y(x_0,y_0)\ne 0$<br>$\to$ 确定唯一函数，且$\displaystyle\frac{dy}{dx}=-\displaystyle\frac{F_x(x,y)}{F_y(x,y)}$</p>
@@ -303,7 +303,7 @@
 F_u & F_v \\
 G_u & G_v \\
 \end{vmatrix}</script><p>$u_x=-\displaystyle\frac{\displaystyle\frac{\partial(F,G)}{\partial(x,v)}}{\displaystyle\frac{\partial(F,G)}{\partial(u,v)}}$ $v_x=-\displaystyle\frac{\displaystyle\frac{\partial(F,G)}{\partial(u,x)}}{\displaystyle\frac{\partial(F,G)}{\partial(u,v)}}$ y同理</p>
-<p>充分条件 $F|<em>{P_0}=0,G|</em>{P<em>0}=0,J=\displaystyle\frac{\partial(F,G)}{\partial(u,v)}|</em>{p_0}\ne 0$<br><img src="/.io//2022-03-11-08-16-36.png" alt></p>
+<p>充分条件 $F|_{P_0}=0,G|_{P_0}=0,J=\displaystyle\frac{\partial(F,G)}{\partial(u,v)}|_{p_0}\ne 0$<br><img src="/.io//2022-03-11-08-16-36.png" alt></p>
 <hr>
 <h3 id="方向导数"><a href="#方向导数" class="headerlink" title="方向导数"></a>方向导数</h3><ul>
 <li>注意 课本定义为 <code>双向</code>;其它定义为<code>单项</code>(t&gt;0)</li>
@@ -311,9 +311,9 @@ G_u & G_v \\
 <p>$f_x cos \alpha+f_y cos \beta$</p>
 <h3 id="梯度"><a href="#梯度" class="headerlink" title="梯度"></a>梯度</h3><p>$\nabla=(\frac{\partial}{\partial x},\frac{\partial}{\partial y})$ 向量微分算子/Hamilton算子</p>
 <h3 id="几何应用"><a href="#几何应用" class="headerlink" title="几何应用"></a>几何应用</h3><h2 id><a href="#" class="headerlink" title></a><img src="/.io//2022-03-11-08-33-12.png" alt></h2><h3 id="二元Taylor"><a href="#二元Taylor" class="headerlink" title="二元Taylor"></a>二元Taylor</h3><p>$f(x,y)$在$P_0(x_0,y_0)$的领域内有<code>n+1</code>阶连续偏导数</p>
-<p>$f(x<em>0+\Delta x,y_0+\Delta y)=\sum</em>{k=0}^n \frac{1}{k !}(\Delta x\frac{\partial x}+\Delta y\frac{\partial}{\partial y})^k f|_{(x_0,y_0)}+R_n$</p>
+<p>$f(x_0+\Delta x,y_0+\Delta y)=\sum_{k=0}^n \frac{1}{k !}(\Delta x\frac{\partial x}+\Delta y\frac{\partial}{\partial y})^k f|_{(x_0,y_0)}+R_n$</p>
 <ul>
-<li><p>Lagrange余项 $R<em>n=\frac{1}{(n+1)!}(\Delta x\frac{\partial x}+\Delta y\frac{\partial}{\partial y})^{n+1} f|</em>{(x_0+\theta \Delta x,y_0+ \theta \Delta y)}$</p>
+<li><p>Lagrange余项 $R_n=\frac{1}{(n+1)!}(\Delta x\frac{\partial x}+\Delta y\frac{\partial}{\partial y})^{n+1} f|_{(x_0+\theta \Delta x,y_0+ \theta \Delta y)}$</p>
 </li>
 <li><p>Peano余项 $R_n=o(\rho^n)$ $\rho=\sqrt{(\Delta x)^2+(\Delta y)^2}$</p>
 <blockquote>
@@ -327,7 +327,7 @@ G_u & G_v \\
 <p>$\theta \in (0,1)$</p>
 </blockquote>
 <p><em>Maclaurin $x_0=0,y_0=0$</em></p>
-<h3 id="极值"><a href="#极值" class="headerlink" title="极值"></a>极值</h3><p>对于驻点($f<em>x=0,f_y=0$)<br>考虑<br>$A=f</em>{xx};B=f<em>{xy}=f</em>{yx};C=f_{yy}$<br>$H=AC-B^2$</p>
+<h3 id="极值"><a href="#极值" class="headerlink" title="极值"></a>极值</h3><p>对于驻点($f_x=0,f_y=0$)<br>考虑<br>$A=f_{xx};B=f_{xy}=f_{yx};C=f_{yy}$<br>$H=AC-B^2$</p>
 <blockquote>
 <p>Hessel行列式？？名字忘了</p>
 </blockquote>
@@ -366,7 +366,7 @@ f_{n1} & f_{n2} & \cdots & f_{nn} \\
 <li>用条件换元  : 有些时候难以实现</li>
 <li>Lagrange 乘数法 : 隐函数</li>
 </ul>
-<p>$-\lambda<em>1=\displaystyle\frac{f_z}{\phi_z^1}|</em>{(x_0,y_0,z_0)}$<br>（m个$\lambda$）</p>
+<p>$-\lambda_1=\displaystyle\frac{f_z}{\phi_z^1}|_{(x_0,y_0,z_0)}$<br>（m个$\lambda$）</p>
 <p>$L(x,y,z,\lambda)=f(x,y,z)+\lambda\phi(x,y,z)$</p>
 <p>所有偏导数为0</p>
 <p><strong>$\displaystyle\frac{f_x}{\phi_x}=\displaystyle\frac{f_y}{\phi_y}=\cdots$</strong><br>代入约束</p>

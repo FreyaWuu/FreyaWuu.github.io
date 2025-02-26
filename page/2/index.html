@@ -277,22 +277,22 @@
       
           <p>选择<em>6 填空</em>8 计算*6</p>
 <h2 id="1-基础"><a href="#1-基础" class="headerlink" title="1. 基础"></a>1. 基础</h2><ul>
-<li>信号能量 $E<em>x=\sum</em>{0}^{N-1}|x(n)|^2$</li>
-<li>信号功率 $P<em>x=\frac 1 N \sum</em>{0}^{N-1}|x(n)|^2$</li>
+<li>信号能量 $E_x=\sum_{0}^{N-1}|x(n)|^2$</li>
+<li>信号功率 $P_x=\frac 1 N \sum_{0}^{N-1}|x(n)|^2$</li>
 </ul>
-<h2 id="2-采样定理"><a href="#2-采样定理" class="headerlink" title="2. 采样定理"></a>2. 采样定理</h2><h3 id="2-1-采样"><a href="#2-1-采样" class="headerlink" title="2.1. 采样"></a>2.1. 采样</h3><p>$\hat{x}<em>a(t)=x_a(t)\cdot P</em>{\delta}(j\Omega)$<br>$\hat{X}<em>a(j\Omega)=\frac 1 T\sum</em>{k=-\infty}^{+\infty}X_a(j\Omega-jk\Omega_s),\Omega_s=\frac{2\pi}T$<br>$X(j\Omega)\in [-\Omega_c,+\Omega_c]$<br>$\Omega_s&gt;2\Omega_c$</p>
+<h2 id="2-采样定理"><a href="#2-采样定理" class="headerlink" title="2. 采样定理"></a>2. 采样定理</h2><h3 id="2-1-采样"><a href="#2-1-采样" class="headerlink" title="2.1. 采样"></a>2.1. 采样</h3><p>$\hat{x}_a(t)=x_a(t)\cdot P_{\delta}(j\Omega)$<br>$\hat{X}_a(j\Omega)=\frac 1 T\sum_{k=-\infty}^{+\infty}X_a(j\Omega-jk\Omega_s),\Omega_s=\frac{2\pi}T$<br>$X(j\Omega)\in [-\Omega_c,+\Omega_c]$<br>$\Omega_s&gt;2\Omega_c$</p>
 <ul>
 <li>奈奎斯特频率<code>Nyquist frequency</code> $\Omega_s=\frac {2\pi}{T}$</li>
 <li>奈奎斯特间隔<code>Nyquist interval</code> $T=\frac {1}{f_s}$</li>
 <li>信号的折叠频率<code>folding frequency</code> $\frac {\Omega_s}{2}$<h3 id="2-2-重建"><a href="#2-2-重建" class="headerlink" title="2.2. 重建"></a>2.2. 重建</h3>$X_r(j\Omega)=H_r(j\Omega)|\hat{X}_a(j\Omega)|$<br>$H_r(j\Omega)=T,|T|&lt;\Omega_s / 2 \to h_r(t)=\frac{T}{\pi t}sin(\frac{\pi}{T}t)=sinc(\frac t T)$<br>$x_r(t)=\sum_n x_a(nT)\frac{sin(\pi(t-nT)/T)}{\pi (t-nT)/T}$</li>
 </ul>
-<h2 id="3-z变换"><a href="#3-z变换" class="headerlink" title="3. z变换"></a>3. z变换</h2><p>$X(z)=\sum<em>{n=-\infty}^{+\infty}x(n)z^{-n}$<br>$X(z)=\displaystyle\frac{b_0\prod</em>{k=1}^{M}(1-c<em>kz^-1)}{a_0 \prod</em>{k=1}^N (1-d_kz^{-1})}$</p>
+<h2 id="3-z变换"><a href="#3-z变换" class="headerlink" title="3. z变换"></a>3. z变换</h2><p>$X(z)=\sum_{n=-\infty}^{+\infty}x(n)z^{-n}$<br>$X(z)=\displaystyle\frac{b_0\prod_{k=1}^{M}(1-c_kz^-1)}{a_0 \prod_{k=1}^N (1-d_kz^{-1})}$</p>
 <ul>
 <li>变换性质<br><img src="/.io//image-2.png" alt="Alt text"><br><img src="/.io//image-3.png" alt="Alt text"></li>
 </ul>
 <p>单边z变换$X^+(z)=\sum_{n=0}^{+\infty}x(n)z^{-n}$<br>仅对因果信号独特</p>
 <ul>
-<li>单边z变换的移位特性<br>$Z^+[x(n-k)]=z^{-k}[X^+(z)+\sum<em>{n=1}^kx(-n)z^n],k&gt;0$<br>$Z^+[x(n+k)]=z^{-k}[X^+(z)-\sum</em>{n=0}^{k-1}x(n)z^{-n}],k&gt;0$<h2 id="4-系统"><a href="#4-系统" class="headerlink" title="4. 系统"></a>4. 系统</h2></li>
+<li>单边z变换的移位特性<br>$Z^+[x(n-k)]=z^{-k}[X^+(z)+\sum_{n=1}^kx(-n)z^n],k&gt;0$<br>$Z^+[x(n+k)]=z^{-k}[X^+(z)-\sum_{n=0}^{k-1}x(n)z^{-n}],k&gt;0$<h2 id="4-系统"><a href="#4-系统" class="headerlink" title="4. 系统"></a>4. 系统</h2></li>
 <li>零极点图</li>
 </ul>
 <div class="table-container">
@@ -320,11 +320,11 @@
 </tbody>
 </table>
 </div>
-<p>$y(n)=y<em>{zs}(n)+y</em>{zi}(n)$<br>$Y<em>{zs}(z)=H(z)X(z)$<br>$Y^+</em>{zi}(z)=N_0(z)/A(z)$</p>
+<p>$y(n)=y_{zs}(n)+y_{zi}(n)$<br>$Y_{zs}(z)=H(z)X(z)$<br>$Y^+_{zi}(z)=N_0(z)/A(z)$</p>
 <ul>
 <li>非零初始条件的系统响应<br>差分方程两边(单边)z变换-代入初始条件-在z域求解方程-z逆变换求时域解</li>
 </ul>
-<p>特征函数$e^{j\omega<em>0 n}$<br>特征值 $H(\omega)|</em>{\omega=\omega_0}$</p>
+<p>特征函数$e^{j\omega_0 n}$<br>特征值 $H(\omega)|_{\omega=\omega_0}$</p>
 <h2 id="5-频率分析"><a href="#5-频率分析" class="headerlink" title="5. 频率分析"></a>5. 频率分析</h2><h3 id="5-1-傅里叶变换"><a href="#5-1-傅里叶变换" class="headerlink" title="5.1. 傅里叶变换"></a>5.1. 傅里叶变换</h3><div class="table-container">
 <table>
 <thead>
@@ -366,7 +366,7 @@
 <td>参数(变换)</td>
 <td>$c_k=\frac 1 T\int_T x(t)e^{-j\frac{2k\pi}{T}t}dt$</td>
 <td>$X(F)=\int_{-\infty}^{+\infty} x(t)e^{-j2\pi F t}dt$</td>
-<td>$C<em>k=\frac 1 N \sum</em>{k=0}^{N-1}x(n)e^{-j2\pi kn/N}$</td>
+<td>$C_k=\frac 1 N \sum_{k=0}^{N-1}x(n)e^{-j2\pi kn/N}$</td>
 <td>$X(\omega)=\sum_{-\infty}^{\infty}x(n)e^{-j\omega n}$($2\pi$周期性)</td>
 <td>$X(k)=\sum_{n=0}^{N-1}x(n)e^{-j\frac{2\pi k}{N}n}$(k=0,1,,,N-1)</td>
 </tr>
@@ -385,10 +385,10 @@
 <td>$\sum \</td>
 <td>C_k\</td>
 <td>^2$</td>
-<td>$E<em>x=\frac{1}{2\pi}\int</em>{-\pi}^{\pi} \</td>
+<td>$E_x=\frac{1}{2\pi}\int_{-\pi}^{\pi} \</td>
 <td>X(\omega)\</td>
 <td>^2d\omega$</td>
-<td>$E<em>x=\frac 1 N\sum</em>{k=0}^{N-1}X(k)\cdot X^{\ast}(k)$</td>
+<td>$E_x=\frac 1 N\sum_{k=0}^{N-1}X(k)\cdot X^{\ast}(k)$</td>
 </tr>
 <tr>
 <td>能量谱密度</td>
@@ -447,7 +447,7 @@
 <p>缩放 移位</p>
 </blockquote>
 </li>
-<li>零极点判断<br>$H(\omega)=b<em>0e^{j\omega(N-M)}\displaystyle\frac{\prod</em>{k=1}^M(e^{j\omega}-z<em>k)}{\prod</em>{k=1}^N(e^{j\omega}-p_k)}$<br>-&gt; z平面单位圆$-\pi \to \pi$</li>
+<li>零极点判断<br>$H(\omega)=b_0e^{j\omega(N-M)}\displaystyle\frac{\prod_{k=1}^M(e^{j\omega}-z_k)}{\prod_{k=1}^N(e^{j\omega}-p_k)}$<br>-&gt; z平面单位圆$-\pi \to \pi$</li>
 <li>低通：极点靠$\omega=0$，零点靠$\omega=\pi$</li>
 </ul>
 <h4 id="5-5-1-群时延"><a href="#5-5-1-群时延" class="headerlink" title="5.5.1. 群时延"></a>5.5.1. 群时延</h4><ul>
@@ -457,7 +457,7 @@
 <p><img src="/.io//image-4.png" alt="Alt text"></p>
 <h4 id="5-5-2-逆系统"><a href="#5-5-2-逆系统" class="headerlink" title="5.5.2. 逆系统"></a>5.5.2. 逆系统</h4><p>输入信号与输出信号一一对应<br>H(z)分子分母翻转（注意ROC）</p>
 <h4 id="5-5-3-全通滤波器"><a href="#5-5-3-全通滤波器" class="headerlink" title="5.5.3. 全通滤波器"></a>5.5.3. 全通滤波器</h4><p>纯延迟系统-&gt; 相位均衡器</p>
-<h4 id="5-5-4-低通与高通互换"><a href="#5-5-4-低通与高通互换" class="headerlink" title="5.5.4. 低通与高通互换"></a>5.5.4. 低通与高通互换</h4><p>$H<em>{hp}(\omega)=H</em>{lp}(\omega-\pi)$<br>$h<em>{lp}(n)=(-1)^n h</em>{hp}(n)$</p>
+<h4 id="5-5-4-低通与高通互换"><a href="#5-5-4-低通与高通互换" class="headerlink" title="5.5.4. 低通与高通互换"></a>5.5.4. 低通与高通互换</h4><p>$H_{hp}(\omega)=H_{lp}(\omega-\pi)$<br>$h_{lp}(n)=(-1)^n h_{hp}(n)$</p>
 <h3 id="5-6-变换的性质"><a href="#5-6-变换的性质" class="headerlink" title="5.6. 变换的性质"></a>5.6. 变换的性质</h3><blockquote>
 <p>略：线性</p>
 </blockquote>
@@ -540,7 +540,7 @@
 <p><img src="/.io//image-5.png" alt="Alt text"><br>$W_N^{nk}=e^{j2\pi k n /N}$<br>|—-|DFT|FFT|<br>|—-|—-|—-|<br>|复数乘法|$N^2$|$\frac N2 log_2 N$|<br>|复数加法|$N(N-1)$|$2\times\frac N2 log_2 N$|<br>|计算量等级|$O(N^2)$|$O(N^2/2)$|</p>
 <h3 id="6-1-加法次数与乘法次数的计算"><a href="#6-1-加法次数与乘法次数的计算" class="headerlink" title="6.1. 加法次数与乘法次数的计算"></a>6.1. 加法次数与乘法次数的计算</h3><h2 id="滤波器设计"><a href="#滤波器设计" class="headerlink" title="滤波器设计"></a>滤波器设计</h2><ul>
 <li>FIR<br>无极点<br>$y(n)=\sum_{k=0}^M b_k x(n-k)$</li>
-<li>IIR<br>存在极点<br>$y(n)=\sum<em>{k=0}^M b_k x(n-k)-\sum</em>{k=1}^N a_ky(n-k)$</li>
+<li>IIR<br>存在极点<br>$y(n)=\sum_{k=0}^M b_k x(n-k)-\sum_{k=1}^N a_ky(n-k)$</li>
 <li>性能参数<ul>
 <li>通带截止频率$\omega_p$</li>
 <li>阻带截止频率$\omega_s$</li>
@@ -569,8 +569,8 @@
 </blockquote>
 <ul>
 <li>选择窗函数(通带波纹大于要求,阻带衰减小于要求)</li>
-<li>过度带宽$\Delta \omega=\omega<em>{st}-\omega_p=2\pi f</em>{st}T_s-2\pi f_p T_s$</li>
-<li>$N$(尽量小的奇数)和$\omega<em>c=2\pi (f</em>{st}-f_p)/2/f_s$</li>
+<li>过度带宽$\Delta \omega=\omega_{st}-\omega_p=2\pi f_{st}T_s-2\pi f_p T_s$</li>
+<li>$N$(尽量小的奇数)和$\omega_c=2\pi (f_{st}-f_p)/2/f_s$</li>
 <li>带通带阻:叠加<h3 id="IIR"><a href="#IIR" class="headerlink" title="IIR"></a>IIR</h3></li>
 </ul>
 <blockquote>
@@ -578,7 +578,7 @@
 </blockquote>
 <p>计算方法</p>
 <ul>
-<li><p>1.把数字滤波器指标 $\omega<em>p$, $\omega</em>{st}$，$A<em>p$，$A</em>{st}$<br>转换成模拟滤波器指标 $\Omega<em>p$，$\Omega</em>{s}$，$A<em>p$，$A</em>{st}$</p>
+<li><p>1.把数字滤波器指标 $\omega_p$, $\omega_{st}$，$A_p$，$A_{st}$<br>转换成模拟滤波器指标 $\Omega_p$，$\Omega_{s}$，$A_p$，$A_{st}$</p>
 <p>$\Omega=\omega/T$</p>
 <p>$A_p=20log(1-\delta_1)$//通带波纹</p>
 <p>$A_{st}=20log(\delta_2)$//阻带波纹</p>
@@ -600,13 +600,13 @@
 </li>
 <li><p>拉普拉斯反变换得单位冲激响应 $h_a(t)=L^{-1}[H_a(s)]$</p>
 </li>
-<li><p>保证冲激响应不变 $h(n)=h<em>a(t)|</em>{t=nT}$</p>
+<li><p>保证冲激响应不变 $h(n)=h_a(t)|_{t=nT}$</p>
 </li>
 <li><p>z变换得数字滤波器 $H(z)=\sum_{n=-\infty}^{\infty}h(n)z^{-n}$</p>
 </li>
 </ul>
 <p>形式</p>
-<p>$H<em>a(s)=\displaystyle\sum</em>{k=1}^{N}\frac{A<em>k}{s-s_k} \to H(z)=\sum</em>{k=1}^{N}\frac{A_k}{1-e^{s_kT}z^{-1}}$</p>
+<p>$H_a(s)=\displaystyle\sum_{k=1}^{N}\frac{A_k}{s-s_k} \to H(z)=\sum_{k=1}^{N}\frac{A_k}{1-e^{s_kT}z^{-1}}$</p>
 <p>tip: 注意频谱混叠现象 $\Omega&lt; \Omega_s/2=\frac\pi T$，不适合高通/带阻数字滤波器</p>
 <h4 id="双线性变换法"><a href="#双线性变换法" class="headerlink" title="双线性变换法"></a>双线性变换法</h4><blockquote>
 <p>变换域-单一映射</p>
@@ -620,12 +620,12 @@
 <li><p><em>Butterworth</em>滤波器原型$H_a(s)=\frac 1 {s+1} ,(n=1)$</p>
 <ul>
 <li>$\epsilon^2 =10^{-0.1A_p}-1$</li>
-<li>阶数$n \ge\displaystyle\frac{log<em>{10}(\frac{10^{-0.1A_s}-1}{\epsilon^2})}{2log</em>{10}(V<em>s)}$, $V_s=\frac{\Omega</em>{st}}{\Omega_p}$</li>
+<li>阶数$n \ge\displaystyle\frac{log_{10}(\frac{10^{-0.1A_s}-1}{\epsilon^2})}{2log_{10}(V_s)}$, $V_s=\frac{\Omega_{st}}{\Omega_p}$</li>
 <li>查表/代入</li>
 </ul>
 </li>
 <li><em>Chebyshev</em>滤波器<ul>
-<li>阶数$n \ge\displaystyle\frac{cosh^{-1}(\frac{10^{-0.1A<em>s}-1}{\epsilon^2})^2}{cosh^{-1}(V_s)}$, $V_s=\frac{\Omega</em>{st}}{\Omega_p}$</li>
+<li>阶数$n \ge\displaystyle\frac{cosh^{-1}(\frac{10^{-0.1A_s}-1}{\epsilon^2})^2}{cosh^{-1}(V_s)}$, $V_s=\frac{\Omega_{st}}{\Omega_p}$</li>
 </ul>
 </li>
 <li>映射关系表</li>
@@ -1288,7 +1288,7 @@
 <p>whether pass by the ROIs<br>ROI: DBSCAN cluster -&gt; set radius r</p>
 </blockquote>
 <p>multi-label classification problem: trajectory T for each ROI</p>
-<p>minimize the cross-entropy loss $L<em>{MLC}=-\sum</em>{R \in R}y_R log(\hat{y}_R)+(1-y_R)log(1-\hat{y}_R)$</p>
+<p>minimize the cross-entropy loss $L_{MLC}=-\sum_{R \in R}y_R log(\hat{y}_R)+(1-y_R)log(1-\hat{y}_R)$</p>
 <blockquote>
 <p>partition: data-driven: cluster trajectory location in auxiliary dataset -&gt; potential ROIs</p>
 </blockquote>
@@ -1403,7 +1403,7 @@
 <blockquote>
 <p>变形 取p</p>
 </blockquote>
-<h3 id="比值判别法"><a href="#比值判别法" class="headerlink" title="比值判别法"></a>比值判别法</h3><p>$\lim<em>{n\to \infty}\displaystyle\frac(a</em>(n+1))(a_n)=l$<br>$0 \le l<1$ 收敛 $l>1$ 发散</1$></p>
+<h3 id="比值判别法"><a href="#比值判别法" class="headerlink" title="比值判别法"></a>比值判别法</h3><p>$\lim_{n\to \infty}\displaystyle\frac(a_(n+1))(a_n)=l$<br>$0 \le l<1$ 收敛 $l>1$ 发散</1$></p>
 <blockquote>
 <p>别忘了lim</p>
 </blockquote>
@@ -1584,10 +1584,10 @@
 <li>[x] 删除时的5种情况<h2 id="散列表"><a href="#散列表" class="headerlink" title="散列表"></a>散列表</h2></li>
 <li>[x] 直接/余数/数字分析/平方取中/折叠</li>
 <li>[x] 迟删除</li>
-<li>[x] 二次探测法 H<em>i+x^2 (负载因子&lt;0.5 H</em>{i-1}+2*i-1)</li>
+<li>[x] 二次探测法 H_i+x^2 (负载因子&lt;0.5 H_{i-1}+2*i-1)</li>
 <li>[x] 再散列法 两个散列函数</li>
 <li>[x] 开散列表<h1 id="排序-1"><a href="#排序-1" class="headerlink" title="排序"></a>排序</h1><h2 id="希尔排序-1"><a href="#希尔排序-1" class="headerlink" title="希尔排序"></a>希尔排序</h2></li>
-<li>[x] 一个h<em>k 有序的序列经过h</em>{k-1}排序后依旧h_k有序<h2 id="直接选择排序"><a href="#直接选择排序" class="headerlink" title="直接选择排序"></a>直接选择排序</h2></li>
+<li>[x] 一个h_k 有序的序列经过h_{k-1}排序后依旧h_k有序<h2 id="直接选择排序"><a href="#直接选择排序" class="headerlink" title="直接选择排序"></a>直接选择排序</h2></li>
 <li>[x] 不稳定</li>
 </ul>
 <h1 id="图-1"><a href="#图-1" class="headerlink" title="图"></a>图</h1><ul>

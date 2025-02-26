@@ -232,9 +232,9 @@
 <ul>
 <li>query $q$</li>
 <li><p>reasoning steps $\mathbf{c} = (c_1, c_2, \cdots, c_T)$</p>
-<p>  $c<em>t = \prod</em>{i=1}^{t-1} \pi<em>\theta(c_i|q, c</em>{&lt; i})$</p>
+<p>  $c_t = \prod_{i=1}^{t-1} \pi_\theta(c_i|q, c_{&lt; i})$</p>
 </li>
-<li><p>answer $y = \pi<em>\theta(y|q, \bold{c}) \prod</em>{i=1}^T \pi<em>\theta(c_i|q, c</em>{&lt; i})$</p>
+<li><p>answer $y = \pi_\theta(y|q, \bold{c}) \prod_{i=1}^T \pi_\theta(c_i|q, c_{&lt; i})$</p>
 </li>
 </ul>
 </li>
@@ -244,9 +244,9 @@
 <li>finite action space: token set $\alpha_t \in |V|$</li>
 <li><p>every action step:</p>
 <p>  generate next state</p>
-<p>  $𝑠<em>{t+1}=[𝑠</em>𝑡, 𝑐_𝑡]$</p>
+<p>  $𝑠_{t+1}=[𝑠_𝑡, 𝑐_𝑡]$</p>
 <p>  reward to define policy</p>
-<p>  $r<em>t=r(𝑠</em>𝑡, 𝑐_𝑡)$</p>
+<p>  $r_t=r(𝑠_𝑡, 𝑐_𝑡)$</p>
 </li>
 </ul>
 </li>
@@ -256,13 +256,13 @@
 <ul>
 <li>query $q$ $\to$ decomposed triple $(e_0, r_1, e_1)$</li>
 <li><p>trajectory $h = (e_0, r_1, e_1, \cdots, r_t, e_t)$</p>
-<p>  $(r<em>t, e_t) = \prod</em>{i=1}^{t-1} \mu((r<em>i, e_i)|(e_0, r_1, e_1, \cdots, r</em>{i-1}, e_{i-1}))$</p>
+<p>  $(r_t, e_t) = \prod_{i=1}^{t-1} \mu((r_i, e_i)|(e_0, r_1, e_1, \cdots, r_{i-1}, e_{i-1}))$</p>
 </li>
 <li><p>answer $e_t$</p>
 </li>
 </ul>
 </li>
-<li>trajectories set $\mathbb{H}={h<em>k}</em>{k=1}^K$</li>
+<li>trajectories set $\mathbb{H}=\{h_k\}_{k=1}^K$</li>
 </ul>
 <h4 id="trajectory-to-model-policy"><a href="#trajectory-to-model-policy" class="headerlink" title="trajectory to model policy"></a>trajectory to model policy</h4><p>$\mu \to \mu_{\phi}$</p>
 <h3 id="Step-3-OCEAN-Aligning-KG-amp-CoT"><a href="#Step-3-OCEAN-Aligning-KG-amp-CoT" class="headerlink" title="Step 3: OCEAN: Aligning KG &amp; CoT"></a>Step 3: OCEAN: Aligning KG &amp; CoT</h3><ul>

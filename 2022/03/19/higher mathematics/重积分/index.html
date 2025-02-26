@@ -20,12 +20,12 @@
     var CONFIG = {"hostname":"freyawuu.github.io","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta name="description" content="性质 线性&#x2F;可加&#x2F;保序&#x2F;  积分中值定理$\iint_Df(x,y)g(x,y)d\sigma&#x3D;f(\epsilon,\eta)\iint_Dg(x,y)d\sigma$  计算转化成二次积分 技巧 积分换序&#x2F;区域划分&#x2F;对称性质(区域&#x2F;奇偶&#x2F;轮换)&#x2F;变量替换&#x2F;补   变量替换$\iintDf(x,y)dxdy&#x3D;\iint{D’}f(x(u,v),y(u,v))|\displaystyle\fra">
+  <meta name="description" content="性质 线性&#x2F;可加&#x2F;保序&#x2F;  积分中值定理$\iint_Df(x,y)g(x,y)d\sigma&#x3D;f(\epsilon,\eta)\iint_Dg(x,y)d\sigma$  计算转化成二次积分 技巧 积分换序&#x2F;区域划分&#x2F;对称性质(区域&#x2F;奇偶&#x2F;轮换)&#x2F;变量替换&#x2F;补   变量替换$\iint_Df(x,y)dxdy&#x3D;\iint_{D’}f(x(u,v),y(u,v))|\displaystyle\f">
 <meta property="og:type" content="article">
 <meta property="og:title" content="重积分">
 <meta property="og:url" content="https://freyawuu.github.io/2022/03/19/higher%20mathematics/%E9%87%8D%E7%A7%AF%E5%88%86/index.html">
 <meta property="og:site_name" content="Freya Wu の blogs">
-<meta property="og:description" content="性质 线性&#x2F;可加&#x2F;保序&#x2F;  积分中值定理$\iint_Df(x,y)g(x,y)d\sigma&#x3D;f(\epsilon,\eta)\iint_Dg(x,y)d\sigma$  计算转化成二次积分 技巧 积分换序&#x2F;区域划分&#x2F;对称性质(区域&#x2F;奇偶&#x2F;轮换)&#x2F;变量替换&#x2F;补   变量替换$\iintDf(x,y)dxdy&#x3D;\iint{D’}f(x(u,v),y(u,v))|\displaystyle\fra">
+<meta property="og:description" content="性质 线性&#x2F;可加&#x2F;保序&#x2F;  积分中值定理$\iint_Df(x,y)g(x,y)d\sigma&#x3D;f(\epsilon,\eta)\iint_Dg(x,y)d\sigma$  计算转化成二次积分 技巧 积分换序&#x2F;区域划分&#x2F;对称性质(区域&#x2F;奇偶&#x2F;轮换)&#x2F;变量替换&#x2F;补   变量替换$\iint_Df(x,y)dxdy&#x3D;\iint_{D’}f(x(u,v),y(u,v))|\displaystyle\f">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://freyawuu.github.io/.io//2022-05-30-09-15-50.png">
 <meta property="og:image" content="https://freyawuu.github.io/.io//2022-04-08-15-04-58.png">
@@ -246,32 +246,32 @@
 <p>积分换序/区域划分/对称性质(区域/奇偶/轮换)/变量替换/补</p>
 </blockquote>
 <ul>
-<li>变量替换<br>$\iint<em>Df(x,y)dxdy=\iint</em>{D’}f(x(u,v),y(u,v))|\displaystyle\frac{\partial(x,y)}{\partial(u,v)}|dudv$<br><code>D&#39;</code>定限很重要！！</li>
-<li>极坐标<br>  $\iint<em>Df(x,y)dxdy=\iint</em>{D’}f(r cos\theta,r sin\theta)|r|d\theta dr$</li>
+<li>变量替换<br>$\iint_Df(x,y)dxdy=\iint_{D’}f(x(u,v),y(u,v))|\displaystyle\frac{\partial(x,y)}{\partial(u,v)}|dudv$<br><code>D&#39;</code>定限很重要！！</li>
+<li>极坐标<br>  $\iint_Df(x,y)dxdy=\iint_{D’}f(r cos\theta,r sin\theta)|r|d\theta dr$</li>
 </ul>
 <p><img src="/.io//2022-03-28-08-17-23.png" alt></p>
 <blockquote>
 <p>用二重积分夹逼求出定积分~</p>
 </blockquote>
 <h2 id="三重积分"><a href="#三重积分" class="headerlink" title="三重积分"></a>三重积分</h2><ul>
-<li><p>柱线法/坐标面投影法<br>$\iiint<em>Df(x,y,z)dV=\int_a^bdx\int</em>{y<em>1(x)}^{y_2(x)}dy\int</em>{z_1(x,y)}^{z_2(x,y)}dz$</p>
+<li><p>柱线法/坐标面投影法<br>$\iiint_Df(x,y,z)dV=\int_a^bdx\int_{y_1(x)}^{y_2(x)}dy\int_{z_1(x,y)}^{z_2(x,y)}dz$</p>
 </li>
-<li><p>截面法<br>$\int<em>{h_1}^{h_2}F(z)dz=\int</em>{h<em>1}^{h_2}dz\iint</em>{D_z}f(x,y,z)dxdy$</p>
+<li><p>截面法<br>$\int_{h_1}^{h_2}F(z)dz=\int_{h_1}^{h_2}dz\iint_{D_z}f(x,y,z)dxdy$</p>
 </li>
 </ul>
-<h3 id="对称性-变量代换-略"><a href="#对称性-变量代换-略" class="headerlink" title="对称性 变量代换 略"></a><em>对称性 变量代换 略</em></h3><h4 id="柱面坐标系"><a href="#柱面坐标系" class="headerlink" title="柱面坐标系"></a>柱面坐标系</h4><p>$(r,\theta,z)$<br>  $\iint<em>Df(x,y,z)dxdy=\iint</em>{D’}f(r cos\theta,r sin\theta,z)|r|d\theta dr dz$</p>
+<h3 id="对称性-变量代换-略"><a href="#对称性-变量代换-略" class="headerlink" title="对称性 变量代换 略"></a><em>对称性 变量代换 略</em></h3><h4 id="柱面坐标系"><a href="#柱面坐标系" class="headerlink" title="柱面坐标系"></a>柱面坐标系</h4><p>$(r,\theta,z)$<br>  $\iint_Df(x,y,z)dxdy=\iint_{D’}f(r cos\theta,r sin\theta,z)|r|d\theta dr dz$</p>
 <blockquote>
 <p>两项平方和</p>
-<h4 id="球面坐标系"><a href="#球面坐标系" class="headerlink" title="球面坐标系"></a>球面坐标系</h4><p>$(\rho,\phi,\theta)$<br>  $\iint<em>Df(x,y,z)dxdy=\iint</em>{D’}f(\rho sin\phi cos\theta,\rho sin \phi sin\theta,\rho cos \phi)\rho^2 sin \phi d \rho d \phi d\theta $</p>
+<h4 id="球面坐标系"><a href="#球面坐标系" class="headerlink" title="球面坐标系"></a>球面坐标系</h4><p>$(\rho,\phi,\theta)$<br>  $\iint_Df(x,y,z)dxdy=\iint_{D’}f(\rho sin\phi cos\theta,\rho sin \phi sin\theta,\rho cos \phi)\rho^2 sin \phi d \rho d \phi d\theta $</p>
 <p>三项平方和<br>注意 $\phi$ 是与z轴夹角</p>
 </blockquote>
 <h1 id="应用"><a href="#应用" class="headerlink" title="应用"></a>应用</h1><h2 id="曲面面积"><a href="#曲面面积" class="headerlink" title="曲面面积"></a>曲面面积</h2><ul>
-<li><p>$z=f(x,y)$<br>$\bold{n}={z_x,z_y,-1}$<br>$S=\iint_D \sqrt{1+z_x^2+z_y^2}dxdy $</p>
+<li><p>$z=f(x,y)$<br>$\bold{n}=\{z_x,z_y,-1\}$<br>$S=\iint_D \sqrt{1+z_x^2+z_y^2}dxdy $</p>
 </li>
 <li><p>$x=x(u,v),y=y(u,v),z=z(u,v)$<br>$S=\iint_D \sqrt{EG-F^2}$</p>
 <p>$r=r(u,v)=r(x(u,v),y(u,v),z(u,v))$</p>
 <p>$n=r_u \times r_v=(A,B,C)$</p>
-<p>$s=\iint<em>{D</em>{uv}}\sqrt{A^2+B^2+C^2}dudv$</p>
+<p>$s=\iint_{D_{uv}}\sqrt{A^2+B^2+C^2}dudv$</p>
 <blockquote>
 <p>$\displaystyle\frac{\partial(y,z)}{u,v}(A),\displaystyle\frac{\partial(z,x)}{u,v}(B),\displaystyle\frac{\partial(x,y)}{u,v}(C)$至少一个非0，S为光滑曲面</p>
 </blockquote>

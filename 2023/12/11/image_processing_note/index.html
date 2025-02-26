@@ -326,7 +326,7 @@
 </li>
 <li>概率密度函数<code>PDF</code>$=P_r(r_k)$</li>
 <li>累积分布函数<code>CDF</code>$=F_r(r_k)$<h5 id="2-1-3-1-直方图均衡化"><a href="#2-1-3-1-直方图均衡化" class="headerlink" title="2.1.3.1. 直方图均衡化"></a>2.1.3.1. 直方图均衡化</h5><blockquote>
-<p>目标函数: 单增+输入输出同一灰度范围<br>$s=(L-1)\int<em>0^rp_r(\omega)d\omega$<br>$s_k=(L-1)\sum</em>{j=0}^rp_r(r_j)$</p>
+<p>目标函数: 单增+输入输出同一灰度范围<br>$s=(L-1)\int_0^rp_r(\omega)d\omega$<br>$s_k=(L-1)\sum_{j=0}^rp_r(r_j)$</p>
 </blockquote>
 </li>
 <li><p>非线性, 灰度级可能减少, 图像细节可能丢失, 不适用于直方图高峰图像</p>
@@ -471,8 +471,8 @@
 </li>
 <li>最大值滤波器<br>寻找图像中亮点/腐蚀亮区相邻的暗区</li>
 <li>最小值滤波器<br>寻找图像中的暗点/腐蚀暗区相邻的亮区<h3 id="2-2-频率域"><a href="#2-2-频率域" class="headerlink" title="2.2. 频率域"></a>2.2. 频率域</h3><h4 id="2-2-1-傅里叶变换"><a href="#2-2-1-傅里叶变换" class="headerlink" title="2.2.1. 傅里叶变换"></a>2.2.1. 傅里叶变换</h4></li>
-<li>一维<br>$F(\mu) =\int<em>{-\infty}^{+\infty} f(t)e^{-j2\pi\mu t}dt$<br>$f(t) =\int</em>{-\infty}^{+\infty} F(\mu)e^{j2\pi\mu t}d\mu$<br>$F(u) =\sum<em>{0}^{M-1} f(x)e^{-j2\pi u x/M}$<br>$f(x) =\frac 1 M \sum</em>{0}^{M-1} F(u)e^{j2\pi u x/M}$</li>
-<li>二维<br>$F(\mu,v)=\int<em>{-\infty}^{+\infty}\int</em>{-\infty}^{+\infty}f(x,y)e^{-j2\pi(\mu x+vy)}dxdy$<br>$f(x,y)=\int<em>{-\infty}^{+\infty}\int</em>{-\infty}^{+\infty}F(\mu,v)e^{j2\pi(\mu x+vy)}d\mu dv$</li>
+<li>一维<br>$F(\mu) =\int_{-\infty}^{+\infty} f(t)e^{-j2\pi\mu t}dt$<br>$f(t) =\int_{-\infty}^{+\infty} F(\mu)e^{j2\pi\mu t}d\mu$<br>$F(u) =\sum_{0}^{M-1} f(x)e^{-j2\pi u x/M}$<br>$f(x) =\frac 1 M \sum_{0}^{M-1} F(u)e^{j2\pi u x/M}$</li>
+<li>二维<br>$F(\mu,v)=\int_{-\infty}^{+\infty}\int_{-\infty}^{+\infty}f(x,y)e^{-j2\pi(\mu x+vy)}dxdy$<br>$f(x,y)=\int_{-\infty}^{+\infty}\int_{-\infty}^{+\infty}F(\mu,v)e^{j2\pi(\mu x+vy)}d\mu dv$</li>
 </ul>
 <p>fftshift-中间低频, 周围高频$F(u-\frac M 2,v-\frac N 2)$ 相当于$f(x,y)(-1)^{x+y}$<br>幅度谱/相位谱/功率谱</p>
 <blockquote>
@@ -511,13 +511,13 @@ H(u,v)=
 </ul>
 </blockquote>
 <ul>
-<li>腐蚀-消除边界<br>$A \ominus B ={z|(B)_z\subseteq A}$</li>
-<li><p>膨胀-扩张边界<br>$A \oplus B = {z|(\hat{B})_z \cap A \ne \emptyset}$ 注意要反射(一般使用对称结构元)</p>
+<li>腐蚀-消除边界<br>$A \ominus B =\{z|(B)_z\subseteq A\}$</li>
+<li><p>膨胀-扩张边界<br>$A \oplus B = \{z|(\hat{B})_z \cap A \ne \emptyset\}$ 注意要反射(一般使用对称结构元)</p>
 </li>
 <li><p>开运算-去除孤立小店和毛刺-平滑边界<br>$A \circ B=(A \ominus B)\oplus B$</p>
 </li>
 <li>闭运算-填充孔洞,连接<br>$A \bullet B=(A \oplus B)\ominus B$</li>
-<li><p>击中击不中变换<code>HMT</code>-寻找相同形状<br>$A \ast B_{1,2} = {(B_1)_z\subseteq A \&amp; (B_2)_z \subseteq A^c}=(A \ominus B_1) \cap(A^c \ominus B_2)$<br>有时取$B_2=B_1^c$</p>
+<li><p>击中击不中变换<code>HMT</code>-寻找相同形状<br>$A \ast B_{1,2} = \{(B_1)_z\subseteq A \&amp; (B_2)_z \subseteq A^c\}=(A \ominus B_1) \cap(A^c \ominus B_2)$<br>有时取$B_2=B_1^c$</p>
 </li>
 <li><p>tip: 噪声滤波器:先开后闭</p>
 </li>
@@ -525,12 +525,12 @@ H(u,v)=
 </ul>
 <h4 id="2-3-2-形态学算法（大题不考）"><a href="#2-3-2-形态学算法（大题不考）" class="headerlink" title="2.3.2. 形态学算法（大题不考）"></a>2.3.2. 形态学算法（大题不考）</h4><h5 id="2-3-2-1-边界提取"><a href="#2-3-2-1-边界提取" class="headerlink" title="2.3.2.1. 边界提取"></a>2.3.2.1. 边界提取</h5><p>$\beta(A)=A- (A\ominus B)$<br>B为3*3 全1结构元</p>
 <p><em>比较：空间滤波定位精度差/噪声敏感/边缘常不连续不规则</em></p>
-<h5 id="2-3-2-2-孔洞填充"><a href="#2-3-2-2-孔洞填充" class="headerlink" title="2.3.2.2. 孔洞填充"></a>2.3.2.2. 孔洞填充</h5><p>$X<em>k = (X</em>{k-1}\oplus B)\cap A^c$, $X<em>k=X</em>{k+1}$时迭代停止<br>$X_0$初始种子点<br><em>必须已知一个种子点</em><br>结构元: 四连通</p>
-<h5 id="2-3-2-3-连通分量提取"><a href="#2-3-2-3-连通分量提取" class="headerlink" title="2.3.2.3. 连通分量提取"></a>2.3.2.3. 连通分量提取</h5><p>$X<em>k=(X</em>{k-1}\oplus B)\cap A$, $X<em>k=X</em>{k+1}$时迭代停止<br>结构元:3*3全1</p>
+<h5 id="2-3-2-2-孔洞填充"><a href="#2-3-2-2-孔洞填充" class="headerlink" title="2.3.2.2. 孔洞填充"></a>2.3.2.2. 孔洞填充</h5><p>$X_k = (X_{k-1}\oplus B)\cap A^c$, $X_k=X_{k+1}$时迭代停止<br>$X_0$初始种子点<br><em>必须已知一个种子点</em><br>结构元: 四连通</p>
+<h5 id="2-3-2-3-连通分量提取"><a href="#2-3-2-3-连通分量提取" class="headerlink" title="2.3.2.3. 连通分量提取"></a>2.3.2.3. 连通分量提取</h5><p>$X_k=(X_{k-1}\oplus B)\cap A$, $X_k=X_{k+1}$时迭代停止<br>结构元:3*3全1</p>
 <h5 id="2-3-2-4-凸壳"><a href="#2-3-2-4-凸壳" class="headerlink" title="2.3.2.4. 凸壳"></a>2.3.2.4. 凸壳</h5><blockquote>
 <p>包含s的最小凸集合</p>
 </blockquote>
-<p>$X<em>k^i=(X</em>{k-1}^i\ast B)\cup X<em>{k-1}^i$, $X_k^i=X</em>{k+1}^i$时迭代停止<br>$X<em>0^i=A$<br>$C(A)=\cup</em>{i=1}^4X_k^i$</p>
+<p>$X_k^i=(X_{k-1}^i\ast B)\cup X_{k-1}^i$, $X_k^i=X_{k+1}^i$时迭代停止<br>$X_0^i=A$<br>$C(A)=\cup_{i=1}^4X_k^i$</p>
 <script type="math/tex; mode=display">B^{1\dots 4}=
  \left[
  \begin{matrix}
@@ -557,14 +557,14 @@ H(u,v)=
 </li>
 </ul>
 <p>$S(A)=\cup_{k=0}^KS_k(A)$</p>
-<p>$S<em>k(A)=(A\ominus kB)-(A\ominus kB)\circ B$//连续腐蚀k次, k为腐蚀至空集前的最后一次迭代<br>重建$A=\cup</em>{k=0}^K(S_k(A)\oplus kB)$<br><em>需要通过骨架子集重建，只有一个无法恢复</em><br>结构元:3*3全1</p>
+<p>$S_k(A)=(A\ominus kB)-(A\ominus kB)\circ B$//连续腐蚀k次, k为腐蚀至空集前的最后一次迭代<br>重建$A=\cup_{k=0}^K(S_k(A)\oplus kB)$<br><em>需要通过骨架子集重建，只有一个无法恢复</em><br>结构元:3*3全1</p>
 <h5 id="2-3-2-7-裁减-不考"><a href="#2-3-2-7-裁减-不考" class="headerlink" title="2.3.2.7. 裁减(不考)"></a>2.3.2.7. 裁减(不考)</h5><p>多次细化删除毛刺-从端点开始膨胀(次数小于要删除的端点数)-与细化结果交集</p>
 <h4 id="2-3-3-灰度级形态学（大题）"><a href="#2-3-3-灰度级形态学（大题）" class="headerlink" title="2.3.3. 灰度级形态学（大题）"></a>2.3.3. 灰度级形态学（大题）</h4><blockquote>
 <p>不平坦结构元:数值为灰度值<br>结果灰度级发生变化</p>
 <ul>
 <li>腐蚀/膨胀<ul>
-<li>平坦结构元<br>$<a href="x,y">f \ominus b</a>=\min<em>{(s,t)\in b}{f(x+s,y+t)}$<br>$<a href="x,y">f \oplus b</a>=\max</em>{(s,t)\in b}{f(x-s,y-t)}$</li>
-<li>非平坦结构元<br>$<a href="x,y">f \ominus b</a>=\min<em>{(s,t)\in b}{f(x+s,y+t)-b(s,t)}$<br>$<a href="x,y">f \oplus b</a>=\max</em>{(s,t)\in b}{f(x-s,y-t)-\hat{b}(s,t)}$</li>
+<li>平坦结构元<br>$<a href="x,y">f \ominus b</a>=\min_{(s,t)\in b}\{f(x+s,y+t)\}$<br>$<a href="x,y">f \oplus b</a>=\max_{(s,t)\in b}\{f(x-s,y-t)\}$</li>
+<li>非平坦结构元<br>$<a href="x,y">f \ominus b</a>=\min_{(s,t)\in b}\{f(x+s,y+t)-b(s,t)\}$<br>$<a href="x,y">f \oplus b</a>=\max_{(s,t)\in b}\{f(x-s,y-t)-\hat{b}(s,t)\}$</li>
 <li>对偶性<br>注意<code>hat</code>和符号，$f^c=-f$</li>
 </ul>
 </li>
@@ -630,10 +630,10 @@ H(u,v)=
 <li>局部连接处理<br>$M(x,y)&gt;T_m$and$\alpha(x,y) \in [A\pm T_A]$<br>记录像素连接情况，得到二值图像-扫描填充-旋转$\theta$</li>
 <li>霍夫(Hough)变换(全局)<br>图像空间与参数空间的对偶性<br>经典霍夫变换:检测线和圆<br>抗噪声能力强/预处理丢失信息<h4 id="3-2-2-区域内相似性"><a href="#3-2-2-区域内相似性" class="headerlink" title="3.2.2. 区域内相似性"></a>3.2.2. 区域内相似性</h4><h5 id="3-2-2-1-优化阈值处理"><a href="#3-2-2-1-优化阈值处理" class="headerlink" title="3.2.2.1. 优化阈值处理"></a>3.2.2.1. 优化阈值处理</h5></li>
 <li>基本全局阈值迭代<br>选择初始阈值$T_0$(一般为灰度级均值)-分割$G_1/G_2$-分别计算区域内灰度平均值$ m_1/m_2$-新阈值$T=\frac 1 2(m_1+m_2)$-当连续两次迭代$\Delta T&lt;\epsilon$预设参数时迭代停止</li>
-<li>最大方差最佳全局阈值选取法(Otsu)<br>区域内部相似性 $P<em>1\sigma_1^2+P_2\sigma_2^2$<br>不同区域间差异性 $P_1P_2(m_1-m_2)^2$    (等价)<br>无需迭代/阈值有效性可评估<br>直方图概率密度函数$p_i$-累计和$P_1(k)=\sum</em>{i=1}^kp<em>i$-累计均值$m(k)=\sum</em>{i=0}^kip<em>i$-全局灰度均值$m_G=\sum</em>{i=1}^{L-1}ip<em>i$-类间方差$\sigma_B^2(k)=\frac{[m_GP_1(k)-m(k)]^2}{P_1(k)[1-P_1(k)]}$-求使其极大值的$k$(若不唯一则取平均值)<br>全局方差$\sigma_G^2=\sum</em>{i=0}^{L-1}<em>(i-m_G)^2p_i$-可分离性测度$\eta^</em>=\frac{\sigma_B^2(k^*)}{\sigma_G^2}$</li>
+<li>最大方差最佳全局阈值选取法(Otsu)<br>区域内部相似性 $P_1\sigma_1^2+P_2\sigma_2^2$<br>不同区域间差异性 $P_1P_2(m_1-m_2)^2$    (等价)<br>无需迭代/阈值有效性可评估<br>直方图概率密度函数$p_i$-累计和$P_1(k)=\sum_{i=1}^kp_i$-累计均值$m(k)=\sum_{i=0}^kip_i$-全局灰度均值$m_G=\sum_{i=1}^{L-1}ip_i$-类间方差$\sigma_B^2(k)=\frac{[m_GP_1(k)-m(k)]^2}{P_1(k)[1-P_1(k)]}$-求使其极大值的$k$(若不唯一则取平均值)<br>全局方差$\sigma_G^2=\sum_{i=0}^{L-1}<em>(i-m_G)^2p_i$-可分离性测度$\eta^</em>=\frac{\sigma_B^2(k^*)}{\sigma_G^2}$</li>
 <li>图像平滑改进<br>目标和背景面积相差很大时效果较差</li>
 <li>边缘信息改进的全局阈值处理<br>先计算梯度幅度/拉普拉斯绝对值-规定阈值T对边缘图像阈值处理得到$g_T(x,y)$-从$f(x,y)$根据$g_T(x,y)$遮罩得到模板图像,灰度直方图计算得到阈值$k^*$-以此分割原图像(减少背景大波峰的影响)</li>
-<li>多阈值处理<br>$\sigma<em>B^2=\sum</em>{k=1}^KP_k(m_k-m_G)^2$</li>
+<li>多阈值处理<br>$\sigma_B^2=\sum_{k=1}^KP_k(m_k-m_G)^2$</li>
 <li>局部分区阈值处理<ul>
 <li>基于局部图像性质的可变阈值处理(平均值/方差)</li>
 <li>基于移动平均的可变阈值处理(目标尺寸较小时)<h5 id="3-2-2-2-区域生长"><a href="#3-2-2-2-区域生长" class="headerlink" title="3.2.2.2. 区域生长"></a>3.2.2.2. 区域生长</h5></li>
@@ -708,7 +708,7 @@ H(u,v)=
 <li>分母+常数k</li>
 </ul>
 </li>
-<li>维纳滤波(最小均方误差)Wiener Filtering<br>假设 图像和噪声均为随机信号 互不相关<br>使$e^2=E{(f-\hat{f})^2}$<br>$\hat{F}(u,v)=H<em>{wie}(u,v)G(u,v)$<br>$H</em>{wie}=\displaystyle\frac{1}{H(u,v)}\frac{|H(u,v)|^2}{|H(u,v)|^2+\frac{S<em>\eta(u,v)}{S_f(u,v)}}$<br>噪声未知:  $H</em>{wie}=\displaystyle\frac{1}{H(u,v)}\frac{|H(u,v)|^2}{|H(u,v)|^2+K}$<br>$s<em>\eta$:噪声功率谱 $s_f$:未退化图像功率谱 $s_f/s</em>\eta$:信噪比</li>
+<li>维纳滤波(最小均方误差)Wiener Filtering<br>假设 图像和噪声均为随机信号 互不相关<br>使$e^2=E\{(f-\hat{f})^2\}$<br>$\hat{F}(u,v)=H_{wie}(u,v)G(u,v)$<br>$H_{wie}=\displaystyle\frac{1}{H(u,v)}\frac{|H(u,v)|^2}{|H(u,v)|^2+\frac{S_\eta(u,v)}{S_f(u,v)}}$<br>噪声未知:  $H_{wie}=\displaystyle\frac{1}{H(u,v)}\frac{|H(u,v)|^2}{|H(u,v)|^2+K}$<br>$s_\eta$:噪声功率谱 $s_f$:未退化图像功率谱 $s_f/s_\eta$:信噪比</li>
 </ul>
 <h4 id="3-3-3-图像复原评价"><a href="#3-3-3-图像复原评价" class="headerlink" title="3.3.3. 图像复原评价"></a>3.3.3. 图像复原评价</h4><blockquote>
 <p>主观/客观</p>

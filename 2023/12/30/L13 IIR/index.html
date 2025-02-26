@@ -20,12 +20,12 @@
     var CONFIG = {"hostname":"freyawuu.github.io","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta name="description" content="L13 IIR数字滤波器 优点：边缘频率准确，可利用模拟滤波器，结构存在反馈，阶次更低。 缺点：相位非线性，稳定性。  计算方法 1.把数字滤波器指标 $\omegap$, $\omega{st}$，$Ap$，$A{st}$ 转换成模拟滤波器指标 $\Omegap$，$\Omega{s}$，$Ap$，$A{st}$ $\Omega&#x3D;\omega&#x2F;T$ $A_p&#x3D;20log(1-\delta_1)$">
+  <meta name="description" content="L13 IIR数字滤波器 优点：边缘频率准确，可利用模拟滤波器，结构存在反馈，阶次更低。 缺点：相位非线性，稳定性。  计算方法 1.把数字滤波器指标 $\omega_p$, $\omega_{st}$，$A_p$，$A_{st}$ 转换成模拟滤波器指标 $\Omega_p$，$\Omega_{s}$，$A_p$，$A_{st}$ $\Omega&#x3D;\omega&#x2F;T$ $A_p&#x3D;20log(1-\d">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Freya Wu の blogs">
 <meta property="og:url" content="https://freyawuu.github.io/2023/12/30/L13%20IIR/index.html">
 <meta property="og:site_name" content="Freya Wu の blogs">
-<meta property="og:description" content="L13 IIR数字滤波器 优点：边缘频率准确，可利用模拟滤波器，结构存在反馈，阶次更低。 缺点：相位非线性，稳定性。  计算方法 1.把数字滤波器指标 $\omegap$, $\omega{st}$，$Ap$，$A{st}$ 转换成模拟滤波器指标 $\Omegap$，$\Omega{s}$，$Ap$，$A{st}$ $\Omega&#x3D;\omega&#x2F;T$ $A_p&#x3D;20log(1-\delta_1)$">
+<meta property="og:description" content="L13 IIR数字滤波器 优点：边缘频率准确，可利用模拟滤波器，结构存在反馈，阶次更低。 缺点：相位非线性，稳定性。  计算方法 1.把数字滤波器指标 $\omega_p$, $\omega_{st}$，$A_p$，$A_{st}$ 转换成模拟滤波器指标 $\Omega_p$，$\Omega_{s}$，$A_p$，$A_{st}$ $\Omega&#x3D;\omega&#x2F;T$ $A_p&#x3D;20log(1-\d">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://freyawuu.github.io/.io//pic1.png">
 <meta property="og:image" content="https://freyawuu.github.io/.io//pic2.png">
@@ -228,7 +228,7 @@
 <p>缺点：相位非线性，稳定性。</p>
 </blockquote>
 <h3 id="计算方法"><a href="#计算方法" class="headerlink" title="计算方法"></a>计算方法</h3><ul>
-<li><p>1.把数字滤波器指标 $\omega<em>p$, $\omega</em>{st}$，$A<em>p$，$A</em>{st}$ 转换成模拟滤波器指标 $\Omega<em>p$，$\Omega</em>{s}$，$A<em>p$，$A</em>{st}$</p>
+<li><p>1.把数字滤波器指标 $\omega_p$, $\omega_{st}$，$A_p$，$A_{st}$ 转换成模拟滤波器指标 $\Omega_p$，$\Omega_{s}$，$A_p$，$A_{st}$</p>
 <p>$\Omega=\omega/T$</p>
 <p>$A_p=20log(1-\delta_1)$</p>
 <p>$A_{st}=20log(\delta_2)$</p>
@@ -251,12 +251,12 @@
 </li>
 <li><p>拉普拉斯反变换得单位冲激响应 $h_a(t)=L^{-1}[H_a(s)]$</p>
 </li>
-<li><p>保证冲激响应不变 $h(n)=h<em>a(t)|</em>{t=nT}$</p>
+<li><p>保证冲激响应不变 $h(n)=h_a(t)|_{t=nT}$</p>
 </li>
 <li><p>z变换得数字滤波器 $H(z)=\sum_{n=-\infty}^{\infty}h(n)z^{-n}$</p>
 </li>
 </ul>
-<h4 id="形式"><a href="#形式" class="headerlink" title="形式"></a>形式</h4><p>$H<em>a(s)=\displaystyle\sum</em>{k=1}^{N}\frac{A<em>k}{s-s_k} \to H(z)=\sum</em>{k=1}^{N}\frac{A_k}{1-e^{s_kT}z^{-1}}$</p>
+<h4 id="形式"><a href="#形式" class="headerlink" title="形式"></a>形式</h4><p>$H_a(s)=\displaystyle\sum_{k=1}^{N}\frac{A_k}{s-s_k} \to H(z)=\sum_{k=1}^{N}\frac{A_k}{1-e^{s_kT}z^{-1}}$</p>
 <p>tip: 注意频谱混叠现象 $\Omega&lt; \Omega_s/2=\frac\pi T$，不适合高通/带阻数字滤波器</p>
 <h3 id="双线性变换法"><a href="#双线性变换法" class="headerlink" title="双线性变换法"></a>双线性变换法</h3><blockquote>
 <p>变换域-单一映射</p>
@@ -267,7 +267,7 @@
 <ul>
 <li><p><em>Butterworth</em>滤波器原型$H_a(s)=\frac 1 {s+1} ,(n=1)$</p>
 </li>
-<li><p>阶数$n \ge\displaystyle\frac{log<em>{10}(\frac{10^{-0.1A_s}-1}{\epsilon^2})}{2log</em>{10}(V<em>s)}$, $V_s=\frac{\Omega</em>{st}}{\Omega_p}$</p>
+<li><p>阶数$n \ge\displaystyle\frac{log_{10}(\frac{10^{-0.1A_s}-1}{\epsilon^2})}{2log_{10}(V_s)}$, $V_s=\frac{\Omega_{st}}{\Omega_p}$</p>
 </li>
 </ul>
 <h4 id="映射关系表"><a href="#映射关系表" class="headerlink" title="映射关系表"></a>映射关系表</h4><div class="table-container">

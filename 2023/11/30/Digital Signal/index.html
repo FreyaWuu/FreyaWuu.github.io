@@ -27,18 +27,18 @@
 <meta property="og:site_name" content="Freya Wu の blogs">
 <meta property="og:description" content="选择6 填空8 计算*6 1. 基础 信号能量 $E_x&#x3D;\sum_{0}^{N-1}|x(n)|^2$ 信号功率 $P_x&#x3D;\frac 1 N \sum_{0}^{N-1}|x(n)|^2$  2. 采样定理2.1. 采样$\hat{x}_a(t)&#x3D;x_a(t)\cdot P_{\delta}(j\Omega)$$\hat{X}_a(j\Omega)&#x3D;\frac 1 T\sum_{k&#x3D;-\inf">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://freyawuu.github.io/2023/11/30/Digital%20Signal/image-2.png">
-<meta property="og:image" content="https://freyawuu.github.io/2023/11/30/Digital%20Signal/image-3.png">
-<meta property="og:image" content="https://freyawuu.github.io/2023/11/30/Digital%20Signal/image-4.png">
-<meta property="og:image" content="https://freyawuu.github.io/2023/11/30/Digital%20Signal/image-5.png">
-<meta property="og:image" content="https://freyawuu.github.io/2023/11/30/Digital%20Signal/1704724449(1">
-<meta property="og:image" content="https://freyawuu.github.io/2023/11/30/Digital%20Signal/1704724494(1">
+<meta property="og:image" content="https://freyawuu.github.io/image-2.png">
+<meta property="og:image" content="https://freyawuu.github.io/image-3.png">
+<meta property="og:image" content="https://freyawuu.github.io/image-4.png">
+<meta property="og:image" content="https://freyawuu.github.io/image-5.png">
+<meta property="og:image" content="https://freyawuu.github.io/1704724449(1">
+<meta property="og:image" content="https://freyawuu.github.io/1704724494(1">
 <meta property="article:published_time" content="2023-11-30T07:57:01.331Z">
 <meta property="article:modified_time" content="2024-01-11T00:20:27.884Z">
 <meta property="article:author" content="Freya Wu">
 <meta property="article:tag" content="notes">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://freyawuu.github.io/2023/11/30/Digital%20Signal/image-2.png">
+<meta name="twitter:image" content="https://freyawuu.github.io/image-2.png">
 
 <link rel="canonical" href="https://freyawuu.github.io/2023/11/30/Digital%20Signal/">
 
@@ -146,7 +146,7 @@
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">53</span></a>
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">52</span></a>
 
   </li>
         <li class="menu-item menu-item-resources">
@@ -241,7 +241,7 @@
 </ul>
 <h2 id="3-z变换"><a href="#3-z变换" class="headerlink" title="3. z变换"></a>3. z变换</h2><p>$X(z)=\sum_{n=-\infty}^{+\infty}x(n)z^{-n}$<br>$X(z)=\displaystyle\frac{b_0\prod_{k=1}^{M}(1-c_kz^-1)}{a_0 \prod_{k=1}^N (1-d_kz^{-1})}$</p>
 <ul>
-<li>变换性质<br><img src="image-2.png" alt="Alt text"><br><img src="image-3.png" alt="Alt text"></li>
+<li>变换性质<br><img src="/image-2.png" alt="Alt text"><br><img src="/image-3.png" alt="Alt text"></li>
 </ul>
 <p>单边z变换$X^+(z)=\sum_{n=0}^{+\infty}x(n)z^{-n}$<br>仅对因果信号独特</p>
 <ul>
@@ -407,7 +407,7 @@
 <li>线性相位 $\theta(\omega)=-\omega n_0$</li>
 <li>群时延 $-\frac{d\theta(\omega)}{d\omega}=$常数</li>
 </ul>
-<p><img src="image-4.png" alt="Alt text"></p>
+<p><img src="/image-4.png" alt="Alt text"></p>
 <h4 id="5-5-2-逆系统"><a href="#5-5-2-逆系统" class="headerlink" title="5.5.2. 逆系统"></a>5.5.2. 逆系统</h4><p>输入信号与输出信号一一对应<br>H(z)分子分母翻转（注意ROC）</p>
 <h4 id="5-5-3-全通滤波器"><a href="#5-5-3-全通滤波器" class="headerlink" title="5.5.3. 全通滤波器"></a>5.5.3. 全通滤波器</h4><p>纯延迟系统-&gt; 相位均衡器</p>
 <h4 id="5-5-4-低通与高通互换"><a href="#5-5-4-低通与高通互换" class="headerlink" title="5.5.4. 低通与高通互换"></a>5.5.4. 低通与高通互换</h4><p>$H_{hp}(\omega)=H_{lp}(\omega-\pi)$<br>$h_{lp}(n)=(-1)^n h_{hp}(n)$</p>
@@ -490,7 +490,7 @@
 <p>蝶形图<br>蝶形:减少运算量/原位:减少存储/乱序输入/规律取数</p>
 </blockquote>
 <p>序号排列:翻转二进制</p>
-<p><img src="image-5.png" alt="Alt text"><br>$W_N^{nk}=e^{j2\pi k n /N}$<br>|—-|DFT|FFT|<br>|—-|—-|—-|<br>|复数乘法|$N^2$|$\frac N2 log_2 N$|<br>|复数加法|$N(N-1)$|$2\times\frac N2 log_2 N$|<br>|计算量等级|$O(N^2)$|$O(N^2/2)$|</p>
+<p><img src="/image-5.png" alt="Alt text"><br>$W_N^{nk}=e^{j2\pi k n /N}$<br>|—-|DFT|FFT|<br>|—-|—-|—-|<br>|复数乘法|$N^2$|$\frac N2 log_2 N$|<br>|复数加法|$N(N-1)$|$2\times\frac N2 log_2 N$|<br>|计算量等级|$O(N^2)$|$O(N^2/2)$|</p>
 <h3 id="6-1-加法次数与乘法次数的计算"><a href="#6-1-加法次数与乘法次数的计算" class="headerlink" title="6.1. 加法次数与乘法次数的计算"></a>6.1. 加法次数与乘法次数的计算</h3><h2 id="滤波器设计"><a href="#滤波器设计" class="headerlink" title="滤波器设计"></a>滤波器设计</h2><ul>
 <li>FIR<br>无极点<br>$y(n)=\sum_{k=0}^M b_k x(n-k)$</li>
 <li>IIR<br>存在极点<br>$y(n)=\sum_{k=0}^M b_k x(n-k)-\sum_{k=1}^N a_ky(n-k)$</li>
@@ -504,7 +504,7 @@
 </ul>
 </li>
 </ul>
-<h4 id="理想线性相位FIR滤波器-窗函数法"><a href="#理想线性相位FIR滤波器-窗函数法" class="headerlink" title="理想线性相位FIR滤波器-窗函数法"></a>理想线性相位FIR滤波器-窗函数法</h4><p>$H_d(\omega)=1,|\omega|\le \omega_c$<br>$h_d(n)=\omega_c/\pi ,n=0; sin(\omega_c n)/(n\pi),n\ne 0$<br>矩形窗函数截断 长度<code>2M+1</code> $n\in [-M,M]$<br>右移-因果 $h’(n)=h(n-M)$<br><img src="1704724449(1" alt="Alt text">.png)<br><img src="1704724494(1" alt="Alt text">.png)</p>
+<h4 id="理想线性相位FIR滤波器-窗函数法"><a href="#理想线性相位FIR滤波器-窗函数法" class="headerlink" title="理想线性相位FIR滤波器-窗函数法"></a>理想线性相位FIR滤波器-窗函数法</h4><p>$H_d(\omega)=1,|\omega|\le \omega_c$<br>$h_d(n)=\omega_c/\pi ,n=0; sin(\omega_c n)/(n\pi),n\ne 0$<br>矩形窗函数截断 长度<code>2M+1</code> $n\in [-M,M]$<br>右移-因果 $h’(n)=h(n-M)$<br><img src="/1704724449(1" alt="Alt text">.png)<br><img src="/1704724494(1" alt="Alt text">.png)</p>
 <ul>
 <li>数字角频率 $\omega_c=2\pi f_c T_s=(rad)$</li>
 <li>代入$h(n)=\omega_c/\pi ,n=0$<br>$sin(\omega_c n)/(n\pi),n\ne 0,n\in [-M,M]$</li>
@@ -717,7 +717,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">53</span>
+          <span class="site-state-item-count">52</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>

@@ -20,16 +20,16 @@
     var CONFIG = {"hostname":"freyawuu.github.io","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta name="description" content="OCEAN: OFFLINE CHAIN-OF-THOUGHT EVALUATION AND ALIGNMENT IN LARGE LANGUAGE MODELS Structure Step 1: Modeling Chain of Thought as MDP CHAIN-OF-THOUGHT  query $q$ reasoning steps $\bold{c} &#x3D; (c1, c_2, \">
+  <meta name="description" content="OCEAN: OFFLINE CHAIN-OF-THOUGHT EVALUATION AND ALIGNMENT IN LARGE LANGUAGE MODELS Structure Step 1: Modeling Chain of Thought as MDP CHAIN-OF-THOUGHT  query $q$ reasoning steps $\bold{c} &#x3D; (c_1, c_2,">
 <meta property="og:type" content="article">
 <meta property="og:title" content="OCEAN OFFLINE CHAIN-OF-THOUGHT EVALUATION AND ALIGNMENT IN LARGE LANGUAGE MODELS">
 <meta property="og:url" content="https://freyawuu.github.io/2025/02/25/PaperReading/OCEAN/index.html">
 <meta property="og:site_name" content="Freya Wu の blogs">
-<meta property="og:description" content="OCEAN: OFFLINE CHAIN-OF-THOUGHT EVALUATION AND ALIGNMENT IN LARGE LANGUAGE MODELS Structure Step 1: Modeling Chain of Thought as MDP CHAIN-OF-THOUGHT  query $q$ reasoning steps $\bold{c} &#x3D; (c1, c_2, \">
+<meta property="og:description" content="OCEAN: OFFLINE CHAIN-OF-THOUGHT EVALUATION AND ALIGNMENT IN LARGE LANGUAGE MODELS Structure Step 1: Modeling Chain of Thought as MDP CHAIN-OF-THOUGHT  query $q$ reasoning steps $\bold{c} &#x3D; (c_1, c_2,">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://freyawuu.github.io/2025/02/25/PaperReading/OCEAN/images/PaperReading/OCEAN_1.png">
 <meta property="article:published_time" content="2025-02-25T07:14:47.000Z">
-<meta property="article:modified_time" content="2025-02-25T14:06:20.051Z">
+<meta property="article:modified_time" content="2025-02-26T01:26:16.184Z">
 <meta property="article:author" content="Freya Wu">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://freyawuu.github.io/2025/02/25/PaperReading/OCEAN/images/PaperReading/OCEAN_1.png">
@@ -200,10 +200,16 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              
 
-              <time title="创建时间：2025-02-25 15:14:47 / 修改时间：22:06:20" itemprop="dateCreated datePublished" datetime="2025-02-25T15:14:47+08:00">2025-02-25</time>
+              <time title="创建时间：2025-02-25 15:14:47" itemprop="dateCreated datePublished" datetime="2025-02-25T15:14:47+08:00">2025-02-25</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2025-02-26 09:26:16" itemprop="dateModified" datetime="2025-02-26T09:26:16+08:00">2025-02-26</time>
+              </span>
 
           
 
@@ -222,23 +228,35 @@
 <li><p>CHAIN-OF-THOUGHT</p>
 <ul>
 <li>query $q$</li>
-<li>reasoning steps $\bold{c} = (c<em>1, c_2, \cdots, c_T )$<br>$c_t = \prod</em>{i=1}^{t-1} \pi<em>\theta(c_i|q, c</em>{&lt; i})$</li>
-<li>answer $y = \pi<em>\theta(y|q, \bold{c}) \prod</em>{i=1}^T \pi<em>\theta(c_i|q, c</em>{&lt; i})$</li>
+<li><p>reasoning steps $\bold{c} = (c_1, c_2, \cdots, c_T)$</p>
+<p>  $c<em>t = \prod</em>{i=1}^{t-1} \pi<em>\theta(c_i|q, c</em>{&lt; i})$</p>
+</li>
+<li><p>answer $y = \pi<em>\theta(y|q, \bold{c}) \prod</em>{i=1}^T \pi<em>\theta(c_i|q, c</em>{&lt; i})$</p>
+</li>
 </ul>
 </li>
 <li><p>Markov Decision Process(MDP)</p>
 <ul>
 <li>Markov Property: The current state contains all the necessary information for the future state</li>
 <li>finite action space: token set $\alpha_t \in |V|$</li>
-<li>every action step:<br>  generate next state<br>  $𝑠<em>{t+1}=[𝑠</em>𝑡, 𝑐<em>𝑡 ]$<br>  reward to define policy<br>  $r_t=r(𝑠</em>𝑡, 𝑐_𝑡)$</li>
+<li><p>every action step:</p>
+<p>  generate next state</p>
+<p>  $𝑠<em>{t+1}=[𝑠</em>𝑡, 𝑐_𝑡]$</p>
+<p>  reward to define policy</p>
+<p>  $r<em>t=r(𝑠</em>𝑡, 𝑐_𝑡)$</p>
+</li>
 </ul>
 </li>
 </ul>
 <h3 id="Step-2-Verbalized-Knowledge-Graph-Reasoning"><a href="#Step-2-Verbalized-Knowledge-Graph-Reasoning" class="headerlink" title="Step 2: Verbalized Knowledge Graph Reasoning"></a>Step 2: Verbalized Knowledge Graph Reasoning</h3><h4 id="modeling-tractory"><a href="#modeling-tractory" class="headerlink" title="modeling tractory"></a>modeling tractory</h4><ul>
-<li>trajectory<ul>
+<li><p>trajectory</p>
+<ul>
 <li>query $q$ $\to$ decomposed triple $(e_0, r_1, e_1)$</li>
-<li>trajectory $h = (e<em>0, r_1, e_1, \cdots, r_t, e_t)$<br>$(r_t, e_t) = \prod</em>{i=1}^{t-1} \mu((r<em>i, e_i)|(e_0, r_1, e_1, \cdots, r</em>{i-1}, e_{i-1}))$</li>
-<li>answer $e_t$</li>
+<li><p>trajectory $h = (e_0, r_1, e_1, \cdots, r_t, e_t)$</p>
+<p>  $(r<em>t, e_t) = \prod</em>{i=1}^{t-1} \mu((r<em>i, e_i)|(e_0, r_1, e_1, \cdots, r</em>{i-1}, e_{i-1}))$</p>
+</li>
+<li><p>answer $e_t$</p>
+</li>
 </ul>
 </li>
 <li>trajectories set $\mathbb{H}={h<em>k}</em>{k=1}^K$</li>

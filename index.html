@@ -194,7 +194,7 @@
               <span class="post-meta-item-text">发表于</span>
               
 
-              <time title="创建时间：2025-03-04 09:42:47 / 修改时间：11:41:11" itemprop="dateCreated datePublished" datetime="2025-03-04T09:42:47+08:00">2025-03-04</time>
+              <time title="创建时间：2025-03-04 09:42:47 / 修改时间：13:39:14" itemprop="dateCreated datePublished" datetime="2025-03-04T09:42:47+08:00">2025-03-04</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -261,9 +261,10 @@
 <li><p>bi-directional LSTM(Bi-LSTM)</p>
 <script type="math/tex; mode=display">f_1(v) = \frac{\sum_{i \in C_v} \left[ \overrightarrow{\text{LSTM}} \left\{ \mathcal{F} C_{\theta_x}(x_i) \right\} \oplus \overleftarrow{\text{LSTM}} \left\{ \mathcal{F} C_{\theta_x}(x_i) \right\} \right]}{|C_v|}</script><p>  different BiLSTMs for different types of nodes</p>
 </li>
+<li>same dimension d</li>
 </ul>
 <h3 id="aggregating-heterogeneous-neighbors"><a href="#aggregating-heterogeneous-neighbors" class="headerlink" title="aggregating heterogeneous neighbors"></a>aggregating heterogeneous neighbors</h3><ul>
-<li><p>step 1: same type neighbors aggregation<br>  $f_2^t(v) = \mathcal{AG}^t _{v’ \in N_t(v)} \left\{ f_1(v’) \right\}$</p>
+<li><p>step 1: same type neighbors aggregation<br>  <img src="HetGNN_3.png" alt="alt text"><br>  $f_2^t(v) = \mathcal{AG}^t _{v’ \in N_t(v)} \left\{ f_1(v’) \right\}$</p>
 <ul>
 <li>$\mathcal{AG}^t$: aggregator(FCNN/CNN/RNN) BiLSTM here</li>
 <li>unordered neighbors set</li>
@@ -276,7 +277,25 @@
 </ul>
 </li>
 </ul>
-<h3 id="formulating-the-objective-and-designing-model-training-procedure"><a href="#formulating-the-objective-and-designing-model-training-procedure" class="headerlink" title="formulating the objective and designing model training procedure"></a>formulating the objective and designing model training procedure</h3>
+<h3 id="formulating-the-objective-and-designing-model-training-procedure"><a href="#formulating-the-objective-and-designing-model-training-procedure" class="headerlink" title="formulating the objective and designing model training procedure"></a>formulating the objective and designing model training procedure</h3><p>graph context loss:</p>
+<script type="math/tex; mode=display">o_2 = \sum_{\langle v, v_c, v_{c'} \rangle \in \mathcal{T}_{walk}} \log \sigma(\mathbf{E}_{v_c} \cdot \mathbf{E}_v) + \log \sigma(-\mathbf{E}_{v_c'} \cdot \mathbf{E}_v)</script><ul>
+<li>$v_c$: context node(neighbor of $c$) positive sample</li>
+<li>$v_{c’}$: negative sample</li>
+</ul>
+<p>The embedding proximity of positively sampled nodes to c is maximized</p>
+<h2 id="Experiments"><a href="#Experiments" class="headerlink" title="Experiments"></a>Experiments</h2><h3 id="link-prediction"><a href="#link-prediction" class="headerlink" title="link prediction"></a>link prediction</h3><p>a binary logistic classifier</p>
+<h3 id="Recommendation"><a href="#Recommendation" class="headerlink" title="Recommendation"></a>Recommendation</h3><p>personalized node recommendation: author-venue link</p>
+<ul>
+<li>preference score: the inner-product between embeddings of 2 nodes</li>
+</ul>
+<h3 id="Classification-and-Clustering"><a href="#Classification-and-Clustering" class="headerlink" title="Classification and Clustering"></a>Classification and Clustering</h3><h2 id="Hyper-parameters"><a href="#Hyper-parameters" class="headerlink" title="Hyper-parameters"></a>Hyper-parameters</h2><ul>
+<li>d: 128-256</li>
+<li>sampled size: 20-30(noise)</li>
+</ul>
+<h2 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h2><blockquote>
+<p>to read</p>
+</blockquote>
+
       
     </div>
 

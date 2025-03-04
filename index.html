@@ -194,7 +194,7 @@
               <span class="post-meta-item-text">发表于</span>
               
 
-              <time title="创建时间：2025-03-04 09:42:47 / 修改时间：10:35:21" itemprop="dateCreated datePublished" datetime="2025-03-04T09:42:47+08:00">2025-03-04</time>
+              <time title="创建时间：2025-03-04 09:42:47 / 修改时间：11:41:11" itemprop="dateCreated datePublished" datetime="2025-03-04T09:42:47+08:00">2025-03-04</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -222,19 +222,61 @@
 </blockquote>
 <hr>
 <ul>
-<li><p>heterogeneous:</p>
-<ul>
+<li>heterogeneous:<ul>
 <li>graph structure heterogenerity</li>
-<li>node content heterogeneity (multimodal)<h2 id="Definition"><a href="#Definition" class="headerlink" title="Definition"></a>Definition</h2></li>
+<li>node content heterogeneity (multimodal)</li>
 </ul>
 </li>
-<li><p>content associated heterogeneous graph(C-HetG):$G=(V, E, O_V, R_E)$</p>
-</li>
+</ul>
+<h2 id="Definition"><a href="#Definition" class="headerlink" title="Definition"></a>Definition</h2><ul>
+<li>content associated heterogeneous graph(C-HetG):$G=(V, E, O_V, R_E)$</li>
 <li>node type set: $O_V$</li>
 <li>edge type set: $R_E$</li>
 </ul>
 <h2 id="HetGNN"><a href="#HetGNN" class="headerlink" title="HetGNN"></a>HetGNN</h2><p><img src="HetGNN_1.png" alt="alt text"></p>
-<h3 id="sampling-heterogeneous-neighbors"><a href="#sampling-heterogeneous-neighbors" class="headerlink" title="sampling heterogeneous neighbors"></a>sampling heterogeneous neighbors</h3><h3 id="encoding-node-heterogeneous-contents"><a href="#encoding-node-heterogeneous-contents" class="headerlink" title="encoding node heterogeneous contents"></a>encoding node heterogeneous contents</h3><h3 id="aggregating-heterogeneous-neighbors"><a href="#aggregating-heterogeneous-neighbors" class="headerlink" title="aggregating heterogeneous neighbors"></a>aggregating heterogeneous neighbors</h3><h3 id="formulating-the-objective-and-designing-model-training-procedure"><a href="#formulating-the-objective-and-designing-model-training-procedure" class="headerlink" title="formulating the objective and designing model training procedure"></a>formulating the objective and designing model training procedure</h3>
+<h3 id="sampling-heterogeneous-neighbors"><a href="#sampling-heterogeneous-neighbors" class="headerlink" title="sampling heterogeneous neighbors"></a>sampling heterogeneous neighbors</h3><ul>
+<li><p>issues:</p>
+<ul>
+<li>hub node: </li>
+<li>“cold-start” node</li>
+</ul>
+</li>
+<li><p>step 1: sampling fixed lenght RWR<br>  random walk from node $v$ -&gt; travels to the neighbors of current node or returns to the starting node with a probability p.</p>
+</li>
+<li><p>step 2: grouping neighbor types<br>  for each node type, select top-k frequent node</p>
+</li>
+<li><p>the t-type sampled neighbor set of $v$:$N_t(v)$</p>
+</li>
+<li>feature:<ul>
+<li>all type of neighbors</li>
+<li>fixed sample size</li>
+<li>type-based aggregation</li>
+</ul>
+</li>
+</ul>
+<h3 id="encoding-node-heterogeneous-contents"><a href="#encoding-node-heterogeneous-contents" class="headerlink" title="encoding node heterogeneous contents"></a>encoding node heterogeneous contents</h3><p><img src="HetGNN_2.png" alt="alt text"></p>
+<ul>
+<li>content of node $v$: $C_v$</li>
+<li>embedding model $f_1$: $x_i \in \mathbb{R}^{d_f \times 1}$<br>  depend on content type</li>
+<li><p>bi-directional LSTM(Bi-LSTM)</p>
+<script type="math/tex; mode=display">f_1(v) = \frac{\sum_{i \in C_v} \left[ \overrightarrow{\text{LSTM}} \left\{ \mathcal{F} C_{\theta_x}(x_i) \right\} \oplus \overleftarrow{\text{LSTM}} \left\{ \mathcal{F} C_{\theta_x}(x_i) \right\} \right]}{|C_v|}</script><p>  different BiLSTMs for different types of nodes</p>
+</li>
+</ul>
+<h3 id="aggregating-heterogeneous-neighbors"><a href="#aggregating-heterogeneous-neighbors" class="headerlink" title="aggregating heterogeneous neighbors"></a>aggregating heterogeneous neighbors</h3><ul>
+<li><p>step 1: same type neighbors aggregation<br>  $f_2^t(v) = \mathcal{AG}^t _{v’ \in N_t(v)} \left\{ f_1(v’) \right\}$</p>
+<ul>
+<li>$\mathcal{AG}^t$: aggregator(FCNN/CNN/RNN) BiLSTM here</li>
+<li>unordered neighbors set</li>
+</ul>
+</li>
+<li><p>step 2: types combination<br>  attention machanism: combine type-based neighbor embeddings &amp; node $v$’s content embedding</p>
+<script type="math/tex; mode=display">E_v = \alpha^{v,v} f_1(v) + \sum_{t \in O_V} \alpha^{v,t} f_2^{t}(v)</script><ul>
+<li>different contributions for different neighbor types<script type="math/tex; mode=display">
+\alpha^{v,i} = \frac{\exp \left\{ \text{LeakyReLU}\left(u^T [f_i \oplus f_1(v)]\right) \right\}}{\sum_{f_j \in \mathcal{F}(v)} \exp \left\{ \text{LeakyReLU}\left(u^T [f_j \oplus f_1(v)]\right) \right\}}</script></li>
+</ul>
+</li>
+</ul>
+<h3 id="formulating-the-objective-and-designing-model-training-procedure"><a href="#formulating-the-objective-and-designing-model-training-procedure" class="headerlink" title="formulating the objective and designing model training procedure"></a>formulating the objective and designing model training procedure</h3>
       
     </div>
 

@@ -136,7 +136,7 @@
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">54</span></a>
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">55</span></a>
 
   </li>
   </ul>
@@ -165,6 +165,150 @@
 
           <div class="content index posts-expand">
             
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://freyawuu.github.io/2023/12/30/L13%20IIR/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="Freya Wu">
+      <meta itemprop="description" content="QwQ">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Freya Wu の blogs">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2023/12/30/L13%20IIR/" class="post-title-link" itemprop="url">未命名</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2023-12-30 15:57:11" itemprop="dateCreated datePublished" datetime="2023-12-30T15:57:11+08:00">2023-12-30</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2024-01-05 11:53:50" itemprop="dateModified" datetime="2024-01-05T11:53:50+08:00">2024-01-05</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="L13-IIR数字滤波器"><a href="#L13-IIR数字滤波器" class="headerlink" title="L13 IIR数字滤波器"></a>L13 IIR数字滤波器</h2><blockquote>
+<p>优点：边缘频率准确，可利用模拟滤波器，结构存在反馈，阶次更低。</p>
+<p>缺点：相位非线性，稳定性。</p>
+</blockquote>
+<h3 id="计算方法"><a href="#计算方法" class="headerlink" title="计算方法"></a>计算方法</h3><ul>
+<li><p>1.把数字滤波器指标 $\omega_p$, $\omega_{st}$，$A_p$，$A_{st}$ 转换成模拟滤波器指标 $\Omega_p$，$\Omega_{s}$，$A_p$，$A_{st}$</p>
+<p>$\Omega=\omega/T$</p>
+<p>$A_p=20log(1-\delta_1)$</p>
+<p>$A_{st}=20log(\delta_2)$</p>
+</li>
+<li><p>2.转换成模拟低通滤波器指标</p>
+</li>
+<li><p>3.查表得模拟低通滤波器原型 $H_p(s)$</p>
+</li>
+<li><p>4.得到模拟滤波器 $H_a(s)$</p>
+</li>
+<li><p>5.得到数字滤波器 $H(z)$</p>
+</li>
+</ul>
+<h3 id="冲激响应不变法"><a href="#冲激响应不变法" class="headerlink" title="冲激响应不变法"></a>冲激响应不变法</h3><blockquote>
+<p>时域-对模拟滤波器的单位冲激响应进行抽样(时域特性逼近好)，多值映射</p>
+</blockquote>
+<p><img src="pic1.png" alt="Alt"></p>
+<h4 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h4><ul>
+<li><p>已知模拟滤波器系统函数 $H_a(s)$ （部分分式形式）</p>
+</li>
+<li><p>拉普拉斯反变换得单位冲激响应 $h_a(t)=L^{-1}[H_a(s)]$</p>
+</li>
+<li><p>保证冲激响应不变 $h(n)=h_a(t)|_{t=nT}$</p>
+</li>
+<li><p>z变换得数字滤波器 $H(z)=\sum_{n=-\infty}^{\infty}h(n)z^{-n}$</p>
+</li>
+</ul>
+<h4 id="形式"><a href="#形式" class="headerlink" title="形式"></a>形式</h4><p>$H_a(s)=\displaystyle\sum_{k=1}^{N}\frac{A_k}{s-s_k} \to H(z)=\sum_{k=1}^{N}\frac{A_k}{1-e^{s_kT}z^{-1}}$</p>
+<p>tip: 注意频谱混叠现象 $\Omega&lt; \Omega_s/2=\frac\pi T$，不适合高通/带阻数字滤波器</p>
+<h3 id="双线性变换法"><a href="#双线性变换法" class="headerlink" title="双线性变换法"></a>双线性变换法</h3><blockquote>
+<p>变换域-单一映射</p>
+</blockquote>
+<p>$s=\displaystyle\frac{2}{T}\frac{1-z^{-1}}{1+z^{-1}}$</p>
+<p>$ \Omega=\displaystyle\frac 2 T tan(\frac{\omega}{2})$</p>
+<p><img src="pic2.png" alt></p>
+<ul>
+<li><p><em>Butterworth</em>滤波器原型$H_a(s)=\frac 1 {s+1} ,(n=1)$</p>
+</li>
+<li><p>阶数$n \ge\displaystyle\frac{log_{10}(\frac{10^{-0.1A_s}-1}{\epsilon^2})}{2log_{10}(V_s)}$, $V_s=\frac{\Omega_{st}}{\Omega_p}$</p>
+</li>
+</ul>
+<h4 id="映射关系表"><a href="#映射关系表" class="headerlink" title="映射关系表"></a>映射关系表</h4><div class="table-container">
+<table>
+<thead>
+<tr>
+<th>类型</th>
+<th>映射</th>
+<th>截止频率</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>低通</td>
+<td>$\displaystyle\frac s{\Omega_c}$</td>
+<td>$\Omega_c$</td>
+</tr>
+<tr>
+<td>高通</td>
+<td>$\displaystyle\frac {\Omega_c}s$</td>
+<td>$\Omega_c$</td>
+</tr>
+<tr>
+<td>带通</td>
+<td>$\displaystyle\frac{s^2+\Omega_l\Omega_h}{s(\Omega_h-\Omega_l)}\Omega_c$</td>
+<td>$\Omega_l,\Omega_h$</td>
+</tr>
+<tr>
+<td>带阻</td>
+<td>$\displaystyle\frac{s(\Omega_h-\Omega_l)}{s^2+\Omega_l\Omega_h}\Omega_c$</td>
+<td>$\Omega_l,\Omega_h$</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
       
   
   
@@ -2134,163 +2278,6 @@ H(u,v)=
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://freyawuu.github.io/2022/04/25/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.jpg">
-      <meta itemprop="name" content="Freya Wu">
-      <meta itemprop="description" content="QwQ">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Freya Wu の blogs">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2022/04/25/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" class="post-title-link" itemprop="url">数据结构</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2022-04-25 10:15:32" itemprop="dateCreated datePublished" datetime="2022-04-25T10:15:32+08:00">2022-04-25</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2022-06-06 21:22:06" itemprop="dateModified" datetime="2022-06-06T21:22:06+08:00">2022-06-06</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/programs/" itemprop="url" rel="index"><span itemprop="name">programs</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h2 id="集合"><a href="#集合" class="headerlink" title="集合"></a>集合</h2><h2 id="线性"><a href="#线性" class="headerlink" title="线性"></a>线性</h2><h2 id="树"><a href="#树" class="headerlink" title="树"></a>树</h2><h2 id="动态查找表"><a href="#动态查找表" class="headerlink" title="动态查找表"></a>动态查找表</h2><h3 id="二叉查找树-二叉排序树"><a href="#二叉查找树-二叉排序树" class="headerlink" title="二叉查找树/二叉排序树"></a>二叉查找树/二叉排序树</h3><p>左节点&lt;根&lt;右键点<br>存储：指针 链式<br>查找/插入<br>删除：两个子节点时：找到左节点的最大值或右节点的最小值作为替换，删掉那个节点<br>tip: 注意插入和删除时的引用</p>
-<h3 id="AVL-树-平衡树"><a href="#AVL-树-平衡树" class="headerlink" title="AVL 树/平衡树"></a>AVL 树/平衡树</h3><p>左右子树高度差不超过1<br>LL/RR: 单旋转 把该子树转成当前父节点 把子树中的中间子树移给它原来的爸爸</p>
-<p>LR/RL: 双旋转 先对不平衡的子树反单旋转 再对根节点单旋转</p>
-<h2 id="排序"><a href="#排序" class="headerlink" title="排序"></a>排序</h2><h3 id="插入排序"><a href="#插入排序" class="headerlink" title="插入排序"></a>插入排序</h3><h4 id="直接插入排序"><a href="#直接插入排序" class="headerlink" title="直接插入排序"></a>直接插入排序</h4><h4 id="二分插入排序"><a href="#二分插入排序" class="headerlink" title="二分插入排序"></a>二分插入排序</h4><ul>
-<li>插入过程依旧O(n)</li>
-</ul>
-<h4 id="希尔排序"><a href="#希尔排序" class="headerlink" title="希尔排序"></a>希尔排序</h4><p>step 多轮插入 $h_1=1$</p>
-<p>希尔建议: N/2<br>O(N^2) O(N^{1.5}) O(N^{1.25})</p>
-<h3 id="选择排序"><a href="#选择排序" class="headerlink" title="选择排序"></a>选择排序</h3><p>略</p>
-<h3 id="堆排序"><a href="#堆排序" class="headerlink" title="堆排序"></a>堆排序</h3><p>O(NlogN)<br>出堆的放在数组最后</p>
-<h3 id="交换排序"><a href="#交换排序" class="headerlink" title="交换排序"></a>交换排序</h3><h4 id="冒泡排序"><a href="#冒泡排序" class="headerlink" title="冒泡排序"></a>冒泡排序</h4><p>跳出</p>
-<h4 id="快速排序"><a href="#快速排序" class="headerlink" title="快速排序"></a>快速排序</h4><h2 id="外部查找"><a href="#外部查找" class="headerlink" title="外部查找"></a>外部查找</h2><blockquote>
-<p>磁带: 保存</p>
-<p>磁盘: 磁道 柱面 扇区</p>
-</blockquote>
-<h3 id="B树"><a href="#B树" class="headerlink" title="B树"></a>B树</h3><p>根节点儿子数: 0, 2 ~ m<br>内部结点: $[m/2]\le s \le m$<br>结点:$(n,A_0,(K_1, R_1),A_1,\cdots,A_n)$</p>
-<h4 id="查找"><a href="#查找" class="headerlink" title="查找"></a>查找</h4><p>lue</p>
-<h4 id="插入"><a href="#插入" class="headerlink" title="插入"></a>插入</h4><ul>
-<li>未满 直接插</li>
-<li><p>已满 插完分裂，父节点s+1，继续往上判断<br>  也可以寄养</p>
-<h4 id="删除"><a href="#删除" class="headerlink" title="删除"></a>删除</h4></li>
-<li><p>非底层 找右子树最左/左子树最右代替</p>
-</li>
-<li>底层 若删完$s&lt;[M/2]-1$ 问邻居节点借/合并</li>
-</ul>
-<h3 id="B-树"><a href="#B-树" class="headerlink" title="B+树"></a>B+树</h3><p>数据存于叶子节点 其它层为索引<br>m阶<br>l: 数据块大小$[[l/2],l]$<br>最坏访问$log_{M/2}N+1$</p>
-<h4 id="查找-1"><a href="#查找-1" class="headerlink" title="查找"></a>查找</h4><h4 id="插入-1"><a href="#插入-1" class="headerlink" title="插入"></a>插入</h4><ul>
-<li>未满 直接插</li>
-<li>已满 插完分裂，父节点s+1，继续往上判断<br>  也可以寄养</li>
-</ul>
-<h4 id="删除-1"><a href="#删除-1" class="headerlink" title="删除"></a>删除</h4><p>同B树 领养/合并</p>
-<h2 id="外部排序"><a href="#外部排序" class="headerlink" title="外部排序"></a>外部排序</h2><h3 id="归并排序"><a href="#归并排序" class="headerlink" title="归并排序"></a>归并排序</h3><ul>
-<li><p>置换选择<br>适用于较有序的数据，分成不同排序段</p>
-</li>
-<li><p>多阶段归并 斐波那契数列分解</p>
-</li>
-</ul>
-<h2 id="图"><a href="#图" class="headerlink" title="图"></a>图</h2><h3 id="存储"><a href="#存储" class="headerlink" title="存储"></a>存储</h3><p>邻接矩阵 邻接表</p>
-<h3 id="遍历"><a href="#遍历" class="headerlink" title="遍历"></a>遍历</h3><p>DFS BFS<br>O(|E|+|V|)<br>O(|V|^2)<br>欧拉路径(回路)<br>欧拉回路计算方法: 拼接路径<br>clone函数<br>外部函数<br>内部函数</p>
-<h3 id="有向图的连通性"><a href="#有向图的连通性" class="headerlink" title="有向图的连通性"></a>有向图的连通性</h3><p>dfs一遍后用后序标号<br>把每个树的最大标号逆向后开始dfs</p>
-<h3 id="拓扑排序"><a href="#拓扑排序" class="headerlink" title="拓扑排序"></a>拓扑排序</h3><p>不停输出入度为0的点，更新减边<br>AOV</p>
-<h3 id="关键路径-关键活动"><a href="#关键路径-关键活动" class="headerlink" title="关键路径 关键活动"></a>关键路径 关键活动</h3><p>两个拓扑<br>AOE</p>
-<h1 id="树-1"><a href="#树-1" class="headerlink" title="树"></a>树</h1><ul>
-<li>[x] 空集也是树</li>
-<li>[x] 根不是内部节点</li>
-<li>[x] 度 直接后继节点数</li>
-<li>[x] 根的层次是1</li>
-<li>[x] 树的高度 最大层次</li>
-<li>[x] 节点高度 以其为根的子树高度</li>
-<li>[x] 满二叉树 完全二叉树</li>
-<li>[x] 包裹函数</li>
-<li>[x] 二叉树前中后序的非递归实现</li>
-<li>[x] 算术表达式转树</li>
-<li>[x] 哈夫曼树 不等长编码</li>
-<li>[x] 孩子兄弟链表示法</li>
-<li><p>[x] 森林表示法 把树转成二叉树 把Bi作为Bi-1根节点的右子树</p>
-<h1 id="优先级队列"><a href="#优先级队列" class="headerlink" title="优先级队列"></a>优先级队列</h1></li>
-<li><p>[x] 二叉堆 完全二叉树</p>
-</li>
-<li>[x] buildHeap 先全读入然后对非叶子节点percolateDown O(N)</li>
-<li>[ ] D堆 插入比删除多得多的时候 / 减少内外存交换</li>
-<li>[x] 多服务台排队系统的模拟 取出到达后加上服务时间作为结束时间重新插入优先队列，取出结束时间时使用中服务台— 等待队列(普通队列)</li>
-<li>[x] 合并两个最小化堆的时间复杂度O(logn) 二项堆?? 插入O(1)<h1 id="静态查找表"><a href="#静态查找表" class="headerlink" title="静态查找表"></a>静态查找表</h1></li>
-<li>[x] 插值查找 外部 均匀有序</li>
-<li>[x] 分块查找 外部常用 无需有序</li>
-<li>[x] STL find/binary_search(l,r,x) //vector对象 返回位置指针/TF<h1 id="动态查找表-1"><a href="#动态查找表-1" class="headerlink" title="动态查找表"></a>动态查找表</h1><h2 id="二叉查找树"><a href="#二叉查找树" class="headerlink" title="二叉查找树"></a>二叉查找树</h2></li>
-<li>[x] 插入/删除的时候一定要引用</li>
-<li>[x] 删除 左子树最大/右子树最小</li>
-<li>[x] 平均1.38logn<h2 id="AVL树"><a href="#AVL树" class="headerlink" title="AVL树"></a>AVL树</h2></li>
-<li>[x] 单旋转/多旋转</li>
-<li>[x] 删除时的5种情况<h2 id="散列表"><a href="#散列表" class="headerlink" title="散列表"></a>散列表</h2></li>
-<li>[x] 直接/余数/数字分析/平方取中/折叠</li>
-<li>[x] 迟删除</li>
-<li>[x] 二次探测法 H_i+x^2 (负载因子&lt;0.5 H_{i-1}+2*i-1)</li>
-<li>[x] 再散列法 两个散列函数</li>
-<li>[x] 开散列表<h1 id="排序-1"><a href="#排序-1" class="headerlink" title="排序"></a>排序</h1><h2 id="希尔排序-1"><a href="#希尔排序-1" class="headerlink" title="希尔排序"></a>希尔排序</h2></li>
-<li>[x] 一个h_k 有序的序列经过h_{k-1}排序后依旧h_k有序<h2 id="直接选择排序"><a href="#直接选择排序" class="headerlink" title="直接选择排序"></a>直接选择排序</h2></li>
-<li>[x] 不稳定</li>
-</ul>
-<h1 id="图-1"><a href="#图-1" class="headerlink" title="图"></a>图</h1><ul>
-<li>[x] 欧拉回路</li>
-<li>[x] 连通性 dfs 后序编号 逆向dfs</li>
-<li>[x] AOE 先找出拓扑排序，正反都走一下<br>1 2 3 4</li>
-</ul>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
@@ -2362,7 +2349,7 @@ H(u,v)=
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">54</span>
+          <span class="site-state-item-count">55</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>

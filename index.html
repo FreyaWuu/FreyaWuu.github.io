@@ -192,10 +192,16 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              
 
-              <time title="创建时间：2025-03-04 09:42:47 / 修改时间：13:51:07" itemprop="dateCreated datePublished" datetime="2025-03-04T09:42:47+08:00">2025-03-04</time>
+              <time title="创建时间：2025-03-04 09:42:47" itemprop="dateCreated datePublished" datetime="2025-03-04T09:42:47+08:00">2025-03-04</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2025-03-05 09:30:14" itemprop="dateModified" datetime="2025-03-05T09:30:14+08:00">2025-03-05</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
@@ -221,81 +227,14 @@
 <p>DOI:<br>publication: KDD 2019<br>Date of publication: 2019-07-25</p>
 </blockquote>
 <hr>
-<ul>
-<li>heterogeneous:<ul>
-<li>graph structure heterogenerity</li>
-<li>node content heterogeneity (multimodal)</li>
-</ul>
-</li>
-</ul>
-<h2 id="Definition"><a href="#Definition" class="headerlink" title="Definition"></a>Definition</h2><ul>
-<li>content associated heterogeneous graph(C-HetG):$G=(V, E, O_V, R_E)$</li>
-<li>node type set: $O_V$</li>
-<li>edge type set: $R_E$</li>
-</ul>
-<h2 id="HetGNN"><a href="#HetGNN" class="headerlink" title="HetGNN"></a>HetGNN</h2><p><img src="HetGNN_1.png" alt="alt text"></p>
-<h3 id="sampling-heterogeneous-neighbors"><a href="#sampling-heterogeneous-neighbors" class="headerlink" title="sampling heterogeneous neighbors"></a>sampling heterogeneous neighbors</h3><ul>
-<li><p>issues:</p>
-<ul>
-<li>hub node: </li>
-<li>“cold-start” node</li>
-</ul>
-</li>
-<li><p>step 1: sampling fixed lenght RWR<br>  random walk from node $v$ -&gt; travels to the neighbors of current node or returns to the starting node with a probability p.</p>
-</li>
-<li><p>step 2: grouping neighbor types<br>  for each node type, select top-k frequent node</p>
-</li>
-<li><p>the t-type sampled neighbor set of $v$:$N_t(v)$</p>
-</li>
-<li>feature:<ul>
-<li>all type of neighbors</li>
-<li>fixed sample size</li>
-<li>type-based aggregation</li>
-</ul>
-</li>
-</ul>
-<h3 id="encoding-node-heterogeneous-contents"><a href="#encoding-node-heterogeneous-contents" class="headerlink" title="encoding node heterogeneous contents"></a>encoding node heterogeneous contents</h3><p><img src="HetGNN_2.png" alt="alt text"></p>
-<ul>
-<li>content of node $v$: $C_v$</li>
-<li>embedding model $f_1$: $x_i \in \mathbb{R}^{d_f \times 1}$<br>  depend on content type</li>
-<li><p>bi-directional LSTM(Bi-LSTM)</p>
-<script type="math/tex; mode=display">f_1(v) = \frac{\sum_{i \in C_v} \left[ \overrightarrow{\text{LSTM}} \left\{ \mathcal{F} C_{\theta_x}(x_i) \right\} \oplus \overleftarrow{\text{LSTM}} \left\{ \mathcal{F} C_{\theta_x}(x_i) \right\} \right]}{|C_v|}</script><p>  different BiLSTMs for different types of nodes</p>
-</li>
-<li>same dimension d</li>
-</ul>
-<h3 id="aggregating-heterogeneous-neighbors"><a href="#aggregating-heterogeneous-neighbors" class="headerlink" title="aggregating heterogeneous neighbors"></a>aggregating heterogeneous neighbors</h3><ul>
-<li><p>step 1: same type neighbors aggregation<br>  <img src="HetGNN_3.png" alt="alt text"><br>  $f_2^t(v) = \mathcal{AG}^t _{v’ \in N_t(v)} \left\{ f_1(v’) \right\}$</p>
-<ul>
-<li>$\mathcal{AG}^t$: aggregator(FCNN/CNN/RNN) BiLSTM here</li>
-<li>unordered neighbors set</li>
-</ul>
-</li>
-<li><p>step 2: types combination<br>  attention machanism: combine type-based neighbor embeddings &amp; node $v$’s content embedding</p>
-<script type="math/tex; mode=display">E_v = \alpha^{v,v} f_1(v) + \sum_{t \in O_V} \alpha^{v,t} f_2^{t}(v)</script><ul>
-<li>different contributions for different neighbor types<script type="math/tex; mode=display">
-\alpha^{v,i} = \frac{\exp \left\{ \text{LeakyReLU}\left(u^T [f_i \oplus f_1(v)]\right) \right\}}{\sum_{f_j \in \mathcal{F}(v)} \exp \left\{ \text{LeakyReLU}\left(u^T [f_j \oplus f_1(v)]\right) \right\}}</script></li>
-</ul>
-</li>
-</ul>
-<h3 id="formulating-the-objective-and-designing-model-training-procedure"><a href="#formulating-the-objective-and-designing-model-training-procedure" class="headerlink" title="formulating the objective and designing model training procedure"></a>formulating the objective and designing model training procedure</h3><p>graph context loss:</p>
-<script type="math/tex; mode=display">o_2 = \sum_{\langle v, v_c, v_{c'} \rangle \in \mathcal{T}_{walk}} \log \sigma(\mathbf{E}_{v_c} \cdot \mathbf{E}_v) + \log \sigma(-\mathbf{E}_{v_c'} \cdot \mathbf{E}_v)</script><ul>
-<li>$v_c$: context node(neighbor of $c$) positive sample</li>
-<li>$v_{c’}$: negative sample</li>
-</ul>
-<p>The embedding proximity of positively sampled nodes to c is maximized</p>
-<h2 id="Experiments"><a href="#Experiments" class="headerlink" title="Experiments"></a>Experiments</h2><h3 id="link-prediction"><a href="#link-prediction" class="headerlink" title="link prediction"></a>link prediction</h3><p>a binary logistic classifier</p>
-<h3 id="Recommendation"><a href="#Recommendation" class="headerlink" title="Recommendation"></a>Recommendation</h3><p>personalized node recommendation: author-venue link</p>
-<ul>
-<li>preference score: the inner-product between embeddings of 2 nodes</li>
-</ul>
-<h3 id="Classification-and-Clustering"><a href="#Classification-and-Clustering" class="headerlink" title="Classification and Clustering"></a>Classification and Clustering</h3><h2 id="Hyper-parameters"><a href="#Hyper-parameters" class="headerlink" title="Hyper-parameters"></a>Hyper-parameters</h2><ul>
-<li>d: 128-256</li>
-<li>sampled size: 20-30(noise)</li>
-</ul>
-<h2 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h2><blockquote>
-<p>to read</p>
-</blockquote>
-
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2025/03/04/PaperReading-HetGNN/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -337,10 +276,16 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              
 
-              <time title="创建时间：2025-03-03 10:21:07 / 修改时间：10:39:31" itemprop="dateCreated datePublished" datetime="2025-03-03T10:21:07+08:00">2025-03-03</time>
+              <time title="创建时间：2025-03-03 10:21:07" itemprop="dateCreated datePublished" datetime="2025-03-03T10:21:07+08:00">2025-03-03</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2025-03-05 09:30:22" itemprop="dateModified" datetime="2025-03-05T09:30:22+08:00">2025-03-05</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
@@ -366,19 +311,14 @@
 <p>DOI:<br>publication: nature Scientific Data<br>Date of publication: 2023-12-18</p>
 </blockquote>
 <hr>
-<h2 id="PMC-Patient"><a href="#PMC-Patient" class="headerlink" title="PMC-Patient"></a>PMC-Patient</h2><p>for Retrieval-based Clinical Decision Support (ReCDS)</p>
-<ul>
-<li>from PubMed Central articles -&gt; patient summary</li>
-<li>citation graph -&gt; patient-article relevance &amp; patient&amp;patient similarity</li>
-</ul>
-<h3 id="Patient-to-article-Retrieval-ReCDS-PaR"><a href="#Patient-to-article-Retrieval-ReCDS-PaR" class="headerlink" title="Patient-to-article Retrieval (ReCDS-PaR)"></a>Patient-to-article Retrieval (ReCDS-PaR)</h3><h3 id="Patient-to-Patient-Retrieval-ReCDS-PPR"><a href="#Patient-to-Patient-Retrieval-ReCDS-PPR" class="headerlink" title="Patient-to-Patient Retrieval (ReCDS-PPR)"></a>Patient-to-Patient Retrieval (ReCDS-PPR)</h3><p>293k patient-patient similarity annotations</p>
-<ul>
-<li><p>same pmc article</p>
-</li>
-<li><p>citation</p>
-</li>
-</ul>
-
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2025/03/03/PMC_Patient/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -428,7 +368,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2025-03-04 13:42:42" itemprop="dateModified" datetime="2025-03-04T13:42:42+08:00">2025-03-04</time>
+                <time title="修改时间：2025-03-05 09:30:28" itemprop="dateModified" datetime="2025-03-05T09:30:28+08:00">2025-03-05</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -455,164 +395,14 @@
 <p>DOI:<br>publication: ICLR 2025 (POSTER)<br>Date of publication: 2024-10-31</p>
 </blockquote>
 <hr>
-<h2 id="Structure"><a href="#Structure" class="headerlink" title="Structure"></a>Structure</h2><p><img src="OCEAN_1.png" alt="OCEAN Structure"></p>
-<h3 id="Step-1-Modeling-Chain-of-Thought-as-MDP"><a href="#Step-1-Modeling-Chain-of-Thought-as-MDP" class="headerlink" title="Step 1: Modeling Chain of Thought as MDP"></a>Step 1: Modeling Chain of Thought as MDP</h3><ul>
-<li><p>CHAIN-OF-THOUGHT</p>
-<ul>
-<li>query $q$</li>
-<li><p>reasoning steps $\mathbf{c} = (c_1, c_2, \cdots, c_T)$</p>
-<p>  $c_t = \prod_{i=1}^{t-1} \pi_\theta(c_i|q, c_{&lt; i})$</p>
-</li>
-<li><p>answer $y = \pi_\theta(y|q, \mathbf{c}) \prod_{i=1}^T \pi_\theta(c_i|q, c_{&lt; i})$</p>
-</li>
-</ul>
-</li>
-<li><p>Markov Decision Process(MDP)</p>
-<ul>
-<li>Markov Property: The current state contains all the necessary information for the future state</li>
-<li>finite action space: token set $a_t \in |V|$<br>surrounding context: $c_t / a_t$</li>
-<li><p>every action step:</p>
-<p>  generate next state</p>
-<p>  $𝑠_{t+1}=[𝑠_𝑡, 𝑐_𝑡]$</p>
-<p>  reward to define policy</p>
-<p>  $r_t=r(𝑠_𝑡, 𝑐_𝑡)$</p>
-</li>
-</ul>
-</li>
-</ul>
-<h3 id="Step-2-Verbalized-Knowledge-Graph-Reasoning"><a href="#Step-2-Verbalized-Knowledge-Graph-Reasoning" class="headerlink" title="Step 2: Verbalized Knowledge Graph Reasoning"></a>Step 2: Verbalized Knowledge Graph Reasoning</h3><h4 id="modeling-tractory"><a href="#modeling-tractory" class="headerlink" title="modeling tractory"></a>modeling tractory</h4><ul>
-<li><p>trajectory</p>
-<ul>
-<li>query $q$ $\to$ decomposed triple $(e_0, r_1, e_1)$</li>
-<li><p>trajectory $h = (e_0, r_1, e_1, \cdots, r_t, e_t)$</p>
-<p>  $(r_t, e_t) = \prod_{i=1}^{t-1} \mu((r_i, e_i)|(e_0, r_1, e_1, \cdots, r_{i-1}, e_{i-1}))$</p>
-</li>
-<li><p>answer $e_t$</p>
-</li>
-</ul>
-</li>
-<li><p>trajectories set $\mathbb{H}=\{h_k\}_{k=1}^K$</p>
-<ul>
-<li>randomly sample</li>
-<li><p>self-consistent measurement</p>
-<ul>
-<li><p>Traditional self-consistency measures: Ask q multiple times, vote on the sample, and verify the answer unity</p>
-<blockquote>
-<p>Wang, X., Wei, J., Schuurmans, D., Le, Q., Chi, E., Narang, S., Chowdhery, A., &amp; Zhou, D. (2022). Self-consistency improves chain of thought reasoning in language models. arXiv preprint arXiv:2203.11171.</p>
-</blockquote>
-</li>
-</ul>
-</li>
-<li><p>trajectory $h$ ➡ verbalization $c$ ➡(GPT-4) question $q$(∗10) ➡ query $q$ ➡ answer $\hat{y}$</p>
-<ul>
-<li>prompt GPT4 to generate questions relative to $e_0$, and take $e_T$ as answer, reasoning as $c$</li>
-<li>normalized accuracy as reward $R(h|c) = E[\mathbf{1}\{e_T = \hat{y}\}]$</li>
-<li><p>train preference policy $\mu_\phi$ in a small LLM(base model here: GPT2-Medium)</p>
-<script type="math/tex; mode=display">\nabla_\phi J(\phi) = \nabla_\phi \sum_{k=1}^{K}\sum_{t=0}^{|c_k|-1} R(h_k|c_k)log \mu_{\phi}(y_{k,t}| q_k, y_{k, <t})</script></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<h4 id="trajectory-to-model-policy"><a href="#trajectory-to-model-policy" class="headerlink" title="trajectory to model policy"></a>trajectory to model policy</h4><p>$\mu \to \mu_{\phi}$</p>
-<h3 id="Step-3-OCEAN-Aligning-KG-amp-CoT"><a href="#Step-3-OCEAN-Aligning-KG-amp-CoT" class="headerlink" title="Step 3: OCEAN: Aligning KG &amp; CoT"></a>Step 3: OCEAN: Aligning KG &amp; CoT</h3><ul>
-<li><p>Inverse propensity scores(IPS)</p>
-<ul>
-<li>Behavior Policy: The policy used to collect data</li>
-<li>Target Policy: A policy that you want to evaluate or optimize</li>
-<li>Propensity Score: the probability that the behavior strategy chooses an action in a certain state</li>
-<li>IPS: represents the expected reward (weighted) of the target strategy given the sample data.</li>
-<li>bias: in data selection<br>  base policy &amp; preference policy have differences in data distribution</li>
-<li>$\hat{R}_{IPS} = \frac 1 N \sum_{i=1}^N \frac{Y_i}{P(A_i | S_i)}$</li>
-</ul>
-</li>
-<li><p><strong>KG-IPS</strong> estimator</p>
-<script type="math/tex; mode=display">\hat{V}_{KG-IPS}(\theta) = \frac 1 N \sum_{i=1}^N \frac 1 T_i\sum_{t=1}^{T_i}\frac 1 {|c_t^{(i)}|}\sum_{v \in c_t^{(i)}}\frac{\pi_\theta(v|s_t(i))}{\lambda(v|s_t^{(i)})}log \pi_0(v|s_t^{(i)})</script><script type="math/tex; mode=display">\lambda(v|s_t^{(i)}) = \mathbf{1} \{v \in a_t^{(i)}\} \cdot \mu_\phi(v|s_t^{(i)}) + \mathbf{1} \{v \in c_t^{(i)} / a_t^{(i)}\} \cdot \pi_0(v|s^{(i)})</script><ul>
-<li>base policy $\pi_0$</li>
-<li>goal LLM $\pi_\theta$</li>
-<li>propensity score $\lambda$</li>
-</ul>
-</li>
-</ul>
-<h4 id="KG-IPS-feature-Unbias"><a href="#KG-IPS-feature-Unbias" class="headerlink" title="KG-IPS feature: Unbias"></a>KG-IPS feature: Unbias</h4><p><em>proof</em>: The expectation of the value function converges to the target expectation</p>
-<ul>
-<li>For entity token $v \in a_t^{(i)}$: KG preference policy $\mu_\phi$</li>
-<li>For non-entity tokens $v \in c_t^{(i)} / a_t^{(i)}$: base model policy $\pi_0$</li>
-</ul>
-<h4 id="KG-IPS-feature-Confidence-Lower-Bound-on-the-Variance"><a href="#KG-IPS-feature-Confidence-Lower-Bound-on-the-Variance" class="headerlink" title="KG-IPS feature: Confidence Lower Bound on the Variance"></a>KG-IPS feature: Confidence Lower Bound on the Variance</h4><p>the variance of <strong>KG-IPS</strong> is lower bounded by $\frac {M^2}{4n}$</p>
-<p>$M$ maxinum of reward<br>$n$ sample num</p>
-<p>Stable and reliable strategy</p>
-<h4 id="KG-IPS-feature-Consistency-of-Rewards"><a href="#KG-IPS-feature-Consistency-of-Rewards" class="headerlink" title="KG-IPS feature: Consistency of Rewards"></a>KG-IPS feature: Consistency of Rewards</h4><p><em>Lemma. Two reward functions from the same equivalence class induce the same optimal policy under the constrained RL problem.</em></p>
-<blockquote>
-<p>Rafailov, R., Sharma, A., Mitchell, E., Manning, C. D., Ermon, S., &amp; Finn, C. (2024). Direct preference optimization: Your language model is secretly a reward model. Advances in Neural Information Processing Systems, 36.</p>
-</blockquote>
-<h2 id="Experiment-Result"><a href="#Experiment-Result" class="headerlink" title="Experiment Result"></a>Experiment Result</h2><h3 id="Experiment-Settings"><a href="#Experiment-Settings" class="headerlink" title="Experiment Settings"></a>Experiment Settings</h3><ul>
-<li>focus * 3<ul>
-<li>knowledge-intensive reasoning : deeper domain</li>
-<li>multi-hop reasoning : implicit reasoning</li>
-<li>commonsense reasoning</li>
-</ul>
-</li>
-<li>baseline<ul>
-<li>backbone LLM(instruction fine-tuned version)<ul>
-<li>Gemma-2 (2B)</li>
-<li>Llama-3 (8B)</li>
-<li>Phi-3.5-mini (3.8B)</li>
-<li>Mistral-0.2 (7B)</li>
-</ul>
-</li>
-<li>supervised fine-tuning</li>
-</ul>
-</li>
-<li>OCEAN<ul>
-<li>reasoning QA: Complex Web Questions(CWQ)</li>
-<li>KG: Wikidata5M </li>
-</ul>
-</li>
-</ul>
-<h3 id="Results-Analysis"><a href="#Results-Analysis" class="headerlink" title="Results Analysis"></a>Results Analysis</h3><ul>
-<li>SFT limitations: the risk of editing direct knowledge of the model (conflict between knowledge graph and model knowledge); Transformation of domain knowledge; high impact of potential catastrophic forgetting of commonsense knowledge</li>
-<li>OCEAN :<ul>
-<li>do not edit the internal knowledge of the model; strong generalization ability of downstream tasks</li>
-<li>comparable to backbone llm in terms of no additional knowledge and simple common sense problems</li>
-<li>comparable to backbone llm in In-Context Learning and Instruction-Tuning(LoRA)</li>
-<li>Equal or better response diversity and answer faithfulness</li>
-</ul>
-</li>
-<li><p>backbone LLM: Lack of additional knowledge</p>
-</li>
-<li><p>Case Study<br>  more acurate and consise in CoT</p>
-</li>
-</ul>
-<h2 id="NOTES"><a href="#NOTES" class="headerlink" title="NOTES:"></a>NOTES:</h2><h3 id="KG-amp-CoT-Previous-Work"><a href="#KG-amp-CoT-Previous-Work" class="headerlink" title="KG &amp; CoT Previous Work"></a>KG &amp; CoT Previous Work</h3><ul>
-<li><p>Verify-and-edit framework<br>  Model self validation &amp; editing</p>
-<blockquote>
-<p>Ruochen Zhao, Xingxuan Li, Shafiq Joty, Chengwei Qin, and Lidong Bing. “Verify-and-edit: A knowledge-enhanced chain-of-thought framework.” In Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers), pp. 5823–5840, Toronto, Canada, July 2023. doi: 10.18653/v1/2023.acl-long.320.</p>
-</blockquote>
-</li>
-<li><p>Retrieval-Augmented Thoughts, RAT<br>  Dynamic retrieval &amp; long context awareness</p>
-<blockquote>
-<p>Zihao Wang, Anji Liu, Haowei Lin, Jiaqi Li, Xiaojian Ma, and Yitao Liang. “RAT: Retrieval-Augmented Thoughts Elicit Context-Aware Reasoning in Long-Horizon Generation.” arXiv preprint arXiv:2403.05313, 2024.</p>
-</blockquote>
-</li>
-<li><p>Chain-of-Knowledge<br>  Dynamically select &amp; update multiple knowledge sources (similar to attention mechanism)</p>
-<blockquote>
-<p>Xingxuan Li, Ruochen Zhao, Yew Ken Chia, Bosheng Ding, Shafiq Joty, Soujanya Poria, and Lidong Bing. “Chain-of-Knowledge: Grounding Large Language Models via Dynamic Knowledge Adapting over Heterogeneous Sources.” In The Twelfth International Conference on Learning Representations, 2024.</p>
-</blockquote>
-</li>
-</ul>
-<h3 id="Highlights"><a href="#Highlights" class="headerlink" title="Highlights"></a>Highlights</h3><ul>
-<li>Model Alignment: Knowledge Graph Structure &amp; Multi-Hop Reasoning Paths</li>
-<li>Complete and Rigorous KG-IPS Theoretical Analysis</li>
-<li>Verification of Performance on Conventional Tasks</li>
-<li>Reducing Dependence on Training with Human Feedback Data</li>
-</ul>
-<h3 id="Limitation"><a href="#Limitation" class="headerlink" title="Limitation"></a>Limitation</h3><ul>
-<li>Knowledge Graph Bias (Dependence on High-Quality Knowledge Graphs)</li>
-<li>Reduced Adaptability of the Model to Unstructured/New Data</li>
-<li>Not Compared with Knowledge Graph-Based RAG (Does Not Suffer from Common Sense/Domain Knowledge Conflicts Like SFT)</li>
-</ul>
-
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2025/02/25/OCEAN/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 

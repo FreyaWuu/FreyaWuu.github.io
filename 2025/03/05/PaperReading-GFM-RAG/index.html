@@ -29,7 +29,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://freyawuu.github.io/2025/03/05/PaperReading-GFM-RAG/GFM-RAG_1.png">
 <meta property="article:published_time" content="2025-03-05T07:10:13.000Z">
-<meta property="article:modified_time" content="2025-03-05T13:59:52.474Z">
+<meta property="article:modified_time" content="2025-03-10T12:41:27.409Z">
 <meta property="article:author" content="Freya Wu">
 <meta property="article:tag" content="graph">
 <meta property="article:tag" content="RAG">
@@ -198,10 +198,16 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              
 
-              <time title="创建时间：2025-03-05 15:10:13 / 修改时间：21:59:52" itemprop="dateCreated datePublished" datetime="2025-03-05T15:10:13+08:00">2025-03-05</time>
+              <time title="创建时间：2025-03-05 15:10:13" itemprop="dateCreated datePublished" datetime="2025-03-05T15:10:13+08:00">2025-03-05</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2025-03-10 20:41:27" itemprop="dateModified" datetime="2025-03-10T20:41:27+08:00">2025-03-10</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
@@ -230,8 +236,22 @@
 <span id="more"></span>
 <p>a graph-enhanced retriever</p>
 <p>multi-jump Reasoning on graph &amp; multi-hop retrieval</p>
-<p><img src="GFM-RAG_1.png" alt="GFM-RAG"></p>
-<h2 id="KG-index"><a href="#KG-index" class="headerlink" title="KG-index"></a>KG-index</h2><h2 id="GFM-retriever"><a href="#GFM-retriever" class="headerlink" title="GFM retriever"></a>GFM retriever</h2><script type="math/tex; mode=display">H_q^L = GNN_q(q,G,H_0)</script><p>capturing query-specific info. in GNN</p>
+<h2 id="GFM-RAG-structure"><a href="#GFM-RAG-structure" class="headerlink" title="GFM-RAG structure"></a>GFM-RAG structure</h2><p><img src="GFM-RAG_1.png" alt="GFM-RAG"></p>
+<h3 id="KG-index"><a href="#KG-index" class="headerlink" title="KG-index"></a>KG-index</h3><h3 id="GFM-retriever"><a href="#GFM-retriever" class="headerlink" title="GFM retriever"></a>GFM retriever</h3><script type="math/tex; mode=display">H_q^L = GNN_q(q,G,H_0)</script><p>capturing query-specific info. in GNN</p>
+<h2 id="Training"><a href="#Training" class="headerlink" title="Training"></a>Training</h2><h3 id="step-1-unsupervised-KG-completion"><a href="#step-1-unsupervised-KG-completion" class="headerlink" title="step 1: unsupervised KG completion"></a>step 1: unsupervised KG completion</h3><ul>
+<li><p>sample a set of triples from KG $q = (e, r, e’)$</p>
+</li>
+<li><p>mask head or tail entity</p>
+</li>
+<li><p>query $q = (e, r, ?)$ or $q = (?, r, e’)$</p>
+</li>
+<li><p>predict the masked entity from $q$ and KG</p>
+</li>
+</ul>
+<h3 id="step-2-supervised"><a href="#step-2-supervised" class="headerlink" title="step 2: supervised"></a>step 2: supervised</h3><ul>
+<li>$q$: natural language questions</li>
+<li>labeled target entity</li>
+</ul>
 
     </div>
 
@@ -313,7 +333,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#GFM-RAG-GraphFoundation-Model-for-Retrieval-Augmented-Generation"><span class="nav-number">1.</span> <span class="nav-text">GFM-RAG:GraphFoundation Model for Retrieval Augmented Generation</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#KG-index"><span class="nav-number">1.1.</span> <span class="nav-text">KG-index</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#GFM-retriever"><span class="nav-number">1.2.</span> <span class="nav-text">GFM retriever</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#GFM-RAG-GraphFoundation-Model-for-Retrieval-Augmented-Generation"><span class="nav-number">1.</span> <span class="nav-text">GFM-RAG:GraphFoundation Model for Retrieval Augmented Generation</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#GFM-RAG-structure"><span class="nav-number">1.1.</span> <span class="nav-text">GFM-RAG structure</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#KG-index"><span class="nav-number">1.1.1.</span> <span class="nav-text">KG-index</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#GFM-retriever"><span class="nav-number">1.1.2.</span> <span class="nav-text">GFM retriever</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Training"><span class="nav-number">1.2.</span> <span class="nav-text">Training</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#step-1-unsupervised-KG-completion"><span class="nav-number">1.2.1.</span> <span class="nav-text">step 1: unsupervised KG completion</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#step-2-supervised"><span class="nav-number">1.2.2.</span> <span class="nav-text">step 2: supervised</span></a></li></ol></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 

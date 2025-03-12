@@ -136,7 +136,7 @@
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">56</span></a>
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">57</span></a>
 
   </li>
   </ul>
@@ -165,6 +165,80 @@
 
           <div class="content index posts-expand">
             
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://freyawuu.github.io/2022/04/04/sstream/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="Freya Wu">
+      <meta itemprop="description" content="QwQ My trashbin here">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Freya Wu の blogs">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2022/04/04/sstream/" class="post-title-link" itemprop="url">sstream载入流的小笔记</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2022-04-04 12:49:41 / 修改时间：21:59:12" itemprop="dateCreated datePublished" datetime="2022-04-04T12:49:41+08:00">2022-04-04</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/C/" itemprop="url" rel="index"><span itemprop="name">C++</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="stringstream-载入流"><a href="#stringstream-载入流" class="headerlink" title="stringstream 载入流"></a>stringstream 载入流</h1><hr>
+<h2 id="1-int"><a href="#1-int" class="headerlink" title="1.int"></a>1.int</h2><p>读入当前指针所指的数字后并自动跳过后面的<code>tab</code> <code>\n</code> <code>\0</code><br>如==1 3== 一开始指向1 读完1后指向3</p>
+<h2 id="2-char"><a href="#2-char" class="headerlink" title="2.char"></a>2.char</h2><p>也会跳过空格等，但是无法跳过/读到<code>eof</code>,只能让它强行读下一个<br>==a b c== 读完a指b 读完b指c 读完c还是c 再读一次指向eof</p>
+<ul>
+<li>此条没查到 是我猜的，暂时未与实践矛盾</li>
+</ul>
+<h2 id="3-string"><a href="#3-string" class="headerlink" title="3.string"></a>3.string</h2><p>读入当前位置开始至缓冲结束 类似 <code>.str()</code><br>移动到下一个开始处<br>==abc cba== 读完abc后指向c</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
       
   
   
@@ -1244,98 +1318,6 @@ f_z(z)=  \left\{
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://freyawuu.github.io/2022/03/19/Linear%20Algebra/%E7%BA%BF%E6%80%A7%E6%96%B9%E7%A8%8B%E7%BB%84%E4%B8%8E%E7%9F%A9%E9%98%B5/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.jpg">
-      <meta itemprop="name" content="Freya Wu">
-      <meta itemprop="description" content="QwQ My trashbin here">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Freya Wu の blogs">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2022/03/19/Linear%20Algebra/%E7%BA%BF%E6%80%A7%E6%96%B9%E7%A8%8B%E7%BB%84%E4%B8%8E%E7%9F%A9%E9%98%B5/" class="post-title-link" itemprop="url">线性方程组与矩阵</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2022-03-19 10:58:33" itemprop="dateCreated datePublished" datetime="2022-03-19T10:58:33+08:00">2022-03-19</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2022-04-02 23:28:52" itemprop="dateModified" datetime="2022-04-02T23:28:52+08:00">2022-04-02</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/linear-algebra/" itemprop="url" rel="index"><span itemprop="name">linear algebra</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <hr>
-<h2 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h2><ul>
-<li>数域：对四则运算封闭</li>
-<li>齐次/非齐次</li>
-<li>对角矩阵A=diag($a_{11},…$); </li>
-<li>单位矩阵E/I</li>
-<li>对称矩阵$a_{i,j}=a_{j,i}$</li>
-<li>反对称矩阵$a_{i,j}=-a_{j,i}$</li>
-<li>阶梯型矩阵 简化阶梯型(行最简型，规范阶梯型，厄密特标准型)</li>
-<li>标准矩阵</li>
-</ul>
-<h2 id="初等行变换"><a href="#初等行变换" class="headerlink" title="初等行变换"></a>初等行变换</h2><pre><code>交换 k倍 k倍加
-</code></pre><ul>
-<li>性质 同解</li>
-</ul>
-<p><em>线性方程组的高斯消元法：把增广矩阵通过初等行变换化成简化阶梯型矩阵</em><br>非零行r，系数矩阵行s与解的关系 略</p>
-<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-<script type="text/x-mathjax-config">
-  MathJax.Hub.Config({ tex2jax: {inlineMath: [['$', '$']]}, messageStyle: "none" });
-</script>
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
@@ -1407,7 +1389,7 @@ f_z(z)=  \left\{
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">56</span>
+          <span class="site-state-item-count">57</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>

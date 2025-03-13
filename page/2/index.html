@@ -136,7 +136,7 @@
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">57</span></a>
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">58</span></a>
 
   </li>
   </ul>
@@ -165,6 +165,219 @@
 
           <div class="content index posts-expand">
             
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://freyawuu.github.io/2024/05/29/EmbeddedSystem/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="Freya Wu">
+      <meta itemprop="description" content="QwQ My trashbin here">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Freya Wu の blogs">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2024/05/29/EmbeddedSystem/" class="post-title-link" itemprop="url">Embedded System</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2024-05-29 07:28:02" itemprop="dateCreated datePublished" datetime="2024-05-29T07:28:02+08:00">2024-05-29</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2025-02-25 09:53:01" itemprop="dateModified" datetime="2025-02-25T09:53:01+08:00">2025-02-25</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/note/" itemprop="url" rel="index"><span itemprop="name">note</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="嵌入式计算机系统"><a href="#嵌入式计算机系统" class="headerlink" title="嵌入式计算机系统"></a>嵌入式计算机系统</h1><h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><p>1）HWI 硬件中断</p>
+<p>2）I/O 输入输出接口，按键，LED灯，LCD显示等</p>
+<p>3）Timer/Counter定时/计数器</p>
+<p>4）UART,SPI,I2C等通信接口</p>
+<p>5）ADC，DAC，DMA等其他外设</p>
+<ul>
+<li><p>医疗仪器的发展趋势</p>
+<ul>
+<li>小型化</li>
+<li>高集成度</li>
+<li>智能化</li>
+<li>低功耗</li>
+<li>从医院走向家庭（个人）</li>
+<li>从有线过渡到无线</li>
+</ul>
+</li>
+<li><p>嵌入式计算机系统</p>
+<ul>
+<li><p>定义: 嵌入式系统是以应用为中心、计算机技术为基础，软、硬件可裁剪，适应应用系统对功能、可靠性、成本、体积、功耗严格要求的专用计算机系统。(通用计算机以外的数字计算机)</p>
+</li>
+<li><p>特点</p>
+<ul>
+<li>功耗低</li>
+<li>体积小/便携</li>
+<li>专用性强/面向特定应用</li>
+<li>可靠性好</li>
+<li>不具备自主开发能力</li>
+<li>低成本</li>
+</ul>
+</li>
+<li><p>架构</p>
+<ul>
+<li>硬件层(嵌入式处理器(CPU=ALU+)/存储器/通用设备接口/IO接口)</li>
+<li>中间层(硬件初始化/相关设备驱动程序)</li>
+<li>系统软件层(嵌入式操作系统/文件系统/图形用户接口GUI/网络系统/通用组件模块)</li>
+<li>用户应用软件层<br><img src="image-58.png" alt="alt text"></li>
+</ul>
+</li>
+<li><p>核心部件</p>
+<ul>
+<li>CPU</li>
+<li><p>内部总线</p>
+<p>程序存储器与数据存储器分开的地址编码结构称为哈佛结构(MCS-51 系列微处理器)</p>
+<p>冯诺依曼结构:合并(MSP430)</p>
+</li>
+<li><p>外设 片内+片外</p>
+</li>
+</ul>
+</li>
+<li><p>操作系统(!=开发环境!!!)</p>
+<ul>
+<li><p>实时操作系统</p>
+</li>
+<li><p>分时操作系统: 给多个终端/分时操作系统比实时操作系统对任务的管理调度效率更高</p>
+</li>
+<li><p>无操作系统: 裸机应用-应用程序直接运行在硬件上。</p>
+</li>
+</ul>
+</li>
+<li><p>分类 (嵌入式芯片: 集成)</p>
+<ul>
+<li><p>MCU(Microcontroller Unit-嵌入式微控制器) 高性能 去冗余</p>
+</li>
+<li><p>MPU(Microprocessor Unit-嵌入式微处理器) 一种只包含处理器核心的微处理器(单片机)</p>
+</li>
+<li><p>DSP(Digital Signal Processing-嵌入式数字信号处理器)</p>
+</li>
+<li><p>SOC(System On Chip-嵌入式片上系统) 综合性 硬件描述语言</p>
+</li>
+</ul>
+</li>
+<li><p>发展趋势</p>
+<ul>
+<li>系统性</li>
+<li>网络信息化</li>
+<li>精简，低成本低功耗</li>
+<li>友好的界面</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>开发环境</p>
+<p>软件仿真/硬件仿真</p>
+<p>在线调试/离线调试 无法读取处理器memory或register</p>
+</li>
+</ul>
+<p>CPU 的位宽: 数据总线的宽度和寄存器的长度</p>
+<h2 id="MCS51"><a href="#MCS51" class="headerlink" title="MCS51"></a>MCS51</h2><h2 id="MSP430"><a href="#MSP430" class="headerlink" title="MSP430"></a>MSP430</h2><h3 id="USCI"><a href="#USCI" class="headerlink" title="USCI"></a>USCI</h3><blockquote>
+<p>Universal Serial Communication Interface 通用串行接口模块</p>
+</blockquote>
+<ul>
+<li>支持模式<ul>
+<li>USCI_A: UART/SPI/<code>还有另外两种不要求</code></li>
+<li>USCI_B: IIC/SPI</li>
+<li><mark>需要记住:USCI_A有4种模式，B有2种模式<mark></mark></mark></li>
+</ul>
+</li>
+</ul>
+<h2 id="SPI"><a href="#SPI" class="headerlink" title="SPI"></a>SPI</h2><blockquote>
+<p>Serial Peripheral Interface 串行外设接口</p>
+</blockquote>
+<p><img src="image-31.png" alt="alt text"><br>全双工/同步/串行/环形总线结构/一主机多从机（不可同时多从机通讯）</p>
+<ul>
+<li>串行时钟线(SCK)：主设备的输出，从设备的输入</li>
+<li>主机输入/从机输出数据线(MISO)：主设备输入/从设备输出引脚。</li>
+<li>主机输出/从机输入数据线(MOSI)：主设备输出/从设备输入引脚。</li>
+<li>从机选择线(NSS)：低电平有效片选。</li>
+</ul>
+<p>ps 从机可 低功耗4模式</p>
+<ul>
+<li><p>features</p>
+<ul>
+<li>7位或8位数据长度</li>
+<li>lsb-first或MSB-first</li>
+<li>3引脚/4引脚SPI操作</li>
+<li>主从模式</li>
+<li>独立发送和接收移位寄存器</li>
+<li>独立发送和接收缓冲寄存器</li>
+<li>连续发送和接收操作</li>
+<li>可选时钟极性和相位控制</li>
+<li>主模式可编程时钟频率</li>
+<li>接收和发送独立中断</li>
+<li>从操作可LPM4</li>
+</ul>
+</li>
+<li><p>寄存器</p>
+<ul>
+<li>UCSYNC set: 选择SPI模式</li>
+<li>UCMODEX : 3-PIN/4-PIN</li>
+<li>发送：<ul>
+<li>主机模式: 写UCxTXBUF</li>
+<li>从机模式: UCxSTE(片选)低电平有效时</li>
+</ul>
+</li>
+<li>接收: 发送时自动接收</li>
+<li>UCBUSY =1 : 收发进行中</li>
+</ul>
+</li>
+</ul>
+<h3 id="基于SPI的TFT模块"><a href="#基于SPI的TFT模块" class="headerlink" title="基于SPI的TFT模块"></a>基于SPI的TFT模块</h3><p>可串行或并行控制~</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
       
   
   
@@ -2765,107 +2978,6 @@ H(u,v)=
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://freyawuu.github.io/2023/07/12/article%20notes/Surgical_data_science_for_next-generation_interventions/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.jpg">
-      <meta itemprop="name" content="Freya Wu">
-      <meta itemprop="description" content="QwQ My trashbin here">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Freya Wu の blogs">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2023/07/12/article%20notes/Surgical_data_science_for_next-generation_interventions/" class="post-title-link" itemprop="url">Surgical data science for next-generation interventions</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-              
-
-              <time title="创建时间：2023-07-12 13:37:20 / 修改时间：15:55:13" itemprop="dateCreated datePublished" datetime="2023-07-12T13:37:20+08:00">2023-07-12</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/article-notes/" itemprop="url" rel="index"><span itemprop="name">article notes</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="Surgical-data-science-for-next-generation-interventions"><a href="#Surgical-data-science-for-next-generation-interventions" class="headerlink" title="Surgical data science for next-generation interventions"></a>Surgical data science for next-generation interventions</h1><h2 id="Basic-Information"><a href="#Basic-Information" class="headerlink" title="Basic Information"></a>Basic Information</h2><ul>
-<li>link: <a target="_blank" rel="noopener" href="https://www.nature.com/articles/s41551-017-0132-7">https://www.nature.com/articles/s41551-017-0132-7</a></li>
-<li>abstract: basic applications and problems of surgical data science</li>
-</ul>
-<h2 id="applications"><a href="#applications" class="headerlink" title="applications"></a>applications</h2><h3 id="Decision-support"><a href="#Decision-support" class="headerlink" title="Decision support"></a>Decision support</h3><blockquote>
-<p>whether to operate/type of surgery</p>
-</blockquote>
-<p>Leakage of full record</p>
-<h3 id="Context-aware-assistance"><a href="#Context-aware-assistance" class="headerlink" title="Context-aware assistance"></a>Context-aware assistance</h3><blockquote>
-<p>monitor procedures(remaining duration prediction / resources scheduling)</p>
-</blockquote>
-<ul>
-<li>needle navigation</li>
-<li>perfusion monitoring</li>
-<li>(assistant) decision support</li>
-<li>context-aware augmented reality</li>
-<li>cognitive robotics</li>
-</ul>
-<h3 id="Surgical-training"><a href="#Surgical-training" class="headerlink" title="Surgical training"></a>Surgical training</h3><blockquote>
-<p>simulation and assessment</p>
-</blockquote>
-<h2 id="challenges"><a href="#challenges" class="headerlink" title="challenges"></a>challenges</h2><h3 id="data"><a href="#data" class="headerlink" title="data"></a>data</h3><p>source / privacy concerns / unstandardized / cooperation with scenarios(resource-intensive)</p>
-<h3 id="analysis"><a href="#analysis" class="headerlink" title="analysis"></a>analysis</h3><p>1.modelling orchestrated actions(medical teams) and response (patients)<br>2.robustness(irreversible)<br>3.rapid<br>4.highly specific<br>5.integrated with other…</p>
-<h3 id="incentives"><a href="#incentives" class="headerlink" title="incentives??"></a>incentives??</h3><blockquote>
-<p>(balance with clinical practice)</p>
-</blockquote>
-<p>society support-&gt;database</p>
-<h3 id="industry"><a href="#industry" class="headerlink" title="industry"></a>industry</h3><p>need of market opportunities<br>hurdles of data regulation</p>
-<h3 id="patients"><a href="#patients" class="headerlink" title="patients??"></a>patients??</h3><blockquote>
-<p>(cogent and user-friendly surgical data science)</p>
-</blockquote>
-<ul>
-<li>da Vinci surgical system</li>
-</ul>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
@@ -2937,7 +3049,7 @@ H(u,v)=
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">57</span>
+          <span class="site-state-item-count">58</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>

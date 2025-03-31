@@ -136,7 +136,7 @@
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">59</span></a>
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">60</span></a>
 
   </li>
   </ul>
@@ -165,6 +165,154 @@
 
           <div class="content index posts-expand">
             
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://freyawuu.github.io/2022/04/13/higher%20mathematics/%E6%9B%B2%E7%BA%BF%E7%A7%AF%E5%88%86%E5%92%8C%E6%9B%B2%E9%9D%A2%E7%A7%AF%E5%88%86/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="Freya Wu">
+      <meta itemprop="description" content="QwQ My trashbin here">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Freya Wu の blogs">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2022/04/13/higher%20mathematics/%E6%9B%B2%E7%BA%BF%E7%A7%AF%E5%88%86%E5%92%8C%E6%9B%B2%E9%9D%A2%E7%A7%AF%E5%88%86/" class="post-title-link" itemprop="url">曲线积分和曲面积分</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2022-04-13 10:24:12" itemprop="dateCreated datePublished" datetime="2022-04-13T10:24:12+08:00">2022-04-13</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2022-06-08 11:09:07" itemprop="dateModified" datetime="2022-06-08T11:09:07+08:00">2022-06-08</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/higher-mathematics/" itemprop="url" rel="index"><span itemprop="name">higher mathematics</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="第一类"><a href="#第一类" class="headerlink" title="第一类"></a>第一类</h1><p>无方向性</p>
+<h2 id="第一类曲线积分"><a href="#第一类曲线积分" class="headerlink" title="第一类曲线积分"></a>第一类曲线积分</h2><p>$\int_Cf(x,y)ds=\int_{\alpha}^\beta f(x(t),y(t))\sqrt{x’^2(t)+y’^2(t)}dt$</p>
+<blockquote>
+<p>单参数形式</p>
+</blockquote>
+<h2 id="第一类曲面积分"><a href="#第一类曲面积分" class="headerlink" title="第一类曲面积分"></a>第一类曲面积分</h2><ul>
+<li><p>$z=z(x,y)$<br>$\iint_c f(x,y,z)ds=\iint_{D_{xy}}f(x,y,z(x,y))\sqrt{1+z_x^2+z_y^2}dxdy$</p>
+</li>
+<li><p>$x=x(u,v)$</p>
+<ul>
+<li>$\iint_c f(x,y,z)ds=\iint_{D_{uv}}f(x(u,v),y(u,v),z(u,v))\sqrt{EG-F^2}dudv$<blockquote>
+<p>$E=r_u \cdot r_u…$</p>
+</blockquote>
+</li>
+<li>$\iint_c f(x,y,z)ds=\iint_{D_{uv}}f(x(u,v),y(u,v),z(u,v))\sqrt{A^2+B^2+C^2}dudv$<blockquote>
+<p>$A=\frac{\partial(y,z)}{\partial(u,v)},…(x,y,z)轮换$</p>
+</blockquote>
+</li>
+<li>or $r=r(u,v)=(x(u,v),y(u,v),z(u,v)),(A,B,C)=r_u \times r_v,dS=|r_u \times r_v|dudv$<blockquote>
+<p><em>关键在于积分函数的转换</em></p>
+</blockquote>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="第二类曲线积分"><a href="#第二类曲线积分" class="headerlink" title="第二类曲线积分"></a>第二类曲线积分</h2><p>用一个变量表示出曲线带进去即可</p>
+<h2 id="第二类曲面积分-通量积分"><a href="#第二类曲面积分-通量积分" class="headerlink" title="第二类曲面积分(通量积分)"></a>第二类曲面积分(通量积分)</h2><blockquote>
+<p>双侧曲面：法向量转一圈回来后不变</p>
+</blockquote>
+<p>$n^0=\displaystyle\frac{\pm 1}{\sqrt{1+z_x^2+z_y^2}}(-z_x,-z_y,1)$</p>
+<p>$\iint F(x,y,z) \cdot n^0 dS=\iint P(x,y,z)dydz+Q(x,y,z)dzdx+R(x,y,z)dxdy$</p>
+<blockquote>
+<p>慎用对称性</p>
+</blockquote>
+<ul>
+<li><p>$z=z(x,y)$<br>$\iint P(x,y,z)dydz+Q(x,y,z)dzdx+R(x,y,z)dxdy=\pm \iint (-Pz_x-Pz_y+R)dxdy$<br>代入即可，注意正负</p>
+</li>
+<li><p>$x=x(u,v),y=y(u,v),z=z(u,v)$<br>$\iint_{\sum} D\cdot dS=\pm\iint_D (PA+QB+RC) dudv$</p>
+<p>$r_u\times r_v=(A,B,C)$</p>
+<p>$\pm $与$(A,B,C)$和定侧想对应</p>
+</li>
+<li><p>三个坐标面分别投影计算<br>略</p>
+</li>
+</ul>
+<h1 id="Green-公式"><a href="#Green-公式" class="headerlink" title="Green 公式"></a>Green 公式</h1><blockquote>
+<p>单连通/复联通<br>连续偏导数！+闭曲线+正方向</p>
+</blockquote>
+<p>$\oint_{C^+}Pdx+Qdy=\iint_D(\displaystyle\frac{\partial Q}{\partial x}-\displaystyle\frac{\partial P}{\partial y})dxdy$</p>
+<blockquote>
+<p>挖 补 围</p>
+</blockquote>
+<h2 id="平面区域的面积公式"><a href="#平面区域的面积公式" class="headerlink" title="平面区域的面积公式"></a>平面区域的面积公式</h2><p>$A_D=\iint_D dxdy=-\oint_{C^+}ydx=\oint_{C^+}xdy=\frac1 2\oint_{C^+}xdy-ydx$</p>
+<h2 id="平面曲线积分与路径的无关性"><a href="#平面曲线积分与路径的无关性" class="headerlink" title="平面曲线积分与路径的无关性"></a>平面曲线积分与路径的无关性</h2><p><img src="2022-04-27-11-20-29.png" alt></p>
+<h2 id="全微分求积"><a href="#全微分求积" class="headerlink" title="全微分求积"></a>全微分求积</h2><blockquote>
+<p>先验证$Q_x=P_y$</p>
+</blockquote>
+<p>$du=Pdx+Qdy$<br>$u(x,y)=\int_{(x_0,y_0)}^{(x,y)}Pdx+Qdy$<br>$\int_A^B Pdx+Qdy=u(B)-u(A)$</p>
+<h3 id="计算"><a href="#计算" class="headerlink" title="计算"></a>计算</h3><ul>
+<li>曲线积分法</li>
+<li>偏积分法 //两边单独积分</li>
+<li>凑积分法 //凑成一堆积分加加减减</li>
+</ul>
+<h3 id="全微分方程"><a href="#全微分方程" class="headerlink" title="全微分方程"></a>全微分方程</h3><p>$Pdx+Qdy=0$<br>通解 $u(x,y)=c$</p>
+<blockquote>
+<p>积分因子</p>
+</blockquote>
+<h2 id="Gauss-公式"><a href="#Gauss-公式" class="headerlink" title="Gauss 公式"></a>Gauss 公式</h2><p>$\oiint_{S+}Pdydz+Qdzdx+Rdxdy=\iiint_{\Omega}=(\displaystyle\frac{\partial P}{\partial x}+\displaystyle\frac{\partial Q}{\partial y})+\displaystyle\frac{\partial R}{\partial z}dV$</p>
+<h3 id="体积计算公式"><a href="#体积计算公式" class="headerlink" title="体积计算公式"></a>体积计算公式</h3><p>$V=\frac 1 3 \oiint_{S+}xdydz+ydzdx+zdxdy$</p>
+<h3 id="散度"><a href="#散度" class="headerlink" title="散度"></a>散度</h3><p>$div F=\frac{\partial F}{\partial x}+ \frac{\partial F}{\partial y}+\frac{\partial F}{\partial z}$</p>
+<h3 id="Stokes-定理"><a href="#Stokes-定理" class="headerlink" title="Stokes 定理"></a>Stokes 定理</h3><p>$\oint_{\partial \Sigma+}Pdx+Qdy+Rdz=\iint_{\Sigma}(\displaystyle\frac{\partial R}{\partial y}-\displaystyle\frac{\partial Q}{\partial z})dydz+(\displaystyle\frac{\partial P}{\partial z}-\displaystyle\frac{\partial R}{\partial x})dzdx+(\displaystyle\frac{\partial Q}{\partial x}-\displaystyle\frac{\partial P}{\partial y})dxdy$</p>
+<h3 id="旋度"><a href="#旋度" class="headerlink" title="旋度"></a>旋度</h3><blockquote>
+<p>rot/cult</p>
+</blockquote>
+<p>$(\displaystyle\frac{\partial R}{\partial y}-\displaystyle\frac{\partial Q}{\partial z},\displaystyle\frac{\partial P}{\partial z}-\displaystyle\frac{\partial R}{\partial x},<br>\displaystyle\frac{\partial Q}{\partial x}-\displaystyle\frac{\partial P}{\partial y})$</p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>$\int_{\partial \Sigma}u=\int_{\Sigma}du$</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
       
   
   
@@ -845,473 +993,6 @@
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://freyawuu.github.io/2022/03/19/probability%20statistics/note/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.jpg">
-      <meta itemprop="name" content="Freya Wu">
-      <meta itemprop="description" content="QwQ My trashbin here">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Freya Wu の blogs">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2022/03/19/probability%20statistics/note/" class="post-title-link" itemprop="url">概统小笔记</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2022-03-19 10:58:34" itemprop="dateCreated datePublished" datetime="2022-03-19T10:58:34+08:00">2022-03-19</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2023-03-16 09:41:05" itemprop="dateModified" datetime="2023-03-16T09:41:05+08:00">2023-03-16</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/probability-statistics/" itemprop="url" rel="index"><span itemprop="name">probability statistics</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="概率"><a href="#概率" class="headerlink" title="概率"></a>概率</h1><h2 id="概型"><a href="#概型" class="headerlink" title="概型"></a>概型</h2><h3 id="古典概型"><a href="#古典概型" class="headerlink" title="古典概型"></a>古典概型</h3><blockquote>
-<p>有限个基本事件+可能性相同</p>
-</blockquote>
-<h3 id="几何概型"><a href="#几何概型" class="headerlink" title="几何概型"></a>几何概型</h3><blockquote>
-<p>基本事件无数多个, 对应点</p>
-</blockquote>
-<ul>
-<li>[ ] p13 例1.2.4 Buffon投针试验</li>
-<li><p>[ ] 贝特朗奇论 取等可能的条件</p>
-</li>
-<li><p>[ ] $P(A \bigcup B)P(AB) \le P(A)P(B)$ ??</p>
-</li>
-</ul>
-<h2 id="条件概率"><a href="#条件概率" class="headerlink" title="条件概率"></a>条件概率</h2><p>乘法公式 $P(AB)=P(A)P(B|A)=P(B)P(A|B)$<br>全概率公式 $P(A)=\sum_{i=1}^nP(B_i)P(A|B_i)$<br>Bayes公式 $P(B_i|A)=\displaystyle\frac{p(AB_i)}{P(A)}=\displaystyle\frac{P(B_i)P(A|B_i)}{\sum_{j=1}^{n}P(B_j)P(A|B_j)}$</p>
-<h2 id="独立性"><a href="#独立性" class="headerlink" title="独立性"></a>独立性</h2><p>$P(AB)=P(A)P(B)$</p>
-<blockquote>
-<p>多项独立还需要加上多项相乘的条件！</p>
-</blockquote>
-<hr>
-<h2 id="离散型随机变量"><a href="#离散型随机变量" class="headerlink" title="离散型随机变量"></a>离散型随机变量</h2><blockquote>
-<p>随机变量X有限个或可列无穷多个</p>
-<h3 id="0-1分布"><a href="#0-1分布" class="headerlink" title="0-1分布"></a>0-1分布</h3></blockquote>
-<p>$P(X=k)=p^k(1-p)^{1-k},k=0,1$</p>
-<h3 id="二项分布-Bernoulli概型"><a href="#二项分布-Bernoulli概型" class="headerlink" title="二项分布(Bernoulli概型)"></a>二项分布(Bernoulli概型)</h3><p><em>独立 重复 两个结果</em></p>
-<p>$P(X=k)=C_{n}^{k}p^k(1-p)^{1-k},k=0,1,\cdots ,n$</p>
-<ul>
-<li>$k&lt;(n+1)p$ : $\uparrow$</li>
-<li>$k&gt;(n+1)p$ : $\downarrow$</li>
-<li>max: $k=[(n+1)p]$<br>取整时 $(n+1)p-1$ 也取到max</li>
-</ul>
-<h3 id="负二项分布-Pascal分布"><a href="#负二项分布-Pascal分布" class="headerlink" title="负二项分布(Pascal分布)"></a>负二项分布(Pascal分布)</h3><ul>
-<li>[ ]<br>$P(X=k)=C_{k-1}^{r-1}p^r(1-p)^{k-r},k=r,r+1,\cdots ,$</li>
-</ul>
-<h4 id="几何分布"><a href="#几何分布" class="headerlink" title="几何分布"></a>几何分布</h4><p>r=1 时 $P(X=k)=(1-p)^{k-1}p$</p>
-<h3 id="泊松分布-Poisson"><a href="#泊松分布-Poisson" class="headerlink" title="泊松分布(Poisson)"></a>泊松分布(Poisson)</h3><p><em>无记忆性</em></p>
-<p>$X \sim B(n,\frac{\lambda}{n})$</p>
-<p>$\lim_{n \to \infty }P(X_n=k)=\lim_{n \to \infty}C_{n}^{k}(\frac{\lambda}{n})^k(1-\frac{\lambda}{n})^{n-k}=e^{-\lambda}\frac{\lambda^k}{k!},k=0,1,2,\cdots , n$</p>
-<h4 id="Poisson-定理"><a href="#Poisson-定理" class="headerlink" title="Poisson 定理"></a>Poisson 定理</h4><ul>
-<li>[x] 推导</li>
-</ul>
-<p>$\lim_{n \to + \infty }np_n=\lambda &gt; 0$</p>
-<p>$\lim_{n \to + \infty }C_{n}^kp_n^k(1-p_n)^{n-k}=e^{-\lambda}\frac{\lambda^k}{k!},k=0,1,2,\cdots$<br>np&lt;10!!   //不知道自己写得啥意思</p>
-<h4 id="推广"><a href="#推广" class="headerlink" title="推广"></a>推广</h4><p>条件不用$+\infty$ //不知道自己写得啥意思+1</p>
-<h3 id="超几何分布"><a href="#超几何分布" class="headerlink" title="超几何分布"></a>超几何分布</h3><p><em>取东西不放回</em></p>
-<p>$P(X=k)=\displaystyle\frac{C_a^k C_b^{n-k}}{C_{a+b}^n}$</p>
-<p>当$(a+b)\to \infty$ 把不放回近似于放回 $P(X=k)=(\frac{a}{a+b})^k(\frac{b}{a+b})^{n-k}$</p>
-<hr>
-<h2 id="连续型随机变量"><a href="#连续型随机变量" class="headerlink" title="连续型随机变量"></a>连续型随机变量</h2><blockquote>
-<p>存在非负可积函数 其积分=F(分布函数) 概率密度函数</p>
-<p>连续型随机变量的分布函数连续</p>
-</blockquote>
-<h3 id="概率密度"><a href="#概率密度" class="headerlink" title="概率密度"></a>概率密度</h3><p>$f(x)=F’(x)$</p>
-<p>$P(x_0&lt;X\le x_0+\Delta x)\approx f(x_0)\Delta x$</p>
-<p>$P(X=a)=0$</p>
-<blockquote>
-<p>f不唯一 有限或可列点处值可突变</p>
-</blockquote>
-<h3 id="均匀分布"><a href="#均匀分布" class="headerlink" title="均匀分布"></a>均匀分布</h3><script type="math/tex; mode=display">
-f(x)=
-  \left\{\begin{matrix} 
-  \displaystyle\frac{1}{b-a},a<x<b, \\
-  0,others, \\ 
-\end{matrix}\right.</script><script type="math/tex; mode=display">
-X \sim U(a,b)</script><script type="math/tex; mode=display">
-F(x)=
-  \left\{\begin{matrix} 
-  0,x<a, \\
-  \displaystyle\frac{x-a}{b-a},a \le x <b, \\
-  1, x \ge b, \\
-\end{matrix}\right.</script><h3 id="指数分布"><a href="#指数分布" class="headerlink" title="指数分布"></a>指数分布</h3><script type="math/tex; mode=display">
-f(x)=
-  \left\{\begin{matrix} 
-  \lambda e ^{-\lambda x},x>0, \\
-  0,x \le 0, \\ 
-\end{matrix}\right.</script><script type="math/tex; mode=display">
-X \sim E(\lambda)</script><script type="math/tex; mode=display">
-F(x)=
-  \left\{\begin{matrix} 
-  1-e ^{-\lambda x},x>0, \\
-  0,x \le 0, \\ 
-\end{matrix}\right.</script><ul>
-<li>ps $N(t) \sim P(\lambda t) \to T\sim E(\lambda)$<ul>
-<li>[ ]</li>
-</ul>
-</li>
-</ul>
-<h3 id="正态分布-Gauss-分布"><a href="#正态分布-Gauss-分布" class="headerlink" title="正态分布(Gauss 分布)"></a>正态分布(Gauss 分布)</h3><p>$f(x)=\displaystyle\frac{1}{\sqrt{2\pi}\sigma}e^{-\displaystyle\frac{(x-\mu)^2}{2\sigma^2}}$</p>
-<p>$x \sim N(\mu,\sigma^2)$</p>
-<ul>
-<li>性质</li>
-<li>max: $x=\mu$ $f=\frac{1}{\sqrt{2\pi}\sigma}$</li>
-<li>$\mu$:位置 $\sigma$:形状</li>
-</ul>
-<h4 id="标准正态分布"><a href="#标准正态分布" class="headerlink" title="标准正态分布"></a>标准正态分布</h4><blockquote>
-<p>$\mu=0,\sigma=1$</p>
-</blockquote>
-<p>分布函数<br>$\Phi(x)=\frac{1}{\sqrt{2\pi}}\int_{-\infty}^{x}e^{-\frac{t^2}{2}}dt$</p>
-<blockquote>
-<p>查表</p>
-</blockquote>
-<ul>
-<li>线性变换  $Y=\frac{X-\mu}{\sigma}$ 把一般正态分布转化为标准正态分布</li>
-</ul>
-<h2 id="其它"><a href="#其它" class="headerlink" title="其它"></a>其它</h2><ul>
-<li><p>小概率原理</p>
-</li>
-<li><p>实际推断原理</p>
-</li>
-</ul>
-<h3 id="随机变量函数"><a href="#随机变量函数" class="headerlink" title="随机变量函数"></a>随机变量函数</h3><p>$f_Y(y)=f_X(g^{-1}(x))|g^{-1}(x)’|$<br>duiy求导o<br>多段单调就多段加起来<br><img src="5894415021af3aed6f6f5d3c2ed8532.jpg" alt><br><img src="ade67786f263ba1e247b2b2e7c1a8d4.png" alt></p>
-<h2 id="二维离散型随机变量"><a href="#二维离散型随机变量" class="headerlink" title="二维离散型随机变量"></a>二维离散型随机变量</h2><blockquote>
-<p>非负 规范</p>
-</blockquote>
-<h3 id="关于x-y的边缘分布律"><a href="#关于x-y的边缘分布律" class="headerlink" title="关于x/y的边缘分布律"></a>关于x/y的边缘分布律</h3><p>不可通过边缘分布律确定联合分布律</p>
-<h2 id="二维连续性随机变量"><a href="#二维连续性随机变量" class="headerlink" title="二维连续性随机变量"></a>二维连续性随机变量</h2><blockquote>
-<p>存在可积</p>
-</blockquote>
-<p>边缘密度函数 略</p>
-<h3 id="二维均匀分布"><a href="#二维均匀分布" class="headerlink" title="二维均匀分布"></a>二维均匀分布</h3><script type="math/tex; mode=display">
-f(x)=
-  \left\{\begin{matrix} 
-  \displaystyle\frac{1}{S_D},(x,y)\in G, \\
-  0,others, \\ 
-\end{matrix}\right.</script><h3 id="二维正态分布"><a href="#二维正态分布" class="headerlink" title="二维正态分布"></a>二维正态分布</h3><script type="math/tex; mode=display">
-f(x)=...</script><script type="math/tex; mode=display">
-(X,Y)\sim N(\mu_1,\sigma_1^2;\mu_2,\sigma_2^2;\rho)</script><script type="math/tex; mode=display">
-x \sim N(\mu_1,\sigma_1^2)</script><script type="math/tex; mode=display">
-y \sim N(\mu_2,\sigma_2^2)</script><blockquote>
-<p>边缘分布律与$\rho$无关</p>
-</blockquote>
-<ul>
-<li>[ ] 例3.1.6</li>
-</ul>
-<h2 id="条件分布"><a href="#条件分布" class="headerlink" title="条件分布"></a>条件分布</h2><blockquote>
-<p>乘法公式 全概率公式<br>连续变量的条件分布用洛必达</p>
-</blockquote>
-<p>$f_{X|Y}(x|y)=(\displaystyle\frac{\int_{-\infty}^{x}f(u,y)du}{f_Y(y)})’=\displaystyle\frac{f(x,y)}{f_Y(y)}$</p>
-<blockquote>
-<p>积分中值定理</p>
-</blockquote>
-<h2 id="独立性-1"><a href="#独立性-1" class="headerlink" title="独立性"></a>独立性</h2><p>$F(X,Y)=F_X(x)F_Y(y)$</p>
-<h3 id="独立性定理"><a href="#独立性定理" class="headerlink" title="独立性定理"></a>独立性定理</h3><p>$f(x,y)=r(x)g(x)$<br><em>meishenmejiazhi</em></p>
-<h3 id="n维随机变量"><a href="#n维随机变量" class="headerlink" title="n维随机变量"></a>n维随机变量</h3><p>略</p>
-<h2 id="多维随机变量函数的分布"><a href="#多维随机变量函数的分布" class="headerlink" title="多维随机变量函数的分布"></a>多维随机变量函数的分布</h2><p>离散卷积公式<br>$P(X+Y=r)=\Sigma_{i=0}^r P(X=i)P(Y=r-i)$</p>
-<blockquote>
-<p>Poisson分布，二项分布的可加性</p>
-</blockquote>
-<h3 id="和"><a href="#和" class="headerlink" title="和"></a>和</h3><p>随机变量的线性函数的分布</p>
-<p>$Z=aX+bY+c$</p>
-<p>$f_z(z)=\displaystyle\frac{1}{|b|}\int_{-\infty}^{+\infty}f(t,\displaystyle\frac{z-at-c}{b})dt=\displaystyle\frac{1}{|a|}\int_{-\infty}^{+\infty}f(\displaystyle\frac{z-bt-c}{a},t)dt$</p>
-<h3 id="商"><a href="#商" class="headerlink" title="商"></a>商</h3><p>$Z=\displaystyle\frac{X}{Y}$</p>
-<p>$f_z(z)=\int_{-\infty}^{+\infty}f(yz,y)|y|dy$</p>
-<h3 id="平方和"><a href="#平方和" class="headerlink" title="平方和"></a>平方和</h3><p>$Z=X_1^2+X_2^2+\cdots+X_n^2$</p>
-<script type="math/tex; mode=display">
-f_z(z)=  \left\{
-  \begin{matrix} 
-  0,z<0, \\
-  \frac12 \int_0^{2\pi}f(\sqrt{z}cos \theta,\sqrt{z}sin \theta )d\theta,z\ge 0. \\ 
-\end{matrix}\right.</script><h3 id="极值"><a href="#极值" class="headerlink" title="极值"></a>极值</h3><p>$P(max(x,y)&lt;M)=\int_{-\infty}^m \int_{-\infty}^m f(x,y)=F_x(m)F_y(m)$</p>
-<p>$P(min(x,y)<M)=1-P(min(x,y)>M)=1-(1-f_x(m))(1-f_y(m))$</M)=1-P(min(x,y)></p>
-<h3 id="多维随机变量函数的联合分布"><a href="#多维随机变量函数的联合分布" class="headerlink" title="多维随机变量函数的联合分布"></a>多维随机变量函数的联合分布</h3><p>$u=u(x,y), v=v(x,y)$<br>$f_{(U,V)}(u,v)=f_{(X,Y)}(h(u,v),s(u,v))|J(u,v)|$</p>
-<blockquote>
-<p>h,s 反函数<br>$J=\displaystyle\frac{\partial(h,s)}{\partial(u,v)}$</p>
-</blockquote>
-<h1 id="数字特征"><a href="#数字特征" class="headerlink" title="数字特征"></a>数字特征</h1><p>p130</p>
-<h2 id="数学期望"><a href="#数学期望" class="headerlink" title="数学期望"></a>数学期望</h2><p>级数$\sum_{k=1}^{+\infty}x_kp_k$ 绝对收敛</p>
-<ul>
-<li><p>$x\sim P(\lambda)$<br>==$E(x)=\lambda \sum_{k=1}^{+\infty}\displaystyle\frac{\lambda^{k-1}}{(k-1)!}e^{-\lambda}=\lambda$==</p>
-</li>
-<li><p>$P(x=K)=pq^{k-1}$<br>$E(x)=\frac{1}{p}$</p>
-<blockquote>
-<p>化成积分后等比数列求和再求导 </p>
-</blockquote>
-</li>
-<li><p>$x \sim B(p)$<br>$E(X)=$<br>…忘了 之后补充..</p>
-</li>
-<li><p>$x \sim N(\mu,\sigma)$<br>$E=\mu$</p>
-<blockquote>
-<p>换成标准正态分布证明</p>
-</blockquote>
-</li>
-<li><p>$x \sim exp(\lambda)$<br>$E=\frac{1}{\lambda}$</p>
-<blockquote>
-<p>分部积分</p>
-</blockquote>
-</li>
-<li><p>$x \sim U(a,b)$<br>$E=\frac{a+b}2$</p>
-</li>
-</ul>
-<h2 id="性质见书"><a href="#性质见书" class="headerlink" title="性质见书"></a>性质见书</h2><p>$E(XY)=cov(X,Y)+(EX)(EY)$</p>
-<h2 id="方差"><a href="#方差" class="headerlink" title="方差"></a>方差</h2><h3 id="性质"><a href="#性质" class="headerlink" title="性质"></a>性质</h3><p>$D(X)=E(X^2)-[E(X)]^2$</p>
-<ul>
-<li>$D(X \pm Y) = D(X) + D(Y) \pm 2 cov(X,Y)$</li>
-<li><p>$D(aX+bY)=a^2DX+2abCov(X,Y)+b^2DY$</p>
-<h3 id="常见"><a href="#常见" class="headerlink" title="常见"></a>常见</h3></li>
-<li><p>$x \sim B(n,p)$<br>$D_{x_i}=pq$<br>$D=npq$</p>
-</li>
-<li><p>$x\sim P(\lambda)$<br>==$E(x)=\lambda \sum_{k=1}^{+\infty}\displaystyle\frac{\lambda^{k-1}}{(k-1)!}e^{-\lambda}=\lambda$==<br><img src="2022-04-12-11-26-20.png" alt></p>
-</li>
-<li><p>$X \sim G(p)$<br>$E(x)=\frac{1}{p}$</p>
-<blockquote>
-<p>化成积分后等比数列求和再求导<br><img src="2022-04-12-11-32-52.png" alt></p>
-</blockquote>
-</li>
-<li><p>$x \sim N(\mu,\sigma^2)$<br>$D=\sigma$</p>
-<blockquote>
-<p>换成标准正态分布证明</p>
-</blockquote>
-</li>
-<li><p>$x \sim exp(\lambda)$<br>$E=\frac{1}{\lambda}$</p>
-<blockquote>
-<p>分部积分</p>
-</blockquote>
-</li>
-<li><p>$x \sim U(a,b)$<br>$E=\frac{a+b}2$</p>
-<h2 id="车贝谢夫不等式"><a href="#车贝谢夫不等式" class="headerlink" title="车贝谢夫不等式"></a>车贝谢夫不等式</h2><p>$\forall \xi&gt;0,P(|x-Ex|\le \xi)$</p>
-</li>
-</ul>
-<p><img src="2022-04-12-11-04-45.png" alt></p>
-<h2 id="协方差和相关系数"><a href="#协方差和相关系数" class="headerlink" title="协方差和相关系数"></a>协方差和相关系数</h2><p>$Cov(x,y)=E[(X-EX)(Y-EY)]=E(XY)-(EX)(EY)$</p>
-<p>$\rho_{X,Y}=\displaystyle\frac{cov(X,Y)}{\sqrt{D(X)}\sqrt{D{Y}}}$</p>
-<blockquote>
-<p>相关系数</p>
-</blockquote>
-<p>=0时xy互不相关</p>
-<p><em>tip: 独立与不相关</em><br><em>独立一定不相关 不相关指的是两随机变量间没有线性联系，可以不独立</em></p>
-<h3 id="协方差的性质"><a href="#协方差的性质" class="headerlink" title="协方差的性质"></a>协方差的性质</h3><p>$Cov(X,aY+bZ)=aCov(X,Y)+bCov(X,Z)$</p>
-<p>$Cov(X,Y) \le \sqrt{DX}\sqrt{DY},Y=aX+b(=)$ </p>
-<blockquote>
-<p>Cauchy-Schwarz 证明$D(Y-aX)&gt;= 0$ 根的性质…..</p>
-</blockquote>
-<p>$Cov(X,Y)=\frac{D(X+Y)-DX-DY}{2}$</p>
-<p>完全正/负相关 1/-1<br> 线性均方误差 $min_{a,b}g(a,b)=min_{a,b}E((Y-aX-b)^2)$<br>$a=\displaystyle\frac{cov(X,Y)}{D(X)}=\rho \sqrt{\frac{DY}{DX}}$<br>$b=EY-aEX$</p>
-<p>tip:二维正态分布</p>
-<ul>
-<li>$(\mu_1,\sigma_1^2,\mu_2,\sigma_2^2,\rho)$的含义</li>
-<li>二维正态分布中  独立==不相关</li>
-</ul>
-<h2 id="高阶矩"><a href="#高阶矩" class="headerlink" title="高阶矩"></a>高阶矩</h2><ul>
-<li>原点矩/中心矩/混合矩</li>
-<li><del>标准正态分布$EX^4=3$</del> 不知道我自己写得啥</li>
-<li>协方差矩阵:半正定</li>
-<li>$D(t_1,X_1+T_2+X_2+…+t_nX_n)=(t_1,t_2,…,t_n)C(t_1,t_2,…,t_n)^T$</li>
-</ul>
-<h3 id="多维正态随机变量的概率分布-好像不要求"><a href="#多维正态随机变量的概率分布-好像不要求" class="headerlink" title="多维正态随机变量的概率分布(好像不要求)"></a>多维正态随机变量的概率分布(好像不要求)</h3><p>$f(x_1,x_2,\cdots,x_n)=\frac1{(2\pi)^{n/2}|C|^{1/2}}e^{-\frac12(x-\mu)^TC^{-1}(x-\mu)}$</p>
-<p>$(x_1,x_2,\cdots,x_n) \sim N(\mu,C)$</p>
-<blockquote>
-<p>均值向量 协方差矩阵</p>
-</blockquote>
-<h2 id="大数定律"><a href="#大数定律" class="headerlink" title="大数定律"></a>大数定律</h2><h3 id="Chebyshev不等式"><a href="#Chebyshev不等式" class="headerlink" title="Chebyshev不等式"></a>Chebyshev不等式</h3><p>$P(|X-\mu|\ge \epsilon)\le \displaystyle\frac{\sigma^2}{\epsilon^2}$</p>
-<blockquote>
-<p>证明：代入积分的式子后 放缩</p>
-</blockquote>
-<ul>
-<li>优点：可用于分布不明确</li>
-<li>缺点：稍有误差，最好区域关于期望对称</li>
-</ul>
-<h3 id="依概率收敛"><a href="#依概率收敛" class="headerlink" title="依概率收敛"></a>依概率收敛</h3><p>$\lim_{n \to +\infty}P(|Y_n-X|\ge \epsilon)=0,or,\lim_{n \to +\infty}P(|Y_n-X|&lt; \epsilon)=1$<br>$Y_n\to^{P}_{n\to +\infty}X$</p>
-<blockquote>
-<p>教材P149</p>
-<p><em>完蛋蛋，我好像要糊掉了嘤嘤嘤 = _ =</em></p>
-</blockquote>
-<h3 id="Bernoulli大数定律"><a href="#Bernoulli大数定律" class="headerlink" title="Bernoulli大数定律"></a>Bernoulli大数定律</h3><blockquote>
-<p>独立，已知频率</p>
-</blockquote>
-<p>$lim_{n\to +\infty}P(|\frac{n_A}n-p|\ge \epsilon=0)$</p>
-<p>$n\to +\infty,$ 频率 $\to$ 概率</p>
-<blockquote>
-<p>可用Chebyshev证明</p>
-</blockquote>
-<h3 id="Chebyshev大数定律"><a href="#Chebyshev大数定律" class="headerlink" title="Chebyshev大数定律"></a>Chebyshev大数定律</h3><blockquote>
-<p>两两不相关 方差有共同上界<br>两两不相关也可以换成$\frac 1 {n^2}D(\sum_{k-1}^n X_k)\to^{x \to+\infty}0$ (Chebyshev)  (?)</p>
-</blockquote>
-<ul>
-<li>[ ] ==<em>为什么一定要共同上界呢？</em>==</li>
-</ul>
-<p>$lim_{n\to +\infty}P(|\frac 1 n \sum_{i=1}^n X_i-\frac 1 n \sum_{i=1}^n E(X_i)|\ge \epsilon=0)$</p>
-<p>$n\to +\infty,$ 样本均值 $\to$ 真实期望</p>
-<ul>
-<li>一般用此定义该序列服从大数定律</li>
-</ul>
-<h3 id="Khintchine大数定律"><a href="#Khintchine大数定律" class="headerlink" title="Khintchine大数定律"></a>Khintchine大数定律</h3><blockquote>
-<p>独立同分布</p>
-</blockquote>
-<ul>
-<li>[ ] ==<em>为什么一定要共同上界呢？</em>==</li>
-</ul>
-<p>$lim_{n\to +\infty}P(|\frac 1 n \sum_{i=1}^n X_i-\mu|\ge \epsilon=0)$</p>
-<p>$n\to +\infty,$ 算术平均值 $\to$ 期望（常数）</p>
-<h2 id="中心极限定理"><a href="#中心极限定理" class="headerlink" title="中心极限定理"></a>中心极限定理</h2><blockquote>
-<p>独立同分布</p>
-</blockquote>
-<p>$lim_{n\to\infty}P(\displaystyle\frac{\Sigma_{k=1}^n X_i-n\mu}{\sqrt{n}\sigma}\le x)=\Phi(x)$</p>
-<p>$\Phi(x)=\displaystyle\frac{1}{\sqrt{2\pi}}\int_{-\infty}^{x}e^{-\frac{t^2}{2}}dt$</p>
-<h3 id="De-Moivre-Laplace-中心极限定理"><a href="#De-Moivre-Laplace-中心极限定理" class="headerlink" title="De Moivre-Laplace 中心极限定理"></a>De Moivre-Laplace 中心极限定理</h3><p>$lim_{n\to +\infty}P(\displaystyle\frac{Y_n-np}{\sqrt{np(1-p)}}\le x)=\frac {1}{\sqrt{2\pi}}\int_{-\infty}^x e^{-\frac{t^2}2}dt$</p>
-<blockquote>
-<p>二项分布近似: 小的时候直接算 中等用Poisson分布 太大用正态分布近似</p>
-</blockquote>
-<h1 id="统计"><a href="#统计" class="headerlink" title="统计"></a>统计</h1><h2 id="常用统计量"><a href="#常用统计量" class="headerlink" title="常用统计量"></a>常用统计量</h2><ul>
-<li>$\bar{X}$</li>
-<li><p>$S^2=\frac{1}{n-1}\sum_{i=1}^n(X_i-\bar{X})^2$</p>
-<ul>
-<li>n-1的理解： 自由度-1，列个式子可得</li>
-<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/Hearthougan/article/details/77859173">https://blog.csdn.net/Hearthougan/article/details/77859173</a></li>
-</ul>
-</li>
-<li><p>$S$</p>
-</li>
-<li>$M_k=\frac 1 n \sum_{i=1}^n X_i^k$ 样本k阶原点矩</li>
-<li>$(CM)_k=\frac 1 n \sum_{i=1}^n (X_i-\bar{X})^k$ 样本k阶中心矩</li>
-<li>$X_{(1)},X_{(2)},\cdots,X_{(n)}$ 顺序统计量</li>
-<li>$D_n=X_{(n)}-X_{(1)}$ 极差</li>
-</ul>
-<blockquote>
-<p>样本值为小写</p>
-</blockquote>
-<h3 id="性质-1"><a href="#性质-1" class="headerlink" title="性质"></a>性质</h3><ul>
-<li>$(CM)_2=M_2-\bar{X}^2$</li>
-<li>$S^2=\frac n {n-1}(CM)_2$</li>
-<li>$E(\bar{X})=EX$</li>
-<li>$D(\bar{X})=\displaystyle\frac{DX}{n}$</li>
-<li>$E(S^2)=DX$</li>
-</ul>
-<h3 id="经验分布函数"><a href="#经验分布函数" class="headerlink" title="经验分布函数"></a>经验分布函数</h3><p>$F_n(x)=\displaystyle\frac{N_n(x)}{n}$<br>依概率收敛于频率</p>
-<h3 id="直方图"><a href="#直方图" class="headerlink" title="直方图"></a>直方图</h3><p>将[a,b]分成8-15个小区间<br>每个小区间包含若干个样本值<br><img src="2022-04-26-11-13-31.png" alt></p>
-<h2 id="常用抽样分布"><a href="#常用抽样分布" class="headerlink" title="常用抽样分布"></a>常用抽样分布</h2><h3 id="X-2-分布"><a href="#X-2-分布" class="headerlink" title="$X^2$分布"></a>$X^2$分布</h3><ul>
-<li>定义<br>$X_i$相互独立且$\sim N(0,1)$,$\sum_{i=1}^{n}X_i^2 \sim X^2(n)$</li>
-<li>性质<br>$EX^2(n)=n$<br>$DX^2(n)=D\sum_{i=1}^n X_i^2=\sum_{i=1}^n D(X_i^2)=\sum_{i=1}^n(E(X_i^4)-E^2(X_i^2))=2n$<br>可加性<br>$n\to +\infty, X^2\sim N(n,2n)$</li>
-<li>概率密度<br>不要求，自己翻书</li>
-</ul>
-<h4 id="上侧α分位数"><a href="#上侧α分位数" class="headerlink" title="上侧α分位数"></a>上侧α分位数</h4><p>$P(X^2(n)\ge X_{\alpha}^2(n))=\alpha$</p>
-<h3 id="t分布"><a href="#t分布" class="headerlink" title="t分布"></a>t分布</h3><ul>
-<li>定义<br>$X\sim N(0,1),Y \sim X^2(n)$ 且<strong>X,Y相互独立</strong> $T=\displaystyle\frac{X}{Y/n}$</li>
-<li>性质<br>$E(t)=0$<br>当n&gt;45时，t分布可用标准正态分布近似<br>$t_{1-\alpha}(n)=-t_\alpha(n)$<br>$T^2 \sim F(1,n)$<h3 id="F分布"><a href="#F分布" class="headerlink" title="F分布"></a>F分布</h3></li>
-<li>定义<br>$U\sim X^2(m),V\sim X^2(n)$<br>$F(m,n)=\displaystyle\frac{U/m}{V/n}$</li>
-<li>性质<br>$\frac 1 {F}\sim F(n,m)$<br>$F_{1-\alpha}(m,n)=\displaystyle\frac 1 {F_{\alpha}(n,m)}$<br>$t_{1-\frac \alpha 2}^2(n)=F_\alpha(1,n)$</li>
-</ul>
-<h2 id="正态总体的抽样分布"><a href="#正态总体的抽样分布" class="headerlink" title="正态总体的抽样分布"></a>正态总体的抽样分布</h2><h3 id="一个"><a href="#一个" class="headerlink" title="一个"></a>一个</h3><p>$\bar{X}\sim N(\mu,\frac{\sigma^2}{n})$<br>$\displaystyle\frac{(n-1)S^2}{\sigma^2}\sim X^2(n-1)$<br>以上两项独立</p>
-<blockquote>
-<p>证明不要求</p>
-</blockquote>
-<p>$\displaystyle\frac{\bar{X}-\mu}{S/\sqrt{n}}\sim t(n-1)$</p>
-<h3 id="两个"><a href="#两个" class="headerlink" title="两个"></a>两个</h3><p><em>两样本独立</em><br>$\bar{X}-\bar{Y} E=\mu_1-\mu_2 D=\frac{\sigma_1^2}{m}+\frac{\sigma_2^2}{n}$<br>$\displaystyle\frac{S_1^2/S_2^2}{\sigma_1^2/\sigma_2^2}\sim F(n-1,m-1)$<br>两项相减凑t分布 见书P174</p>
-<h2 id="参数估计"><a href="#参数估计" class="headerlink" title="参数估计"></a>参数估计</h2><h3 id="点估计"><a href="#点估计" class="headerlink" title="点估计"></a>点估计</h3><h4 id="矩法估计"><a href="#矩法估计" class="headerlink" title="矩法估计"></a>矩法估计</h4><blockquote>
-<p>无需事先知道分布类型<br>不具备唯一性<br>必须原点矩存在</p>
-</blockquote>
-<p>$E(X)= \cdots $<br>$E(X^2) = D(X) + E^2(X) = \cdots $</p>
-<h4 id="极大似然估计"><a href="#极大似然估计" class="headerlink" title="极大似然估计"></a>极大似然估计</h4><ul>
-<li>Fisher极大似然原理<blockquote>
-<p>只有一次观测</p>
-</blockquote>
-</li>
-</ul>
-<p>似然函数$L(\theta)=P(X_1= )P(X_2= )\cdots P(X_n= )$<br>取对数(好算)<br>求导（或者直接看单调性和范围/比值），并认为该结果就是最大值 代入导数为0求估计点</p>
-<p>$L(\theta_1, \theta_2,\cdots,\theta _n)=\prod_{i=1}^n P(x_i;\theta_1, \theta_2,\cdots,\theta _n) or \prod_{i=1}^n f(x_i;\theta_1, \theta_2,\cdots,\theta _n)$</p>
-<blockquote>
-<p>最大似然估计不变性原理(好像没有很理解耶┭┮﹏┭┮) ，矩估计法没有不变性</p>
-<h4 id="频率估计法"><a href="#频率估计法" class="headerlink" title="频率估计法"></a>频率估计法</h4></blockquote>
-<p>频率代替概率</p>
-<h3 id="估计的评价"><a href="#估计的评价" class="headerlink" title="估计的评价"></a>估计的评价</h3><h4 id="无偏性"><a href="#无偏性" class="headerlink" title="无偏性"></a>无偏性</h4><p>多次估计 $E(\hat{\theta})=\theta, \epsilon = E(\hat{\theta}) - \theta$</p>
-<p>例如: 样本中心二阶矩就不是方差的无偏估计</p>
-<p>若是线性函数则可修改为无偏</p>
-<h4 id="有效性"><a href="#有效性" class="headerlink" title="有效性"></a>有效性</h4><p>都是无偏估计，方差小的更有效</p>
-<ul>
-<li>方差下界 Rao-Cramer不等式<br>条件 ${x| f(x,\theta)&gt;0}$ 与$\theta$无关<br>$D(\hat{\theta})\ge \displaystyle\frac 1 {n I(\theta)} = \displaystyle\frac{1}{nE((\displaystyle\frac{\partial \ln f(X;\theta)}{\partial \theta})^2)}&gt;0$<blockquote>
-<p>信息量<br>有效估计量不一定存在</p>
-<h4 id="一致性"><a href="#一致性" class="headerlink" title="一致性"></a>一致性</h4></blockquote>
-</li>
-</ul>
-<p>依概率收敛<br>一般用Chebyshev证明</p>
-<h3 id="区间估计"><a href="#区间估计" class="headerlink" title="区间估计"></a>区间估计</h3><blockquote>
-<p>置信度，置信水平<br>用无偏估计值<br>构造一个分布已知的枢轴量(样本函数)</p>
-<h4 id="单个正态总体"><a href="#单个正态总体" class="headerlink" title="单个正态总体"></a>单个正态总体</h4><h5 id="mu"><a href="#mu" class="headerlink" title="$\mu$"></a>$\mu$</h5><p>$U=\displaystyle\frac{\bar{X}-\mu}{\sigma / \sqrt{n}}\sim N(0,1)$<br>$T=\displaystyle\frac{\bar{X}-\mu}{S / \sqrt{n}}\sim t(n-1)$</p>
-<h5 id="sigma-2"><a href="#sigma-2" class="headerlink" title="$\sigma^2$"></a>$\sigma^2$</h5><p>$X^2 = \displaystyle\frac{1}{\sigma^2}\sum_{i=1}^n (X_i-\mu)^2\sim X^2(n)$<br>$X^2 = \displaystyle\frac{(n-1)S^2}{\sigma^2}\sim X^2(n-1)$</p>
-</blockquote>
-<h5 id="单侧置信上-下界"><a href="#单侧置信上-下界" class="headerlink" title="单侧置信上/下界"></a>单侧置信上/下界</h5><p>其实差不多<br><img src="2022-05-19-08-56-36.png" alt></p>
-<h4 id="两个正态总体-考试不考"><a href="#两个正态总体-考试不考" class="headerlink" title="两个正态总体(考试不考)"></a>两个正态总体(考试不考)</h4><p>差<br>$\bar{X}-\bar{Y} \sim N(\mu_1-\mu_2,\frac{\sigma_1^2}{n_1}+\frac{\sigma_2^2}{n_2})$<br>/T分布</p>
-<p>$F=\displaystyle\frac{S_1^2/S_2^2}{\sigma_1^2/\sigma_2^2}\sim F(n_1-1,n_2-1)$</p>
-<h4 id="非正态总体"><a href="#非正态总体" class="headerlink" title="非正态总体"></a>非正态总体</h4><p>$n&gt;50, U=\displaystyle\frac{\bar{X}-\mu}{\sigma / \sqrt{n}} \sim N(0,1)$</p>
-<h2 id="假设检验"><a href="#假设检验" class="headerlink" title="假设检验"></a>假设检验</h2><blockquote>
-<p>零假设$H_0$：默认立场，普遍存在（基准：拒绝$H_0$不代表接受$H_\alpha$）<br>  备择假设&amp;H_\alphs&amp;</p>
-</blockquote>
-<ul>
-<li>原则：保护原假设</li>
-</ul>
-<p>根据$H_0$ 构造小概率事件，小概率发生即拒绝零假设</p>
-<blockquote>
-<p>显著性水平$\alpha$:罕见度<br>  临界值$C$ 拒绝域<br>  统计量 $T/Z$<br>  自由度$df=n-k$</p>
-</blockquote>
-<h3 id="p值检验法"><a href="#p值检验法" class="headerlink" title="p值检验法"></a>p值检验法</h3><p>落在拒绝域的概率(越大越好)<br>当不对称双侧检验时 p取$2P(Z \le z_0)/2P(Z \ge z_0)$ 哪个小于0.5用哪个</p>
-<blockquote>
-<p>直白理解，p值表示在原假设（零假设）的条件下，样本发生或观测值出现的概率。若p值小于小概率事件的阈值即$\alpha$，那么拒绝原假设。否则接受原假设。</p>
-</blockquote>
-<h3 id="正态分布检验"><a href="#正态分布检验" class="headerlink" title="正态分布检验"></a>正态分布检验</h3><h4 id="mu-lue"><a href="#mu-lue" class="headerlink" title="$\mu$ lue"></a>$\mu$ lue</h4><h4 id="sigma"><a href="#sigma" class="headerlink" title="$\sigma$"></a>$\sigma$</h4><p>$X^2=\displaystyle\frac{\sum_{i=1}^{n}(X_i-\mu)^2}{\sigma_0^2}\sim X^2(n)$<br>$X^2=\displaystyle\frac{(n-1)S^2}{\sigma_0^2}=\displaystyle\frac{\sum_{i=1}^n (X_i-\bar{x})^2}{\sigma_0^2}\sim X^2(n-1)$</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
@@ -1383,7 +1064,7 @@ f_z(z)=  \left\{
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">59</span>
+          <span class="site-state-item-count">60</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
